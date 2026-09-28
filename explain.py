@@ -17,8 +17,10 @@ MODELS = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-2.5-flash", "gemini
 TYPES = ["Formato", "Audio", "Real time", "Cultura pop", "Humor", "Estilo de vida", "Consumo", "Noticia"]
 CATEGORIES = ["Belleza y Moda", "Bienestar y Fitness", "Comida y Bebida", "Consumo y Productos", "Cultura y Memes",
               "Deportes", "IA y Tech", "Música y Entretenimiento", "Noticias y Política", "Otros"]
-BATCH = 20
-MAX_NEW_PER_RUN = 60
+BATCH = 25
+FULL_TOP = 150       # trends that get a full explanation
+LITE_BATCH = 100     # the rest get a quick title/type/category in large batches
+MAX_CALLS_PER_RUN = 14  # keeps each hourly run well inside Gemini's free quota
 KEEP_DAYS = 10
 
 
@@ -81,25 +83,50 @@ Tendencias:
 {items}"""
 
 
+def _lite_prompt(batch):
+    items = "\n".join(_describe(t) for t in batch)
+    return f"""Clasificá estas tendencias para una agencia creativa de Buenos Aires. Para cada una devolvé un objeto JSON con:
+"id" (el mismo), "titulo" (formato "Nombre — de qué se trata", máx. 70 caracteres, en español), "tipo" (uno de {TYPES}) y "categoria" (uno de {CATEGORIES}).
+Si no sabés qué es, deducilo de las fuentes. Devolvé solo un array JSON.
+
+Tendencias:
+{items}"""
+
+
+def _run(api_key, batches, prompt_fn, cache, now, lite, budget):
+    made = 0
+    for batch in batches:
+        if budget[0] <= 0:
+            break
+        budget[0] -= 1
+        try:
+            result = _call(api_key, prompt_fn(batch))
+        except Exception as e:
+            print(f"Gemini no respondió ({type(e).__name__}): {e}")
+            budget[0] = 0
+            break
+        for r in result if isinstance(result, list) else []:
+            if isinstance(r, dict) and r.get("id"):
+                r["ts"] = now
+                r["lite"] = lite
+                cache[r["id"]] = r
+                made += 1
+    return made
+
+
 def enrich(trends, generate=False):
     """Mutates trends in place with cached explanations; with generate=True also asks Gemini for new ones."""
     api_key = os.environ.get("GEMINI_API_KEY", "").strip() if generate else ""
     cache = load_cache()
     now = time.time()
-    todo = [t for t in trends if key_for(t) not in cache][:MAX_NEW_PER_RUN] if api_key else []
     made = 0
-    for i in range(0, len(todo), BATCH):
-        batch = todo[i : i + BATCH]
-        try:
-            result = _call(api_key, _prompt(batch))
-        except Exception as e:
-            print(f"Gemini no respondió ({type(e).__name__}): {e}")
-            break
-        for r in result if isinstance(result, list) else []:
-            if isinstance(r, dict) and r.get("id"):
-                r["ts"] = now
-                cache[r["id"]] = r
-                made += 1
+    if api_key:
+        budget = [MAX_CALLS_PER_RUN]
+        top, rest = trends[:FULL_TOP], trends[FULL_TOP:]
+        full = [t for t in top if key_for(t) not in cache or cache[key_for(t)].get("lite")]
+        made += _run(api_key, [full[i : i + BATCH] for i in range(0, len(full), BATCH)], _prompt, cache, now, False, budget)
+        lite = [t for t in rest if key_for(t) not in cache]
+        made += _run(api_key, [lite[i : i + LITE_BATCH] for i in range(0, len(lite), LITE_BATCH)], _lite_prompt, cache, now, True, budget)
     cache = {k: v for k, v in cache.items() if now - v.get("ts", now) < KEEP_DAYS * 86400}
     if api_key:
         CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=0), encoding="utf-8")
