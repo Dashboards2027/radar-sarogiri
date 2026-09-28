@@ -182,7 +182,6 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
   <span class="title">Radar de tendencias</span>
   <span class="spacer"></span>
   <span class="mono" id="updated">—</span>
-  <button class="ghost" id="settings" type="button">IA</button>
   <button class="ghost" id="theme" type="button" aria-label="Cambiar tema">◐</button>
   <button class="btn" id="refresh" type="button">Actualizar ahora</button>
 </header>
@@ -255,24 +254,6 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
   </form>
 </dialog>
 
-<dialog id="dlg-settings">
-  <form class="dlg" id="settings-form" method="dialog">
-    <h3>Configurar IA (gratis)</h3>
-    <p class="hint">La IA ya funciona para todos sin cargar nada. Si querés usar tu propia clave de <b>Google Gemini</b> (plan gratuito), cargala acá. Sacá tu clave en <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (entrás con tu cuenta de Google, «Create API key», no pide tarjeta) y pegala acá. Queda guardada solo en este navegador.</p>
-    <label>Clave de Gemini<input type="password" id="s-key" autocomplete="off"></label>
-    <label>Modelo<input type="text" id="s-model"></label>
-    <div class="hint">Clientes: los perfiles se comparten automáticamente con todo el equipo. Exportar sirve como copia de respaldo.</div>
-    <div class="actions" style="justify-content:flex-start">
-      <button class="ghost" type="button" id="s-export">Exportar clientes</button>
-      <label class="ghost" style="flex-direction:row;font-weight:400;cursor:pointer">Importar clientes<input type="file" id="s-import" accept=".json,application/json" hidden></label>
-    </div>
-    <div class="actions">
-      <button class="ghost" type="button" id="s-cancel">Cancelar</button>
-      <button class="btn" type="submit">Guardar</button>
-    </div>
-  </form>
-</dialog>
-
 <dialog id="dlg-prop" class="prop">
   <div class="dlg">
     <div class="actions" style="justify-content:space-between">
@@ -293,11 +274,9 @@ const SOURCES=["X","TikTok","Instagram","Google","Shorts","YouTube","Spotify","M
 const platCls=p=>"plat p-"+p.replace(/\s+/g,"");
 const NETWORKS=["Instagram","TikTok","X","YouTube","LinkedIn","Facebook","Threads","Pinterest"];
 const REGION_LABEL={AR:"Argentina",MUNDO:"Mundo",US:"EE.UU.",GB:"Reino Unido",BR:"Brasil",MX:"México",ES:"España",EXPLICA:"OutOfTheLoop"};
-const DEFAULT_MODEL="gemini-flash-latest";
-// Shared AI relay on Vercel: the Gemini key stays on the server. Empty = each person uses their own key.
+// Shared AI relay on Vercel: the Gemini/Groq keys stay on the server.
 const PROXY_URL="https://radar-sarogiri-ia.vercel.app/api/gemini";
-const hasAI=()=>!!(store.get("radar.key","")||PROXY_URL);
-const FALLBACK_MODELS=["gemini-3.8-flash","gemini-3.7-flash","gemini-3.5-flash","gemini-flash-lite-latest","gemini-3.5-flash-lite"];
+const hasAI=()=>!!PROXY_URL;
 const QUESTIONS=[
   {id:"ideas",main:true,label:"Sugerencias de contenido para cada red del cliente"},
   {id:"what",label:"¿De qué trata? Formato, audio, emoción"},
@@ -359,13 +338,13 @@ const isHot=t=>isStarting(t)&&t.score>=state.hotCut;
 let clients=store.get("radar.clients",null)||JSON.parse(JSON.stringify(window.SEED_CLIENTS||[]));
 
 /* ---------- Clientes compartidos (Firebase Firestore, API REST) ---------- */
-// Firebase web config is public by design; access is limited by Firestore rules to the "clients" collection.
-const FIREBASE={apiKey:"AIzaSyDaH87avblhGstzytLxa5XpC1UyJOXn5WQ",projectId:"sarogiri-6f82d"};
+// Access is controlled by the Firestore rules (only the "clients" collection is open); no API key needed.
+const FIREBASE={projectId:"sarogiri-6f82d"};
 const FS_URL=`https://firestore.googleapis.com/v1/projects/${FIREBASE.projectId}/databases/(default)/documents/clients`;
 const MAX_SHARED_FILE=700*1024; // Firestore documents max out at 1 MiB
 let cloudOk=false;
 async function cloudList(){
-  const r=await fetch(`${FS_URL}?pageSize=300&key=${FIREBASE.apiKey}`,{cache:"no-store"});
+  const r=await fetch(`${FS_URL}?pageSize=300`,{cache:"no-store"});
   if(!r.ok)throw new Error("Firebase "+r.status);
   const j=await r.json();
   return (j.documents||[]).map(d=>{try{return JSON.parse(d.fields.json.stringValue);}catch(e){return null;}}).filter(Boolean);
@@ -373,13 +352,13 @@ async function cloudList(){
 async function cloudSave(c){
   const shared={...c};
   if(shared.file&&shared.file.data&&shared.file.data.length>MAX_SHARED_FILE){delete shared.file;shared.fileTooBig=c.file.name;}
-  const r=await fetch(`${FS_URL}/${encodeURIComponent(c.id)}?key=${FIREBASE.apiKey}`,{method:"PATCH",headers:{"Content-Type":"application/json"},
+  const r=await fetch(`${FS_URL}/${encodeURIComponent(c.id)}`,{method:"PATCH",headers:{"Content-Type":"application/json"},
     body:JSON.stringify({fields:{json:{stringValue:JSON.stringify(shared)},name:{stringValue:c.name},updated:{timestampValue:new Date().toISOString()}}})});
   if(!r.ok)throw new Error("Firebase "+r.status);
   return !shared.fileTooBig;
 }
 async function cloudDelete(id){
-  const r=await fetch(`${FS_URL}/${encodeURIComponent(id)}?key=${FIREBASE.apiKey}`,{method:"DELETE"});
+  const r=await fetch(`${FS_URL}/${encodeURIComponent(id)}`,{method:"DELETE"});
   if(!r.ok)throw new Error("Firebase "+r.status);
 }
 async function syncClients(first){
@@ -666,12 +645,7 @@ function renderPanel(){
   if(state.busy){const w=el("div","msg a");w.append(el("span","loading"),document.createTextNode(" Pensando…"));chat.append(w);}
 
   const hint=document.getElementById("p-keyhint");hint.replaceChildren();
-  if(!hasAI()){
-    const d=el("div","warn");d.append(document.createTextNode("Para usar la IA, cargá tu clave gratis de Gemini en "));
-    const b=el("button","linkbtn","Configurar IA");b.type="button";b.style.color="var(--blue)";b.onclick=openSettings;d.append(b);hint.append(d);
-  } else if(!state.trend||!cur){
-    hint.append(el("div","hint",!state.trend?"Elegí una tendencia.":"Elegí un cliente (doble clic para editarlo)."));
-  }
+  if(!state.trend||!cur)hint.append(el("div","hint",!state.trend?"Elegí una tendencia.":"Elegí un cliente."));
   document.querySelector("#p-ask button").disabled=!ready;
 }
 
@@ -745,19 +719,6 @@ const PROMPTS={
   exp:c=>`Proponé 2 ideas de experiencia presencial o activación de comunidad para ${c.name} basadas en esta tendencia: concepto, formato, lugar, cantidad de gente, qué contenido sale de ahí y en qué plazo habría que hacerla.`,
 };
 
-async function pickFlashModel(key){
-  try{
-    const r=await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",{headers:{"x-goog-api-key":key}});
-    const names=((await r.json()).models||[])
-      .filter(m=>(m.supportedGenerationMethods||[]).includes("generateContent"))
-      .map(m=>m.name.replace("models/",""))
-      .filter(n=>/flash/.test(n)&&!/image|live|tts|audio|lite|preview|exp/.test(n));
-    const ver=n=>parseFloat((n.match(/gemini-(\d+(?:\.\d+)?)/)||[0,0])[1]);
-    names.sort((a,b)=>ver(b)-ver(a));
-    return names.includes("gemini-flash-latest")?"gemini-flash-latest":names[0]||null;
-  }catch(e){return null;}
-}
-
 function historyChart(hist){
   if(hist.length<2)return null;
   const ns="http://www.w3.org/2000/svg",W=320,H=110,L=26,R=6,T=8,B=18;
@@ -808,27 +769,9 @@ async function toggleSaved(c,t){
 }
 
 async function gemini(body){
-  const key=store.get("radar.key","");
-  if(!key&&PROXY_URL){
-    const r=await fetch(PROXY_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-    const j=await r.json().catch(()=>({}));
-    if(!r.ok)throw new Error(r.status===429?"La IA está muy pedida en este momento. Probá en un rato.":r.status===503?"Gemini está saturado en este momento. Probá de nuevo en unos minutos.":(j.error&&j.error.message)||"No se pudo consultar a la IA");
-    return j;
-  }
-  const call=m=>fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}:generateContent`,{
-    method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":key},body:JSON.stringify(body)});
-  const chain=[...new Set([store.get("radar.model",DEFAULT_MODEL)||DEFAULT_MODEL,...FALLBACK_MODELS])];
-  let r;
-  for(const m of chain){
-    r=await call(m);
-    if(r.status===404){const picked=await pickFlashModel(key);if(picked&&!chain.includes(picked))chain.push(picked);continue;}
-    if(r.status!==503&&r.status!==429&&r.status!==500)break;
-  }
-  const j=await r.json();
-  if(!r.ok){
-    const msg=(j.error&&j.error.message)||r.statusText;
-    throw new Error(r.status===429?"Se alcanzó el límite gratuito de Gemini por ahora. Probá en un rato.":r.status===503?"Gemini está saturado en este momento. Probá de nuevo en unos minutos.":r.status===400&&/API key/i.test(msg)?"La clave de Gemini no es válida. Revisala en «IA».":msg);
-  }
+  const r=await fetch(PROXY_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(r.status===429?"La IA está muy pedida en este momento. Probá en un rato.":r.status===503?"La IA está saturada en este momento. Probá de nuevo en unos minutos.":(j.error&&j.error.message)||"No se pudo consultar a la IA");
   return j;
 }
 
@@ -855,7 +798,7 @@ Buscá en Google qué es y por qué está en tendencia hoy. Respondé SOLO un JS
 async function ask(text,qid){
   const client=currentClient(),trend=state.trend;
   if(!client||!trend)return;
-  if(!hasAI()){openSettings();return;}
+  if(!hasAI())return;
   const k=chatKey();const hist=state.chats[k]||(state.chats[k]=[]);
   const prompt=(qid&&PROMPTS[qid])?PROMPTS[qid](client):text;
   hist.push({role:"user",text:prompt,display:text});
@@ -939,35 +882,6 @@ document.getElementById("c-delete").onclick=e=>{
   clients=clients.filter(c=>c!==gone);if(state.clientId===gone.id)state.clientId=null;
   store.set("radar.clients",clients);document.getElementById("dlg-client").close();renderPanel();
   cloudDelete(gone.id).then(()=>toast("Cliente borrado para todo el equipo")).catch(()=>toast("Borrado solo en este navegador: no se pudo conectar con la base de clientes."));
-};
-
-/* ---------- Configuración ---------- */
-function openSettings(){
-  document.getElementById("s-key").value=store.get("radar.key","");
-  document.getElementById("s-model").value=store.get("radar.model",DEFAULT_MODEL);
-  document.getElementById("dlg-settings").showModal();
-}
-document.getElementById("settings").onclick=openSettings;
-document.getElementById("s-cancel").onclick=()=>document.getElementById("dlg-settings").close();
-document.getElementById("settings-form").onsubmit=e=>{
-  e.preventDefault();
-  store.set("radar.key",document.getElementById("s-key").value.trim());
-  store.set("radar.model",document.getElementById("s-model").value.trim()||DEFAULT_MODEL);
-  document.getElementById("dlg-settings").close();renderPanel();toast("Configuración guardada");
-};
-document.getElementById("s-export").onclick=async()=>{
-  const txt=JSON.stringify(clients.map(({file,...c})=>c),null,2);
-  try{await navigator.clipboard.writeText(txt);toast("Clientes copiados. Pegalos en un mensaje o archivo para compartirlos.");}
-  catch(err){const b=new Blob([txt],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="clientes-radar.json";a.click();}
-};
-document.getElementById("s-import").onchange=async e=>{
-  const f=e.target.files[0];if(!f)return;
-  try{const arr=JSON.parse(await f.text());if(!Array.isArray(arr))throw 0;
-    arr.forEach(c=>{if(!c||!c.name)return;const i=clients.findIndex(x=>x.id===c.id);if(i>=0)clients[i]={...clients[i],...c};else clients.push({id:c.id||"c"+Math.random().toString(36).slice(2),...c});});
-    store.set("radar.clients",clients);renderPanel();
-    Promise.all(clients.map(cloudSave)).then(()=>toast("Clientes importados y compartidos con el equipo")).catch(()=>toast("Clientes importados solo en este navegador"));
-  }catch(err){toast("Ese archivo no tiene clientes válidos");}
-  e.target.value="";
 };
 
 /* ---------- Datos ---------- */

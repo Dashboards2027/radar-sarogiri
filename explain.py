@@ -115,13 +115,12 @@ def _describe(t):
     return f'- id: {key_for(t)} | tendencia: "{t["keyword"]}" | fuentes: {members}' + (f" | contexto: {ctx}" if ctx else "")
 
 
-FIRESTORE_CLIENTS = ("https://firestore.googleapis.com/v1/projects/sarogiri-6f82d/databases/(default)/documents/clients"
-                     "?pageSize=300&key=AIzaSyDaH87avblhGstzytLxa5XpC1UyJOXn5WQ")
+FIRESTORE_CLIENTS = "https://firestore.googleapis.com/v1/projects/sarogiri-6f82d/databases/(default)/documents/clients?pageSize=300"
 _clients_cache = None
 
 
 def load_clients():
-    """Agency client profiles from the shared Firebase list (public web config, read-only here)."""
+    """Agency client profiles from the shared Firebase list (the Firestore rules allow reading /clients)."""
     global _clients_cache
     if _clients_cache is None:
         try:
