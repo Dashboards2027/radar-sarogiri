@@ -76,7 +76,8 @@ def stage_for(t):
             return "Pico"
         return "Saturado"
     if t["source"] == "Reddit":
-        return "Emergente"
+        # "rising" already means climbing; only the very top is genuinely starting
+        return "Emergente" if t["rank"] <= 5 else "Creciendo" if t["rank"] <= 12 else "Pico"
     if t["source"] == "TikTok":
         views = t["extra"].get("views", "")
         mult = {"K": 1e3, "M": 1e6, "B": 1e9}.get(views[-1:], 1)
@@ -91,7 +92,8 @@ def stage_for(t):
         climbed = (prev - t["rank"]) if prev else 0
         if e.get("is_new") or e.get("change", "").upper() in ("NEW", "RE") or days <= 3:
             return "Emergente"
-        if climbed >= 5 or e.get("change", "").startswith("+") or days <= 10:
+        climbed = max(climbed, int(e.get("change", "+0")[1:] or 0) if e.get("change", "").startswith("+") else 0)
+        if climbed >= 15 or days <= 7:
             return "Creciendo"
         return "Saturado" if days > 45 else "Pico"
     if t["source"] == "YouTube":
@@ -100,10 +102,13 @@ def stage_for(t):
             return "Pico"
         return "Emergente" if age <= 3 else "Creciendo" if age <= 10 else "Pico"
     if t["source"] in ("Mercado Libre", "Wikipedia"):
-        return "Creciendo"
+        # popularity lists, not momentum: only brand-new entries near the top count as growing
+        return "Creciendo" if t["first_seen_hours"] <= 24 and t["rank"] <= 5 else "Pico"
     if t["source"] in ("Memes", "Bluesky"):
         h = t["first_seen_hours"]
-        return "Emergente" if h <= 24 else "Creciendo" if h <= 72 else "Pico"
+        if h <= 6 and t["rank"] <= 8:
+            return "Emergente"
+        return "Creciendo" if h <= 24 else "Pico"
     traffic = int(re.sub(r"\D", "", t["traffic"] or "0") or 0) * (1000 if "K" in t["traffic"] else 1_000_000 if "M" in t["traffic"] else 1)
     started = t["extra"].get("started_hours_ago")
     if started is not None:
