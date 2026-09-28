@@ -47,7 +47,7 @@ function toGroqMessages(body) {
 }
 
 async function askGroq(body) {
-  const key = process.env.GROQ_API_KEY;
+  const key = process.env.GROQ_API_KEY || process.env.GROQ_API || process.env.Groq;
   if (!key) return null;
   const wantsJson = body.generationConfig?.response_mime_type === "application/json";
   for (const model of GROQ_MODELS) {
