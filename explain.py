@@ -15,7 +15,7 @@ from analyze import norm
 CACHE = Path(__file__).with_name("explanations.json")
 MODELS = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest", "gemini-2.5-flash-lite"]
 # Lite models answer big classification batches much faster.
-LITE_MODELS = ["gemini-flash-lite-latest", "gemini-2.5-flash-lite", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
+LITE_MODELS = ["gemini-2.5-flash-lite", "gemini-flash-lite-latest"] + MODELS
 TYPES = ["Formato", "Audio", "Real time", "Cultura pop", "Humor", "Estilo de vida", "Consumo", "Noticia"]
 CATEGORIES = ["Belleza y Moda", "Bienestar y Fitness", "Comida y Bebida", "Consumo y Productos", "Cultura y Memes",
               "Deportes", "IA y Tech", "Música y Entretenimiento", "Noticias y Política", "Otros"]
@@ -55,6 +55,7 @@ def _call(api_key, prompt, models=MODELS):
             return json.loads(text)
         except urllib.error.HTTPError as e:
             last = e
+            print(f"  {model}: HTTP {e.code}")
             if e.code in (404, 429, 500, 503):
                 continue
             raise
