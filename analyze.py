@@ -259,6 +259,52 @@ def attach_history(conn, cards):
         t["window"] = opportunity_window(t)
 
 
+def explosion_probability(t):
+    """Chance that the trend becomes massive, from momentum signals. Returns (percent, reasons).
+
+    Heuristic weights (no labelled data yet): each signal adds or subtracts, then a logistic curve maps to 0-100.
+    """
+    import math
+    e = t.get("extra") or {}
+    signals = []
+
+    def add(weight, reason):
+        signals.append((weight, reason))
+
+    add({"Emergente": 1.0, "Creciendo": 0.6, "Pico": -0.4, "Saturado": -1.5}.get(t["stage"], 0), f"etapa {t['stage'].lower()}")
+    add({"sube": 0.8, "nuevo": 0.3, "baja": -0.8}.get(t.get("direction"), 0), {"sube": "viene subiendo en el ranking", "nuevo": "recién aparece", "baja": "viene bajando"}.get(t.get("direction"), ""))
+    plats = len(t.get("platforms", []))
+    if plats > 1:
+        add(0.5 * (plats - 1), f"ya está en {plats} plataformas")
+    places = len(t.get("seen_in", []))
+    if places > 2:
+        add(min(1.0, 0.15 * (places - 1)), f"aparece en {places} rankings de distintos países/redes")
+    ranks = [r for _, r in t.get("history", [])]
+    if len(ranks) >= 4:
+        gained = ranks[0] - ranks[-1]
+        if gained > 0:
+            add(min(1.0, gained / 15), f"subió {gained} puestos desde que la vemos")
+    growth = int(re.sub(r"\D", "", e.get("growth", "") or "0") or 0)
+    if growth >= 500:
+        add(0.6, f"búsquedas en Google +{growth}%")
+    if e.get("started_hours_ago") is not None and e["started_hours_ago"] <= 4 and e.get("active", True):
+        add(0.4, "arrancó en Google hace menos de 4 h")
+    if (e.get("wow") or 0) >= 30:
+        add(0.5, f"Pinterest +{round(e['wow'])}% en la semana")
+    if e.get("is_new") and t["source"] in ("X", "Shorts"):
+        add(0.4, "entró nueva al ranking")
+    if t["source"] == "X" and e.get("is_new") and t["rank"] <= 10:
+        add(0.4, "entró directo al top 10 de X")
+    if str(e.get("change", "")).upper() in ("NEW", "RE"):
+        add(0.3, "entrada nueva en Spotify")
+    if t.get("risk") == "alto":
+        add(-0.5, "tema sensible")
+    total = sum(w for w, _ in signals)
+    pct = round(100 / (1 + math.exp(-(total - 1.2))))
+    reasons = [r for w, r in sorted(signals, key=lambda x: -abs(x[0])) if r and w != 0][:4]
+    return pct, reasons
+
+
 def opportunity_window(t):
     """Rough time left to use the trend before it feels late, from its stage and recent direction."""
     stage, d = t["stage"], t.get("direction")
@@ -294,6 +340,12 @@ def analyze(generate=False):
     conn.close()
     from explain import enrich
     made = enrich(cards, generate=generate)
+    from visual import describe_visuals
+    seen = describe_visuals(cards, generate=generate)
+    if generate:
+        print(f"Imágenes analizadas con IA: {seen}")
+    for t in cards:
+        t["explode"], t["explode_why"] = explosion_probability(t)
     if generate:
         print(f"Explicaciones nuevas con IA: {made}")
     return {"updated_at": max((t["fetched_at"] for t in trends), default=None), "trends": cards}

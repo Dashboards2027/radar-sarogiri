@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore: ["radar.db", "data.js", "explanations.json"]
+    paths-ignore: ["radar.db", "data.js", "explanations.json", "visual.json"]
 
 permissions:
   contents: write
@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          touch explanations.json && git add radar.db data.js explanations.json
+          touch explanations.json visual.json && git add radar.db data.js explanations.json visual.json
           git diff --cached --quiet || git commit -m "Actualizar tendencias"
           git pull --rebase -X theirs || true  # in a rebase, "theirs" = this run's fresh data
           git push

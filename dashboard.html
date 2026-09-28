@@ -80,6 +80,15 @@ h2{font-family:"Archivo Black";font-size:22px;margin:0 0 2px;color:var(--blue);t
 .saved{display:flex;flex-direction:column;gap:4px}
 .saved button{text-align:left;background:none;border:0;padding:3px 0;font-size:13px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line)}
 .star{color:#e6b800;font-size:14px}
+.boom{border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.boom.hi{background:#1f1bf2;color:#fff} .boom.mid{background:var(--blue-soft);color:var(--blue)} .boom.lo{background:var(--line);color:var(--muted)}
+.meter{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--blue);border-radius:999px}
+.why{margin:4px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+.vis{display:flex;flex-wrap:wrap;gap:5px;font-size:12px}
+.vis span{border-radius:999px;padding:2px 8px;background:#fdf0e6;color:#8a4b12}
+.pins{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pins img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;background:var(--line)}
 .risk{border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700}
 .risk.alto{background:#d6264b;color:#fff} .risk.medio{background:#ffe3a3;color:#6b4a00}
 .fits{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px}
@@ -344,6 +353,8 @@ function mentions(t){
   });
   return out;
 }
+const boomCls=p=>p>=70?"hi":p>=40?"mid":"lo";
+const isVisual=t=>!!t.visual;
 const isComing=t=>isStarting(t)&&isWorld(t)&&!isAR(t);
 const cleanKw=t=>t.keyword.replace(/^#/,"").replace(/\s+-\s+.*$/,"").slice(0,80);
 const savedFor=c=>(c&&c.saved)||[];
@@ -421,6 +432,7 @@ function card(t,big){
   if(ty)top.append(el("span","type",ty));
   top.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category));
   if(isHot(t))top.append(el("span","hotb","🔥 HOT"));
+  if(t.explode!=null&&t.explode>=40)top.append(el("span","boom "+boomCls(t.explode),"🎯 "+t.explode+"%"));
   if(isSaved(currentClient(),t))top.append(el("span","star","★"));
   mentions(t).forEach(m=>top.append(el("span","risk medio","📣 "+m.word+" → "+m.client)));
   if(t.risk==="alto")top.append(el("span","risk alto","⚠ Sensible"));
@@ -434,6 +446,7 @@ function card(t,big){
   if(ex)c.append(el("div","exp",ex));
   const hs=info(t).hashtags;
   if(hs&&hs.length){const tg=el("div","tags");hs.forEach(h=>tg.append(el("span",null,h)));c.append(tg);}
+  if(t.visual){const v=el("div","vis");[t.visual.estetica,t.visual.formato].filter(Boolean).forEach(x=>v.append(el("span",null,"🎨 "+x)));c.append(v);}
   if(t.fits&&t.fits.length){const f=el("div","fits");f.append(el("span","mono","Encaja con"));t.fits.forEach(x=>{const s=el("span","fit",x.cliente);s.title=x.por_que||"";f.append(s);});c.append(f);}
   const plats=el("div","row");
   if(isAR(t))plats.append(el("span","ar","AR"));
@@ -490,6 +503,8 @@ function passes(t,skip){
   if(skip!=="moment"&&state.moment==="start"&&!isStarting(t))return false;
   if(skip!=="moment"&&state.moment==="hot"&&!isHot(t))return false;
   if(skip!=="moment"&&state.moment==="coming"&&!isComing(t))return false;
+  if(skip!=="moment"&&state.moment==="boom"&&!(t.explode>=70))return false;
+  if(skip!=="moment"&&state.moment==="visual"&&!isVisual(t))return false;
   if(skip!=="region"&&state.moment==="coming")return passesRest(t,skip);
   if(skip!=="type"&&state.type.size&&!state.type.has(info(t).type))return false;
   if(skip!=="region"&&state.region.size&&!((state.region.has("AR")&&isAR(t))||(state.region.has("MUNDO")&&isWorld(t))))return false;
@@ -516,7 +531,7 @@ function filterGroup(id,title,key,values,test,labels){
 function renderFilters(){
   const gm=document.getElementById("f-moment");gm.replaceChildren(el("span","mono","Momento"));
   const pool=state.data.filter(t=>passes(t,"moment"));
-  [["all","Todas",pool.length],["start","🚀 Arrancando ahora",pool.filter(isStarting).length],["hot","🔥 Solo HOT",pool.filter(isHot).length],["coming","🌎 Todavía no llegó a AR",state.data.filter(t=>isComing(t)&&passesRest(t,"moment")).length]].forEach(([v,label,n])=>{
+  [["all","Todas",pool.length],["start","🚀 Arrancando ahora",pool.filter(isStarting).length],["hot","🔥 Solo HOT",pool.filter(isHot).length],["coming","🌎 Todavía no llegó a AR",state.data.filter(t=>isComing(t)&&passesRest(t,"moment")).length],["boom","🎯 Alta probabilidad de explotar",pool.filter(t=>t.explode>=70).length],["visual","🎨 Tendencias visuales",pool.filter(isVisual).length]].forEach(([v,label,n])=>{
     const b=el("button","fopt"+(state.moment===v?" on":""));b.type="button";b.append(el("span",null,label),el("span","n",n));
     b.onclick=()=>{state.moment=v;render();};gm.append(b);
   });
@@ -599,6 +614,23 @@ function renderPanel(){
     box.append(dh);
     const ch=historyChart(t.history||[]);
     if(ch)box.append(ch);else box.append(el("div","hint","Todavía hay pocos datos para el gráfico: se completa con las próximas actualizaciones."));
+    if(t.explode!=null){
+      const bx=el("div");bx.append(el("div","row"));
+      bx.firstChild.append(el("span","mono","Probabilidad de explotar"),el("span","boom "+boomCls(t.explode),t.explode+"% · "+(t.explode>=70?"alta":t.explode>=40?"media":"baja")));
+      const m=el("div","meter"),bar=el("i");bar.style.width=t.explode+"%";m.append(bar);bx.append(m);
+      if(t.explode_why&&t.explode_why.length){const ul=el("ul","why");t.explode_why.forEach(r=>ul.append(el("li",null,r)));bx.append(ul);}
+      box.append(bx);
+    }
+    if(t.visual||(t.extra&&t.extra.images&&t.extra.images.length)){
+      const vb=el("div");vb.append(el("span","mono","Tendencia visual"));
+      const imgs=((t.extra&&t.extra.images)||[t.extra&&t.extra.image]).filter(u=>u&&/^https:\/\//.test(u)).slice(0,3);
+      if(imgs.length){const g=el("div","pins");imgs.forEach(u=>{const im=el("img");im.src=u;im.alt=t.keyword;im.loading="lazy";im.referrerPolicy="no-referrer";g.append(im);});vb.append(g);}
+      if(t.visual){
+        const v=el("div","vis");[t.visual.estetica,t.visual.formato,...(t.visual.colores||[])].filter(Boolean).forEach(x=>v.append(el("span",null,x)));vb.append(v);
+        if(t.visual.descripcion)vb.append(el("div","pexp",t.visual.descripcion));
+      }
+      box.append(vb);
+    }
     const facts=el("dl","facts");
     const addFact=(k,v)=>{if(v){facts.append(el("dt",null,k),el("dd",null,v));}};
     addFact("Ventana",t.window);
@@ -706,6 +738,8 @@ function systemPrompt(client,trend,enhance){
   const extra=[];
   if(trend.source==="X")extra.push(`En X lleva ${trend.extra.hours_in_trending}h en tendencia (puesto anterior: ${trend.extra.rank_prev_hour||"—"}).`);
   if(trend.source==="Google"&&trend.extra.started_hours_ago!=null)extra.push(`En Google arrancó hace ${trend.extra.started_hours_ago}h, crecimiento ${trend.extra.growth||"—"}, ${trend.extra.active===false?"ya terminó":"sigue activa"}.`);
+  if(trend.explode!=null)extra.push(`Probabilidad estimada de volverse masiva: ${trend.explode}% (${(trend.explode_why||[]).join("; ")}).`);
+  if(trend.visual)extra.push(`Estética visual: ${trend.visual.estetica||""}; formato: ${trend.visual.formato||""}; colores: ${(trend.visual.colores||[]).join(", ")}. ${trend.visual.descripcion||""}`);
   if(trend.source==="Memes")extra.push("Es un formato o meme nuevo documentado en Know Your Meme: "+trend.url);
   if(trend.extra&&trend.extra.news)extra.push("Contexto / búsquedas relacionadas: "+trend.extra.news);
   return `Sos estratega creativa de SAROGIRI, una agencia de Buenos Aires que crea contenido, comunidad y experiencias presenciales para marcas. Respondés en español rioplatense (voseo), concreto y accionable, sin relleno. Usá títulos cortos y viñetas.

@@ -253,6 +253,22 @@ def _pinterest(page, cc):
         data = captured[0].json() if captured else {}
     finally:
         page.remove_listener("response", handler)
+    terms = [v["term"] for v in data.get("values", [])]
+    images = {}
+    if terms:
+        try:
+            images = page.evaluate(
+                """async ([terms, cc]) => {
+                    const csrf = (document.cookie.match(/csrftoken=([^;]+)/) || [])[1] || "";
+                    const r = await fetch("/term_images/", {method: "POST",
+                        headers: {"Content-Type": "application/json", "X-CSRFToken": csrf},
+                        body: JSON.stringify({terms, country: cc, limit: 3, requestImageSize: "236x"})});
+                    return r.ok ? r.json() : {};
+                }""",
+                [terms, cc],
+            ) or {}
+        except Exception:
+            images = {}
     out = []
     for v in sorted(data.get("values", []), key=lambda v: -v.get("reverseRank", 0)):
         wow = (v.get("wow_change") or {}).get("value") or 0
@@ -261,7 +277,8 @@ def _pinterest(page, cc):
         out.append(item("Pinterest", region, v["term"], len(out) + 1,
                         traffic=f"+{round(wow)}% semana · +{round(mom)}% mes",
                         url="https://www.pinterest.com/search/pins/?q=" + urllib.parse.quote(v["term"]),
-                        extra={"wow": wow, "mom": mom}))
+                        extra={"wow": wow, "mom": mom, "images": images.get(v["term"], [])[:3],
+                               "image": (images.get(v["term"]) or [None])[0]}))
     return out
 
 
