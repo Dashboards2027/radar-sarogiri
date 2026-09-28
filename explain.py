@@ -13,9 +13,9 @@ from pathlib import Path
 from analyze import norm
 
 CACHE = Path(__file__).with_name("explanations.json")
-MODELS = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest", "gemini-2.5-flash-lite"]
+MODELS = ["gemini-flash-latest", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash"]
 # Lite models answer big classification batches much faster.
-LITE_MODELS = ["gemini-2.5-flash-lite", "gemini-flash-lite-latest"] + MODELS
+LITE_MODELS = ["gemini-flash-lite-latest", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"] + MODELS
 TYPES = ["Formato", "Audio", "Real time", "Cultura pop", "Humor", "Estilo de vida", "Consumo", "Noticia"]
 CATEGORIES = ["Belleza y Moda", "Bienestar y Fitness", "Comida y Bebida", "Consumo y Productos", "Cultura y Memes",
               "Deportes", "IA y Tech", "Música y Entretenimiento", "Noticias y Política", "Otros"]
@@ -43,6 +43,17 @@ def _call(api_key, prompt, models=MODELS):
         "generationConfig": {"response_mime_type": "application/json", "temperature": 0.4},
     }).encode()
     last = None
+    for attempt in range(2):
+        result = _try_models(api_key, body, models)
+        if not isinstance(result, Exception):
+            return result
+        last = result
+        time.sleep(30)  # Gemini's free tier is often briefly overloaded (503/429)
+    raise last
+
+
+def _try_models(api_key, body, models):
+    last = None
     for model in models:
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
@@ -58,11 +69,11 @@ def _call(api_key, prompt, models=MODELS):
             print(f"  {model}: HTTP {e.code}")
             if e.code in (404, 429, 500, 503):
                 continue
-            raise
+            return e
         except (TimeoutError, urllib.error.URLError, json.JSONDecodeError, KeyError, IndexError) as e:
             last = e  # slow or malformed answer: try the next model
             continue
-    raise last
+    return last
 
 
 def _describe(t):

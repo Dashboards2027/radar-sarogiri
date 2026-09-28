@@ -255,7 +255,10 @@ const platCls=p=>"plat p-"+p.replace(/\s+/g,"");
 const NETWORKS=["Instagram","TikTok","X","YouTube","LinkedIn","Facebook","Threads","Pinterest"];
 const REGION_LABEL={AR:"Argentina",MUNDO:"Mundo",US:"EE.UU.",GB:"Reino Unido",BR:"Brasil",MX:"México",ES:"España",EXPLICA:"OutOfTheLoop"};
 const DEFAULT_MODEL="gemini-flash-latest";
-const FALLBACK_MODELS=["gemini-3.5-flash","gemini-2.5-flash","gemini-flash-lite-latest","gemini-3.5-flash-lite","gemini-2.5-flash-lite"];
+// Shared AI relay on Vercel: the Gemini key stays on the server. Empty = each person uses their own key.
+const PROXY_URL="";
+const hasAI=()=>!!(store.get("radar.key","")||PROXY_URL);
+const FALLBACK_MODELS=["gemini-3.8-flash","gemini-3.7-flash","gemini-3.5-flash","gemini-flash-lite-latest","gemini-3.5-flash-lite"];
 const QUESTIONS=[
   {id:"ideas",main:true,label:"Sugerencias de contenido para cada red del cliente"},
   {id:"what",label:"¿De qué trata? Formato, audio, emoción"},
@@ -489,7 +492,7 @@ const chatKey=()=>state.trend&&state.clientId?trendId(state.trend)+"::"+state.cl
 
 function selectTrend(t){
   state.trend=t;state.showQs=true;render();renderPanel();
-  if(!info(t).explanation&&store.get("radar.key",""))explainTrend(t);
+  if(!info(t).explanation&&hasAI())explainTrend(t);
   if(window.matchMedia("(max-width:1250px)").matches)document.querySelector(".panel").scrollIntoView({behavior:"smooth"});
 }
 
@@ -503,7 +506,7 @@ function renderPanel(){
     box.append(r);
     if(info(t).explanation)box.append(el("div","pexp",info(t).explanation));
     else if(state.explaining===trendId(t)){const w=el("div","hint");w.append(el("span","loading"),document.createTextNode(" Buscando de qué se trata…"));box.append(w);}
-    else if(store.get("radar.key","")){const b=el("button","qtoggle","Explicar esta tendencia");b.type="button";b.onclick=()=>explainTrend(t);box.append(b);}
+    else if(hasAI()){const b=el("button","qtoggle","Explicar esta tendencia");b.type="button";b.onclick=()=>explainTrend(t);box.append(b);}
     box.append(el("div","meta","En: "+t.seen_in.map(s=>{const[a,b]=s.split(" ");return a+" "+regionName(b);}).join(", ")));
   } else box.append(el("span","hint","Elegí una tendencia con «Analizar»."));
 
@@ -537,7 +540,7 @@ function renderPanel(){
   if(state.busy){const w=el("div","msg a");w.append(el("span","loading"),document.createTextNode(" Pensando…"));chat.append(w);}
 
   const hint=document.getElementById("p-keyhint");hint.replaceChildren();
-  if(!store.get("radar.key","")){
+  if(!hasAI()){
     const d=el("div","warn");d.append(document.createTextNode("Para usar la IA, cargá tu clave gratis de Gemini en "));
     const b=el("button","linkbtn","Configurar IA");b.type="button";b.style.color="var(--blue)";b.onclick=openSettings;d.append(b);hint.append(d);
   } else if(!state.trend||!cur){
@@ -626,6 +629,12 @@ async function pickFlashModel(key){
 
 async function gemini(body){
   const key=store.get("radar.key","");
+  if(!key&&PROXY_URL){
+    const r=await fetch(PROXY_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok)throw new Error(r.status===429?"La IA está muy pedida en este momento. Probá en un rato.":r.status===503?"Gemini está saturado en este momento. Probá de nuevo en unos minutos.":(j.error&&j.error.message)||"No se pudo consultar a la IA");
+    return j;
+  }
   const call=m=>fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}:generateContent`,{
     method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":key},body:JSON.stringify(body)});
   const chain=[...new Set([store.get("radar.model",DEFAULT_MODEL)||DEFAULT_MODEL,...FALLBACK_MODELS])];
@@ -664,9 +673,9 @@ Buscá en Google qué es y por qué está en tendencia hoy. Respondé SOLO un JS
 }
 
 async function ask(text,qid){
-  const client=currentClient(),trend=state.trend,key=store.get("radar.key","");
+  const client=currentClient(),trend=state.trend;
   if(!client||!trend)return;
-  if(!key){openSettings();return;}
+  if(!hasAI()){openSettings();return;}
   const k=chatKey();const hist=state.chats[k]||(state.chats[k]=[]);
   const prompt=(qid&&PROMPTS[qid])?PROMPTS[qid](client):text;
   hist.push({role:"user",text:prompt,display:text});
