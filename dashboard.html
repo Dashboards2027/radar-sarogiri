@@ -80,6 +80,29 @@ h2{font-family:"Archivo Black";font-size:22px;margin:0 0 2px;color:var(--blue);t
 .saved{display:flex;flex-direction:column;gap:4px}
 .saved button{text-align:left;background:none;border:0;padding:3px 0;font-size:13px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line)}
 .star{color:#e6b800;font-size:14px}
+.risk{border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700}
+.risk.alto{background:#d6264b;color:#fff} .risk.medio{background:#ffe3a3;color:#6b4a00}
+.fits{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px}
+.fit{border-radius:999px;padding:2px 8px;background:#e6f6ec;color:var(--ok);font-weight:600}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px}
+.facts dt{color:var(--muted)} .facts dd{margin:0}
+dialog.prop{width:min(820px,calc(100vw - 32px))}
+.propdoc{display:flex;flex-direction:column;gap:6px;line-height:1.55}
+.propdoc .logo{align-self:flex-start;font-size:15px}
+.propdoc h1{font-family:"Archivo Black";color:var(--blue);margin:10px 0 0;font-size:26px;line-height:1.15;text-wrap:balance}
+.propdoc h2{font-family:"Archivo Black";color:var(--blue);font-size:16px;margin:16px 0 2px}
+.propdoc p{margin:0}.propdoc ul{margin:0;padding-left:18px}
+@media print{
+  body.printing>*:not(#dlg-prop){display:none!important}
+  body.printing{background:#fff}
+  body.printing dialog.prop{position:static;width:auto;max-height:none;box-shadow:none;border:0}
+  body.printing dialog.prop .actions{display:none}
+}
+.dates{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin:-8px 0 22px}
+.date{flex:none;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:8px 12px;font-size:13px;display:flex;flex-direction:column;gap:2px;min-width:130px}
+.date b{font-family:"Archivo Black";font-weight:400;font-size:14px}
+.date .d{font-family:"Space Mono",monospace;font-size:11px;color:var(--muted)}
+.date.soon{border-color:var(--emergente)} .date.soon .d{color:var(--emergente)}
 .qtoggle{align-self:flex-start;background:none;border:0;padding:0;color:var(--blue);font-size:13px;text-decoration:underline}
 .brandhead{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .brandhead b{color:var(--emergente)}
@@ -171,6 +194,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
     <div class="fgroup" id="f-region"></div>
     <div class="fgroup" id="f-source"></div>
     <div class="fgroup" id="f-cat"></div>
+    <div class="fgroup" id="f-fit"></div>
     <div class="fgroup" id="f-type"></div>
     <div class="fgroup" id="f-stage"></div>
     <div class="fgroup" id="f-flags"></div>
@@ -184,6 +208,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
       <div class="kpi"><span class="mono">Saltaron de plataforma</span><b id="k-jump">0</b></div>
       <div class="kpi"><span class="mono">Aptas para experiencia</span><b id="k-exp">0</b></div>
     </section>
+    <div class="dates" id="dates" aria-label="Próximas fechas comerciales"></div>
     <h2>Arrancando ahora</h2>
     <p class="sub">Las que están arrancando, según los filtros de la izquierda. Pasá el mouse por encima para frenarlas.</p>
     <section class="hot" id="hot"></section>
@@ -248,6 +273,16 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
   </form>
 </dialog>
 
+<dialog id="dlg-prop" class="prop">
+  <div class="dlg">
+    <div class="actions" style="justify-content:space-between">
+      <button class="btn" type="button" id="prop-print">Guardar como PDF / imprimir</button>
+      <button class="ghost" type="button" id="prop-close">Cerrar</button>
+    </div>
+    <article id="prop-doc" class="propdoc"></article>
+  </div>
+</dialog>
+
 <div class="toast" id="toast" hidden></div>
 
 <script src="data.js"></script>
@@ -278,12 +313,44 @@ const store={
   get(k,def){try{const v=localStorage.getItem(k);return v==null?def:JSON.parse(v);}catch(e){return def;}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){return false;}},
 };
-const state={data:[],q:"",moment:"all",region:new Set(["AR"]),source:new Set(),cat:new Set(),type:new Set(),stage:new Set(),jump:false,exp:false,open:new Set(),
+const state={data:[],q:"",fit:new Set(),moment:"all",region:new Set(["AR"]),source:new Set(),cat:new Set(),type:new Set(),stage:new Set(),jump:false,exp:false,open:new Set(),
   trend:null,clientId:store.get("radar.client",null),chats:{},busy:false,showQs:true,explaining:null,hotCut:Infinity};
 const explained=store.get("radar.explain",{});
 const info=t=>t.explanation?t:(explained[trendId(t)]||{});
 const titleOf=t=>info(t).title||t.keyword;
 const isStarting=t=>t.stage==="Emergente"||t.stage==="Creciendo";
+// Argentine commercial/cultural calendar. Movable dates computed per year (e.g. third Sunday of October).
+const nthSunday=(y,m,n)=>{const d=new Date(y,m,1);d.setDate(1+((7-d.getDay())%7)+7*(n-1));return d;};
+function calendarDates(){
+  const now=new Date(),y=now.getFullYear(),out=[];
+  for(const yy of [y,y+1]){
+    out.push(
+      ["San Valentín",new Date(yy,1,14),"Parejas, regalos, gastronomía"],
+      ["Día de la Mujer",new Date(yy,2,8),"Cuidado: tono y propósito"],
+      ["Hot Sale",new Date(yy,4,11),"E-commerce (fecha aprox., se confirma cada año)"],
+      ["Día del Padre",nthSunday(yy,5,3),"Regalos, comida, deporte"],
+      ["Día del Amigo",new Date(yy,6,20),"Comunidad, salidas, experiencias"],
+      ["Día del Niño",nthSunday(yy,7,3),"Familias, juguetes, eventos"],
+      ["Primavera y Día del Estudiante",new Date(yy,8,21),"Flores, picnics, salidas"],
+      ["Día de la Madre",nthSunday(yy,9,3),"Belleza, moda, experiencias"],
+      ["Halloween",new Date(yy,9,31),"Disfraces, fiestas, contenido temático"],
+      ["CyberMonday Argentina",new Date(yy,10,3),"E-commerce (fecha aprox.)"],
+      ["Black Friday",new Date(yy,10,27),"Ofertas (fecha aprox.)"],
+      ["Navidad",new Date(yy,11,25),"Regalos, reuniones, cierre de año"],
+      ["Año Nuevo",new Date(yy+1,0,1),"Balances, propósitos, fiestas"]);
+  }
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  return out.map(([name,date,hint])=>({name,date,hint,days:Math.round((date-today)/864e5)}))
+    .filter(d=>d.days>=0).sort((a,b)=>a.days-b.days).slice(0,8);
+}
+function renderDates(){
+  const box=document.getElementById("dates");box.replaceChildren();
+  calendarDates().forEach(d=>{
+    const c=el("div","date"+(d.days<=21?" soon":""));c.title=d.hint;
+    c.append(el("b",null,d.name),el("span","d",d.days===0?"¡Hoy!":`faltan ${d.days} días · ${d.date.toLocaleDateString("es-AR",{day:"numeric",month:"short"})}`),el("span","hint",d.hint));
+    box.append(c);
+  });
+}
 const isComing=t=>isStarting(t)&&isWorld(t)&&!isAR(t);
 const cleanKw=t=>t.keyword.replace(/^#/,"").replace(/\s+-\s+.*$/,"").slice(0,80);
 const savedFor=c=>(c&&c.saved)||[];
@@ -362,6 +429,8 @@ function card(t,big){
   top.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category));
   if(isHot(t))top.append(el("span","hotb","🔥 HOT"));
   if(isSaved(currentClient(),t))top.append(el("span","star","★"));
+  if(t.risk==="alto")top.append(el("span","risk alto","⚠ Sensible"));
+  else if(t.risk==="medio")top.append(el("span","risk medio","⚠ Con cuidado"));
   top.append(el("span","score",Math.round(t.score)));
   c.append(top);
   if(t.extra&&t.extra.image&&/^https:\/\//.test(t.extra.image)){const im=el("img","thumb");im.src=t.extra.image;im.alt=t.keyword;im.loading="lazy";im.referrerPolicy="no-referrer";c.append(im);}
@@ -371,6 +440,7 @@ function card(t,big){
   if(ex)c.append(el("div","exp",ex));
   const hs=info(t).hashtags;
   if(hs&&hs.length){const tg=el("div","tags");hs.forEach(h=>tg.append(el("span",null,h)));c.append(tg);}
+  if(t.fits&&t.fits.length){const f=el("div","fits");f.append(el("span","mono","Encaja con"));t.fits.forEach(x=>{const s=el("span","fit",x.cliente);s.title=x.por_que||"";f.append(s);});c.append(f);}
   const plats=el("div","row");
   if(isAR(t))plats.append(el("span","ar","AR"));
   t.platforms.forEach(p=>plats.append(el("span",platCls(p),p)));
@@ -408,7 +478,9 @@ function card(t,big){
   return c;
 }
 
+const fitsNames=t=>(t.fits||[]).map(f=>f.cliente);
 function passesRest(t,skip){
+  if(skip!=="fit"&&state.fit.size&&!fitsNames(t).some(n=>state.fit.has(n)))return false;
   if(skip!=="source"&&state.source.size&&!t.platforms.some(p=>state.source.has(p)))return false;
   if(skip!=="cat"&&state.cat.size&&!state.cat.has(t.category))return false;
   if(skip!=="type"&&state.type.size&&!state.type.has(info(t).type))return false;
@@ -419,6 +491,7 @@ function passesRest(t,skip){
 }
 function passes(t,skip){
   if(state.q&&!(t.keyword+" "+titleOf(t)+" "+(info(t).explanation||"")+" "+t.members.map(m=>m.keyword).join(" ")).toLowerCase().includes(state.q))return false;
+  if(skip!=="fit"&&state.fit.size&&!fitsNames(t).some(n=>state.fit.has(n)))return false;
   if(skip!=="moment"&&state.moment==="start"&&!isStarting(t))return false;
   if(skip!=="moment"&&state.moment==="hot"&&!isHot(t))return false;
   if(skip!=="moment"&&state.moment==="coming"&&!isComing(t))return false;
@@ -451,6 +524,9 @@ function renderFilters(){
     const b=el("button","fopt"+(state.moment===v?" on":""));b.type="button";b.append(el("span",null,label),el("span","n",n));
     b.onclick=()=>{state.moment=v;render();};gm.append(b);
   });
+  const fitNames=[...new Set(state.data.flatMap(fitsNames))].sort();
+  if(fitNames.length)filterGroup("f-fit","Encaja con el cliente","fit",fitNames,(t,v)=>fitsNames(t).includes(v));
+  else document.getElementById("f-fit").replaceChildren();
   const types=[...new Set(state.data.map(t=>info(t).type).filter(Boolean))].sort();
   if(types.length)filterGroup("f-type","Tipo","type",types,(t,v)=>info(t).type===v);
   else document.getElementById("f-type").replaceChildren();
@@ -527,6 +603,12 @@ function renderPanel(){
     box.append(dh);
     const ch=historyChart(t.history||[]);
     if(ch)box.append(ch);else box.append(el("div","hint","Todavía hay pocos datos para el gráfico: se completa con las próximas actualizaciones."));
+    const facts=el("dl","facts");
+    const addFact=(k,v)=>{if(v){facts.append(el("dt",null,k),el("dd",null,v));}};
+    addFact("Ventana",t.window);
+    addFact("Riesgo",t.risk?({bajo:"Bajo",medio:"Medio",alto:"Alto"}[t.risk]+(t.risk_reason?" — "+t.risk_reason:"")):"");
+    (t.fits||[]).forEach(f=>addFact("Para "+f.cliente,f.por_que||"Encaja"));
+    if(facts.childNodes.length)box.append(facts);
     const ex=el("div","examples");ex.append(el("span","mono","Ver ejemplos"));
     const q=encodeURIComponent(cleanKw(t));
     [["X",`https://x.com/search?q=${q}&f=live`],["TikTok",`https://www.tiktok.com/search?q=${q}`],["Instagram",`https://www.instagram.com/explore/search/keyword/?q=${q}`],["YouTube",`https://www.youtube.com/results?search_query=${q}`],["Google",`https://www.google.com/search?q=${q}&tbm=nws`]]
@@ -537,6 +619,8 @@ function renderPanel(){
       const on=isSaved(cur,t);
       const sb=el("button","savebtn"+(on?" on":""),on?"★ Guardada para "+cur.name+" (quitar)":"☆ Guardar para "+cur.name);sb.type="button";
       sb.onclick=()=>toggleSaved(cur,t);box.append(sb);
+      const pb=el("button","savebtn","📄 Armar propuesta para "+cur.name);pb.type="button";
+      pb.onclick=()=>openProposal(cur,t);box.append(pb);
     }
   } else box.append(el("span","hint","Elegí una tendencia con «Analizar»."));
 
@@ -610,6 +694,11 @@ function inline(parent,text){
   });
 }
 function mdInto(root,md){
+  const doc=root.ownerDocument,el=(tag,cls,text)=>{const e=doc.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;};
+  const inline=(parent,text)=>text.split(/(\*\*[^*]+\*\*)/g).forEach(part=>{
+    if(/^\*\*[^*]+\*\*$/.test(part))parent.append(el("strong",null,part.slice(2,-2)));
+    else if(part)parent.append(doc.createTextNode(part.replace(/\*(\S[^*]*)\*/g,"$1").replace(/`([^`]*)`/g,"$1")));
+  });
   let list=null;
   md.split("\n").forEach(raw=>{
     const line=raw.trimEnd();
@@ -686,6 +775,27 @@ function historyChart(hist){
   const e=mk("text",{x:W-R,y:H-4},fmt(hist[hist.length-1][0]));e.setAttribute("text-anchor","end");
   return svg;
 }
+
+function openProposal(c,t){
+  const hist=(state.chats[trendId(t)+"::"+c.id]||[]).filter(m=>m.role!=="user");
+  const doc=document.getElementById("prop-doc");doc.replaceChildren();
+  const mk=(tag,txt,cls)=>el(tag,cls,txt);
+  doc.append(mk("span","SAROGIRI","logo"),mk("h1",titleOf(t)),mk("div",`Propuesta para ${c.name} · ${new Date().toLocaleDateString("es-AR",{dateStyle:"long"})}`,"meta"));
+  doc.append(mk("h2","De qué se trata"),mk("p",info(t).explanation||t.keyword));
+  const facts=mk("ul");
+  [["Etapa",t.stage],["Ventana",t.window],["Dónde está",t.seen_in.map(x=>{const[a,r]=x.split(" ");return a+" "+regionName(r);}).join(", ")],["Riesgo",t.risk?(t.risk+(t.risk_reason?" — "+t.risk_reason:"")):""]]
+    .forEach(([k,v])=>{if(v){const li=mk("li");li.append(mk("b",k+": "),document.createTextNode(v));facts.append(li);}});
+  doc.append(mk("h2","Datos"),facts);
+  const fit=(t.fits||[]).find(f=>f.cliente===c.name);
+  if(fit&&fit.por_que)doc.append(mk("h2","Por qué le sirve a "+c.name),mk("p",fit.por_que));
+  doc.append(mk("h2","Ideas"));
+  if(hist.length)hist.forEach(m=>{const box=mk("div",null,"pbox");mdInto(box,m.text);doc.append(box);});
+  else doc.append(mk("p","Todavía no generaste ideas para esta tendencia. Tocá «Sugerencias de contenido para cada red del cliente» y volvé a armar la propuesta.","meta"));
+  doc.append(mk("div","Radar de tendencias Sarogiri","meta"));
+  document.getElementById("dlg-prop").showModal();
+}
+document.getElementById("prop-close").onclick=()=>document.getElementById("dlg-prop").close();
+document.getElementById("prop-print").onclick=()=>{document.body.classList.add("printing");window.print();document.body.classList.remove("printing");};
 
 async function toggleSaved(c,t){
   c.saved=savedFor(c).slice();
@@ -892,6 +1002,7 @@ refreshBtn.onclick=async()=>{
 document.getElementById("q").oninput=e=>{state.q=e.target.value.trim().toLowerCase();render();};
 document.getElementById("clear").onclick=()=>{["region","source","cat","stage"].forEach(k=>state[k].clear());state.jump=state.exp=false;state.q="";document.getElementById("q").value="";render();};
 document.getElementById("theme").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";};
+renderDates();
 fetchTrends();
 setInterval(fetchTrends,60000);
 syncClients(true);

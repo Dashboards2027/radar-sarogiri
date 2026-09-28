@@ -115,6 +115,33 @@ def _describe(t):
     return f'- id: {key_for(t)} | tendencia: "{t["keyword"]}" | fuentes: {members}' + (f" | contexto: {ctx}" if ctx else "")
 
 
+FIRESTORE_CLIENTS = ("https://firestore.googleapis.com/v1/projects/sarogiri-6f82d/databases/(default)/documents/clients"
+                     "?pageSize=300&key=AIzaSyDaH87avblhGstzytLxa5XpC1UyJOXn5WQ")
+_clients_cache = None
+
+
+def load_clients():
+    """Agency client profiles from the shared Firebase list (public web config, read-only here)."""
+    global _clients_cache
+    if _clients_cache is None:
+        try:
+            with urllib.request.urlopen(FIRESTORE_CLIENTS, timeout=30) as r:
+                docs = json.loads(r.read()).get("documents", [])
+            _clients_cache = [json.loads(d["fields"]["json"]["stringValue"]) for d in docs]
+        except Exception as e:
+            print(f"No se pudieron leer los clientes: {e}")
+            _clients_cache = []
+    return _clients_cache
+
+
+def _clients_block():
+    rows = []
+    for c in load_clients():
+        brief = " ".join((c.get("brief") or "").split())[:220]
+        rows.append(f'- {c.get("name")}: {c.get("industry", "")}. {brief}')
+    return "\n".join(rows) or "(sin clientes cargados)"
+
+
 def _prompt(batch):
     items = "\n".join(_describe(t) for t in batch)
     return f"""Sos analista de tendencias de SAROGIRI, una agencia creativa de Buenos Aires que hace contenido, comunidad y experiencias para marcas.
@@ -125,7 +152,13 @@ Para cada tendencia de la lista devolvé un objeto JSON con:
 - "tipo": uno de {TYPES}
 - "categoria": uno de {CATEGORIES}
 - "hashtags": hasta 3 hashtags relevantes
+- "riesgo": "bajo", "medio" o "alto" para que una marca la use (alto = tragedias, muertes, política partidaria, polémicas, delitos; medio = temas divididos o que pueden leerse como oportunismo)
+- "riesgo_motivo": una frase corta con el motivo (vacío si es bajo)
+- "encaja": lista de clientes de la agencia (de la lista de abajo) a los que les sirve de verdad, cada uno como {{"cliente": nombre exacto, "por_que": una frase}}. Lista vacía si no le sirve a ninguno o si el riesgo es alto.
 Si no sabés qué es, deducilo de las fuentes y el contexto, y decí que es una suposición. No inventes datos.
+
+Clientes de la agencia:
+{_clients_block()}
 Devolvé solo un array JSON.
 
 Tendencias:
@@ -171,7 +204,7 @@ def enrich(trends, generate=False):
     if api_key:
         budget = [MAX_CALLS_PER_RUN]
         top, rest = trends[:FULL_TOP], trends[FULL_TOP:]
-        full = [t for t in top if key_for(t) not in cache or cache[key_for(t)].get("lite")]
+        full = [t for t in top if key_for(t) not in cache or cache[key_for(t)].get("lite") or "riesgo" not in cache[key_for(t)]]
         made += _run(api_key, [full[i : i + BATCH] for i in range(0, len(full), BATCH)], _prompt, cache, now, False, budget)
         lite = [t for t in rest if key_for(t) not in cache]
         made += _run(api_key, [lite[i : i + LITE_BATCH] for i in range(0, len(lite), LITE_BATCH)], _lite_prompt, cache, now, True, budget)
@@ -186,6 +219,11 @@ def enrich(trends, generate=False):
         t["explanation"] = info.get("explicacion", "")
         t["type"] = info.get("tipo") if info.get("tipo") in TYPES else None
         t["hashtags"] = [h if h.startswith("#") else "#" + h for h in info.get("hashtags", [])][:3]
+        if info.get("riesgo") in ("bajo", "medio", "alto"):
+            t["risk"] = info["riesgo"]
+            t["risk_reason"] = info.get("riesgo_motivo", "")
+        names = {c.get("name") for c in load_clients()}
+        t["fits"] = [f for f in info.get("encaja", []) if isinstance(f, dict) and f.get("cliente") in names][:4]
         if info.get("categoria") in CATEGORIES and info["categoria"] != "Otros":
             t["category"] = info["categoria"]
     return made

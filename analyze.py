@@ -253,6 +253,21 @@ def attach_history(conn, cards):
             recent = sum(ranks[-3:]) / 3
             before = sum(ranks[-6:-3]) / len(ranks[-6:-3]) if len(ranks) >= 6 else ranks[0]
             t["direction"] = "sube" if recent < before - 1 else "baja" if recent > before + 1 else "estable"
+        t["window"] = opportunity_window(t)
+
+
+def opportunity_window(t):
+    """Rough time left to use the trend before it feels late, from its stage and recent direction."""
+    stage, d = t["stage"], t.get("direction")
+    if stage == "Saturado":
+        return "Ya pasó el mejor momento"
+    if d == "baja":
+        return "1 a 2 días (está bajando)"
+    return {
+        "Emergente": "7 a 10 días" if d in ("sube", "nuevo") else "5 a 7 días",
+        "Creciendo": "4 a 7 días" if d == "sube" else "3 a 5 días",
+        "Pico": "1 a 3 días",
+    }.get(stage, "")
 
 
 def analyze(generate=False):
