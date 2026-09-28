@@ -7,6 +7,8 @@ const ALLOWED_ORIGINS = [
   "http://localhost:8787",
 ];
 const MODELS = ["gemini-flash-latest", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-flash-lite-latest"];
+// Backup when Gemini is overloaded: Groq's free tier (needs GROQ_API_KEY in Vercel).
+const GROQ_MODELS = ["llama-3.3-70b-versatile", "openai/gpt-oss-120b", "llama-3.1-8b-instant"];
 const MAX_BODY_BYTES = 4 * 1024 * 1024;
 const PER_IP_PER_HOUR = 60;
 
@@ -30,6 +32,37 @@ function allowedBody(body) {
     clean.tools = body.tools;
   }
   return clean;
+}
+
+function toGroqMessages(body) {
+  const text = (parts) => (parts || []).map((p) => p.text || "").join("\n").trim();
+  const messages = [];
+  const system = text(body.system_instruction?.parts);
+  if (system) messages.push({ role: "system", content: system });
+  for (const c of body.contents) {
+    const t = text(c.parts);
+    if (t) messages.push({ role: c.role === "model" ? "assistant" : "user", content: t });
+  }
+  return messages;
+}
+
+async function askGroq(body) {
+  const key = process.env.GROQ_API_KEY;
+  if (!key) return null;
+  const wantsJson = body.generationConfig?.response_mime_type === "application/json";
+  for (const model of GROQ_MODELS) {
+    const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
+      body: JSON.stringify({ model, messages: toGroqMessages(body), temperature: 0.5, ...(wantsJson ? { response_format: { type: "json_object" } } : {}) }),
+    });
+    if (!r.ok) continue;
+    const data = await r.json().catch(() => null);
+    const out = data?.choices?.[0]?.message?.content;
+    // Same shape the dashboard expects from Gemini.
+    if (out) return { candidates: [{ content: { role: "model", parts: [{ text: out }] } }], servedBy: `groq:${model}` };
+  }
+  return null;
 }
 
 export default async function handler(req, res) {
@@ -66,6 +99,10 @@ export default async function handler(req, res) {
     const data = await r.json().catch(() => ({}));
     last = { status: r.status, data };
     if (![404, 429, 500, 503].includes(r.status)) break;
+  }
+  if ([404, 429, 500, 503].includes(last.status)) {
+    const backup = await askGroq(body).catch(() => null);
+    if (backup) return res.status(200).json(backup);
   }
   return res.status(last.status).json(last.data);
 }

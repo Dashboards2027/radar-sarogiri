@@ -2,7 +2,7 @@ import json
 import re
 import sqlite3
 import unicodedata
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 DB = Path(__file__).with_name("radar.db")
@@ -232,12 +232,34 @@ def cluster(trends):
     return cards
 
 
+HISTORY_HOURS = 72
+
+
+def attach_history(conn, cards):
+    """Rank over time for each card's main source, plus a simple direction for the trend sheet."""
+    cutoff = (datetime.now(timezone.utc) - timedelta(hours=HISTORY_HOURS)).isoformat(timespec="seconds")
+    series = {}
+    for source, region, kw, rank, at in conn.execute(
+        "SELECT source, region, keyword, rank, fetched_at FROM snapshots WHERE fetched_at >= ? ORDER BY fetched_at", (cutoff,)
+    ):
+        series.setdefault((source, region, kw), []).append((at, rank))
+    for t in cards:
+        pts = series.get((t["source"], t["region"], t["keyword"]), [])
+        t["history"] = [[at[:16], r] for at, r in pts][-HISTORY_HOURS:]
+        ranks = [r for _, r in pts]
+        if len(ranks) < 3:
+            t["direction"] = "nuevo"
+        else:
+            recent = sum(ranks[-3:]) / 3
+            before = sum(ranks[-6:-3]) / len(ranks[-6:-3]) if len(ranks) >= 6 else ranks[0]
+            t["direction"] = "sube" if recent < before - 1 else "baja" if recent > before + 1 else "estable"
+
+
 def analyze(generate=False):
     if not DB.exists():
         return {"updated_at": None, "trends": []}
     conn = sqlite3.connect(DB)
     trends = load_latest(conn)
-    conn.close()
     for t in trends:
         t["category"] = SOURCE_CATEGORY.get(t["source"]) or categorize(t["keyword"] + " " + t["extra"].get("news", ""))
         if t["category"] in ("Otros", "Cultura y Memes") and t["extra"].get("industry") in TIKTOK_INDUSTRY:
@@ -250,6 +272,8 @@ def analyze(generate=False):
         t["score"] = score(t)
     cards = cluster(trends)
     cards.sort(key=lambda t: -t["score"])
+    attach_history(conn, cards)
+    conn.close()
     from explain import enrich
     made = enrich(cards, generate=generate)
     if generate:

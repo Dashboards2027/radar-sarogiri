@@ -48,8 +48,40 @@ def _call(api_key, prompt, models=MODELS):
         if not isinstance(result, Exception):
             return result
         last = result
+        backup = _groq(prompt)
+        if backup is not None:
+            return backup
         time.sleep(30)  # Gemini's free tier is often briefly overloaded (503/429)
     raise last
+
+
+GROQ_MODELS = ["llama-3.3-70b-versatile", "openai/gpt-oss-120b", "llama-3.1-8b-instant"]
+
+
+def _groq(prompt):
+    """Backup model when Gemini is overloaded; only used if the GROQ_API_KEY secret exists."""
+    key = os.environ.get("GROQ_API_KEY", "").strip()
+    if not key:
+        return None
+    wrapped = prompt + '\n\nDevolvé un objeto JSON con la forma {"items": [ ... ]}.'
+    for model in GROQ_MODELS:
+        req = urllib.request.Request(
+            "https://api.groq.com/openai/v1/chat/completions",
+            data=json.dumps({"model": model, "temperature": 0.4, "response_format": {"type": "json_object"},
+                             "messages": [{"role": "user", "content": wrapped}]}).encode(),
+            headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}", "User-Agent": "radar-sarogiri"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                content = json.loads(r.read())["choices"][0]["message"]["content"]
+            data = json.loads(content)
+            items = data.get("items") if isinstance(data, dict) else data
+            if isinstance(items, list):
+                print(f"  respondió Groq ({model})")
+                return items
+        except Exception as e:
+            print(f"  groq {model}: {type(e).__name__}")
+    return None
 
 
 def _try_models(api_key, body, models):
