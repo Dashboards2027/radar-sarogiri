@@ -218,7 +218,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
     <p class="hint">La IA usa <b>Google Gemini</b>, que tiene un plan gratuito. Sacá tu clave en <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (entrás con tu cuenta de Google, «Create API key», no pide tarjeta) y pegala acá. Queda guardada solo en este navegador.</p>
     <label>Clave de Gemini<input type="password" id="s-key" autocomplete="off"></label>
     <label>Modelo<input type="text" id="s-model"></label>
-    <div class="hint">Clientes: los perfiles se guardan en este navegador. Para pasárselos a otra persona, exportalos y que los importe.</div>
+    <div class="hint">Clientes: los perfiles se comparten automáticamente con todo el equipo. Exportar sirve como copia de respaldo.</div>
     <div class="actions" style="justify-content:flex-start">
       <button class="ghost" type="button" id="s-export">Exportar clientes</button>
       <label class="ghost" style="flex-direction:row;font-weight:400;cursor:pointer">Importar clientes<input type="file" id="s-import" accept=".json,application/json" hidden></label>
@@ -265,6 +265,51 @@ const titleOf=t=>info(t).title||t.keyword;
 const isStarting=t=>t.stage==="Emergente"||t.stage==="Creciendo";
 const isHot=t=>isStarting(t)&&t.score>=state.hotCut;
 let clients=store.get("radar.clients",null)||JSON.parse(JSON.stringify(window.SEED_CLIENTS||[]));
+
+/* ---------- Clientes compartidos (Firebase Firestore, API REST) ---------- */
+// Firebase web config is public by design; access is limited by Firestore rules to the "clients" collection.
+const FIREBASE={apiKey:"AIzaSyDaH87avblhGstzytLxa5XpC1UyJOXn5WQ",projectId:"sarogiri-6f82d"};
+const FS_URL=`https://firestore.googleapis.com/v1/projects/${FIREBASE.projectId}/databases/(default)/documents/clients`;
+const MAX_SHARED_FILE=700*1024; // Firestore documents max out at 1 MiB
+let cloudOk=false;
+async function cloudList(){
+  const r=await fetch(`${FS_URL}?pageSize=300&key=${FIREBASE.apiKey}`,{cache:"no-store"});
+  if(!r.ok)throw new Error("Firebase "+r.status);
+  const j=await r.json();
+  return (j.documents||[]).map(d=>{try{return JSON.parse(d.fields.json.stringValue);}catch(e){return null;}}).filter(Boolean);
+}
+async function cloudSave(c){
+  const shared={...c};
+  if(shared.file&&shared.file.data&&shared.file.data.length>MAX_SHARED_FILE){delete shared.file;shared.fileTooBig=c.file.name;}
+  const r=await fetch(`${FS_URL}/${encodeURIComponent(c.id)}?key=${FIREBASE.apiKey}`,{method:"PATCH",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({fields:{json:{stringValue:JSON.stringify(shared)},name:{stringValue:c.name},updated:{timestampValue:new Date().toISOString()}}})});
+  if(!r.ok)throw new Error("Firebase "+r.status);
+  return !shared.fileTooBig;
+}
+async function cloudDelete(id){
+  const r=await fetch(`${FS_URL}/${encodeURIComponent(id)}?key=${FIREBASE.apiKey}`,{method:"DELETE"});
+  if(!r.ok)throw new Error("Firebase "+r.status);
+}
+async function syncClients(first){
+  try{
+    const remote=await cloudList();
+    cloudOk=true;
+    if(first&&!remote.length){
+      // First run for the team: upload what this browser has (seed profiles plus any local edits).
+      for(const c of clients)await cloudSave(c);
+      toast("Clientes subidos a la nube: ahora los ve todo el equipo");
+      return;
+    }
+    if(first){
+      const ids=new Set(remote.map(c=>c.id));
+      for(const c of clients.filter(c=>!ids.has(c.id)&&!(window.SEED_CLIENTS||[]).some(s=>s.id===c.id))){await cloudSave(c);remote.push(c);}
+    }
+    const local=new Map(clients.map(c=>[c.id,c]));
+    clients=remote.map(c=>(!c.file&&local.get(c.id)&&local.get(c.id).file&&c.fileTooBig)?{...c,file:local.get(c.id).file}:c);
+    store.set("radar.clients",clients);
+    if(!document.getElementById("dlg-client").open)renderPanel();
+  }catch(e){cloudOk=false;if(first)toast("No se pudo conectar con la base de clientes; se usan los guardados en este navegador.");}
+}
 
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.hidden=false;clearTimeout(t._h);t._h=setTimeout(()=>t.hidden=true,4500);}
@@ -651,8 +696,10 @@ document.getElementById("client-form").onsubmit=e=>{
     networks:[...nets.querySelectorAll("input:checked")].map(i=>i.value)};
   if(editing){Object.assign(editing,data);if(pendingFile)editing.file=pendingFile;}
   else{const c={id:"c"+Date.now().toString(36),...data};if(pendingFile)c.file=pendingFile;clients.push(c);state.clientId=c.id;store.set("radar.client",c.id);}
-  if(!store.set("radar.clients",clients))toast("No se pudo guardar: el navegador no tiene espacio (¿PDF muy grande?).");
-  else toast("Cliente guardado");
+  store.set("radar.clients",clients);
+  const saved=editing||clients[clients.length-1];
+  cloudSave(saved).then(fileShared=>toast(fileShared?"Guardado para todo el equipo":"Guardado para el equipo. El PDF es muy grande para compartir (máx. 700 KB): pegá su texto en el brief."))
+    .catch(()=>toast("Guardado solo en este navegador: no se pudo conectar con la base de clientes."));
   Object.keys(state.chats).forEach(k=>{if(k.endsWith("::"+(editing?editing.id:"")))delete state.chats[k];});
   document.getElementById("dlg-client").close();renderPanel();
 };
@@ -662,8 +709,10 @@ document.getElementById("c-delete").onclick=e=>{
   if(!editing)return;
   if(!confirmDelete){confirmDelete=true;e.currentTarget.textContent="Tocá de nuevo para borrar";setTimeout(()=>{confirmDelete=false;e.target.textContent="Borrar cliente";},3000);return;}
   confirmDelete=false;e.currentTarget.textContent="Borrar cliente";
-  clients=clients.filter(c=>c!==editing);if(state.clientId===editing.id)state.clientId=null;
-  store.set("radar.clients",clients);document.getElementById("dlg-client").close();renderPanel();toast("Cliente borrado");
+  const gone=editing;
+  clients=clients.filter(c=>c!==gone);if(state.clientId===gone.id)state.clientId=null;
+  store.set("radar.clients",clients);document.getElementById("dlg-client").close();renderPanel();
+  cloudDelete(gone.id).then(()=>toast("Cliente borrado para todo el equipo")).catch(()=>toast("Borrado solo en este navegador: no se pudo conectar con la base de clientes."));
 };
 
 /* ---------- Configuración ---------- */
@@ -689,7 +738,8 @@ document.getElementById("s-import").onchange=async e=>{
   const f=e.target.files[0];if(!f)return;
   try{const arr=JSON.parse(await f.text());if(!Array.isArray(arr))throw 0;
     arr.forEach(c=>{if(!c||!c.name)return;const i=clients.findIndex(x=>x.id===c.id);if(i>=0)clients[i]={...clients[i],...c};else clients.push({id:c.id||"c"+Math.random().toString(36).slice(2),...c});});
-    store.set("radar.clients",clients);renderPanel();toast("Clientes importados");
+    store.set("radar.clients",clients);renderPanel();
+    Promise.all(clients.map(cloudSave)).then(()=>toast("Clientes importados y compartidos con el equipo")).catch(()=>toast("Clientes importados solo en este navegador"));
   }catch(err){toast("Ese archivo no tiene clientes válidos");}
   e.target.value="";
 };
@@ -728,6 +778,8 @@ document.getElementById("clear").onclick=()=>{["region","source","cat","stage"].
 document.getElementById("theme").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";};
 fetchTrends();
 setInterval(fetchTrends,60000);
+syncClients(true);
+setInterval(()=>syncClients(false),60000);
 </script>
 </body>
 </html>
