@@ -32,20 +32,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var
 .btn{background:var(--blue);color:#fff;border:0;border-radius:999px;padding:9px 16px}
 .btn:disabled{opacity:.55;cursor:default}
 .ghost{background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 12px}
-.ticker{position:sticky;top:calc(env(safe-area-inset-top,0px) + 58px);z-index:4;background:var(--blue);color:#fff;overflow:hidden;border-bottom:1px solid var(--blue)}
-.ticker-track{display:flex;width:max-content;animation:tick var(--dur,120s) linear infinite}
-.ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
-.titem{display:flex;align-items:center;gap:8px;padding:9px 18px;background:none;border:0;color:#fff;font-size:14px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.25)}
-.titem:hover{background:rgba(255,255,255,.12)}
-.titem b{font-family:"Archivo Black";font-weight:400}
-.titem .dot{width:8px;height:8px;border-radius:50%;flex:none}
-.titem .tsrc{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
-.titem .tst{font-size:11px;border-radius:999px;padding:1px 7px;background:rgba(255,255,255,.18)}
-.ticker-empty{padding:9px 20px;font-size:14px;opacity:.85}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.ticker{overflow-x:auto}.ticker-track{animation:none}}
 .layout{display:grid;grid-template-columns:230px minmax(0,1fr) 400px;gap:18px;padding:18px 20px;align-items:start;max-width:1700px;margin:0 auto}
-aside.filters,.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 112px);max-height:calc(100vh - 130px);overflow:auto}
+aside.filters,.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);max-height:calc(100vh - 92px);overflow:auto}
 aside.filters{display:flex;flex-direction:column;gap:18px;padding-right:4px}
 .fgroup{display:flex;flex-direction:column;gap:2px}
 .fgroup .mono{color:var(--muted);margin-bottom:4px}
@@ -60,7 +48,13 @@ aside.filters{display:flex;flex-direction:column;gap:18px;padding-right:4px}
 .kpi b{display:block;font-family:"Archivo Black";font-size:28px;color:var(--blue);margin-top:4px;font-variant-numeric:tabular-nums}
 h2{font-family:"Archivo Black";font-size:22px;margin:0 0 2px;color:var(--blue);text-wrap:balance}
 .sub{color:var(--muted);margin:0 0 12px;font-size:14px}
-.hot{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-bottom:28px}
+.hot{overflow:hidden;margin-bottom:28px;padding:4px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.hot-track{display:flex;gap:12px;width:max-content;animation:belt var(--dur,90s) linear infinite}
+.hot-track.still{animation:none;width:auto;flex-wrap:wrap}
+.hot:hover .hot-track,.hot:focus-within .hot-track{animation-play-state:paused}
+.hot-track .card{width:290px;flex:none}
+@keyframes belt{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 6px))}}
+@media (prefers-reduced-motion:reduce){.hot{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.hot-track{animation:none}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:9px;transition:border-color .12s}
 .card:hover{border-color:var(--blue)}
@@ -158,8 +152,6 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
   <button class="btn" id="refresh" type="button">Actualizar ahora</button>
 </header>
 
-<div class="ticker" id="ticker" aria-label="Tendencias en vivo según los filtros"><div class="ticker-track" id="ticker-track"></div></div>
-
 <div class="layout">
   <aside class="filters" aria-label="Filtros">
     <input type="search" id="q" placeholder="Buscar tendencia…" aria-label="Buscar tendencia">
@@ -181,7 +173,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
       <div class="kpi"><span class="mono">Aptas para experiencia</span><b id="k-exp">0</b></div>
     </section>
     <h2>Arrancando ahora</h2>
-    <p class="sub">Las emergentes y en crecimiento con mejor puntaje, según los filtros de la izquierda.</p>
+    <p class="sub">Las que están arrancando, según los filtros de la izquierda. Pasá el mouse por encima para frenarlas.</p>
     <section class="hot" id="hot"></section>
     <h2>Todas las tendencias</h2>
     <p class="sub">Tocá «Analizar» para llevar una tendencia al panel de clientes.</p>
@@ -443,26 +435,22 @@ function renderFilters(){
   });
 }
 
-const DOT={Emergente:"var(--emergente)",Creciendo:"var(--creciendo)",Pico:"#fff",Saturado:"var(--saturado)"};
-let tickerSig="";
-function renderTicker(list){
-  const items=list.slice(0,40);
-  const sig=items.map(trendId).join("|");
-  if(sig===tickerSig)return;
-  tickerSig=sig;
-  const track=document.getElementById("ticker-track");track.replaceChildren();
-  if(!items.length){track.style.animation="none";track.append(el("div","ticker-empty","Ninguna tendencia con estos filtros."));return;}
-  track.style.animation="";
-  const build=(ghost)=>items.forEach(t=>{
-    const b=el("button","titem");b.type="button";
-    if(ghost){b.tabIndex=-1;b.setAttribute("aria-hidden","true");}
-    const d=el("span","dot");d.style.background=DOT[t.stage]||"#fff";
-    b.append(d,el("span","tsrc",t.platforms.join(" · ")),el("b",null,titleOf(t)),el("span","tst",isHot(t)?"🔥 "+t.stage:t.stage));
-    b.onclick=()=>selectTrend(t);
-    track.append(b);
-  });
-  build(false);build(true); // duplicated so the loop is seamless
-  track.style.setProperty("--dur",Math.max(40,items.length*5)+"s");
+let beltSig="";
+function renderBelt(items){
+  // Rebuilding restarts the animation, so only rebuild when what's shown actually changes.
+  const sig=items.map(trendId).join("|")+"#"+(state.trend?trendId(state.trend):"")+"#"+[...state.open].join("|")+"#"+JSON.stringify(explained).length;
+  if(sig===beltSig)return;
+  beltSig=sig;
+  const hot=document.getElementById("hot");hot.replaceChildren();
+  if(!items.length){hot.append(el("div","empty","Nada arrancando con estos filtros."));return;}
+  const track=el("div","hot-track");
+  items.forEach(t=>track.append(card(t,true)));
+  if(items.length>=4){
+    // A second, hidden copy makes the loop seamless.
+    items.forEach(t=>{const c=card(t,true);c.setAttribute("aria-hidden","true");c.querySelectorAll("button,a").forEach(x=>x.tabIndex=-1);track.append(c);});
+    track.style.setProperty("--dur",(items.length*13)+"s");
+  } else track.classList.add("still");
+  hot.append(track);
 }
 
 function render(){
@@ -470,15 +458,12 @@ function render(){
   state.hotCut=sc.length?sc[Math.min(sc.length-1,Math.floor(sc.length*0.12))]:Infinity;
   renderFilters();
   const list=state.data.filter(t=>passes(t));
-  renderTicker(list);
   document.getElementById("k-total").textContent=list.length;
   document.getElementById("k-new").textContent=list.filter(t=>t.stage==="Emergente").length;
   document.getElementById("k-jump").textContent=list.filter(t=>t.jumped).length;
   document.getElementById("k-exp").textContent=list.filter(t=>t.experience_friendly).length;
-  const hotList=list.filter(t=>t.stage==="Emergente"||t.stage==="Creciendo").slice(0,6);
-  const hot=document.getElementById("hot");hot.replaceChildren();
-  if(!hotList.length)hot.append(el("div","empty","Nada emergente con estos filtros."));
-  hotList.forEach(t=>hot.append(card(t,true)));
+  const hotList=list.filter(isStarting).slice(0,14);
+  renderBelt(hotList);
   const hotIds=new Set(hotList.map(trendId));
   const grid=document.getElementById("grid");grid.replaceChildren();
   const rest=list.filter(t=>!hotIds.has(trendId(t)));
