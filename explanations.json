@@ -151,16 +151,19 @@
 },
 "mecadolibrechile": {
 "id": "mecadolibrechile",
-"titulo": "Mercado Libre Chile — El interés por comprar en el país vecino se dispara",
-"explicacion": "Los argentinos están buscando opciones de compra en la plataforma chilena debido a la diferencia de precios en tecnología y otros productos. Las marcas de logística o finanzas pueden aprovechar para explicar cómo comprar afuera de forma segura o comparar ofertas de manera inteligente.",
-"tipo": "Consumo",
+"titulo": "Mecado libre Chile — tendencia de compras online en Chile",
+"explicacion": "Se ha disparado la conversación sobre Mercado Libre Chile, impulsada por ofertas y lanzamientos locales. Es relevante para e‑commerce, pero no tiene vínculo directo con nuestros clientes.",
+"tipo": "Real time",
 "categoria": "Consumo y Productos",
 "hashtags": [
 "#MercadoLibre",
-"#ComprasOnline",
 "#Chile"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "sabrina": {
 "id": "sabrina",
@@ -307,16 +310,20 @@
 },
 "aireacondicionado": {
 "id": "aireacondicionado",
-"titulo": "Aire acondicionado — los equipos más buscados para ganarle al calor que se viene",
-"explicacion": "Se trata de la disparada en las búsquedas online de sistemas de refrigeración a medida que empieza a subir la temperatura en el país, marcando el termómetro del consumo estacional. Las marcas de electrodomésticos y e-commerce lo usan para lanzar financiaciones en cuotas y ofertas de instalación bonificada.",
+"titulo": "Aire acondicionado — búsqueda de unidades inverter y portátiles",
+"explicacion": "Los consumidores están comparando aires acondicionados inverter y portátiles para el verano. La tendencia surge por la alta demanda estacional y una marca de retail puede promocionar ofertas, aunque ninguno de nuestros clientes vende este tipo de producto.",
 "tipo": "Consumo",
 "categoria": "Consumo y Productos",
 "hashtags": [
-"#aireacondicionado",
-"#verano",
-"#ofertas"
+"#AireAcondicionado",
+"#Inverter",
+"#Verano"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "daviswebb": {
 "id": "daviswebb",
@@ -333,16 +340,25 @@
 },
 "mylivejourney": {
 "id": "mylivejourney",
-"titulo": "#mylivejourney — el hashtag global para mostrar evolución personal y proyectos de vida",
-"explicacion": "Es una tendencia de TikTok donde los usuarios comparten un compilado de su día a día, viajes o procesos de superación personal con estética motivacional, pegando fuerte porque apela a la autoexploración. Las marcas de estilo de vida y indumentaria lo pueden capitalizar invitando a su comunidad a mostrar sus propias travesías usando el producto.",
-"tipo": "Estilo de vida",
-"categoria": "Cultura y Memes",
+"titulo": "#mylivejourney — relatos personales de superación",
+"explicacion": "El hashtag se usa para compartir historias de crecimiento y bienestar. Está en tendencia porque la gente busca inspiración y autenticidad, y una marca de salud o bienestar puede sumarse con contenido motivador.",
+"tipo": "Real time",
+"categoria": "Estilo de vida",
 "hashtags": [
-"#mylivejourney",
-"#lifestyle",
-"#vlog"
+"#MyLiveJourney",
+"#Bienestar",
+"#Historias"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Pasito",
+"por_que": "para motivar a los usuarios a caminar y compartir sus logros"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "rippac": {
 "id": "rippac",
@@ -398,29 +414,45 @@
 },
 "mepreocupasinti": {
 "id": "mepreocupasinti",
-"titulo": "Me Preocupa, Sin Ti — el clásico romántico de Leo Mattioli que sigue vigente",
-"explicacion": "Se trata del resurgimiento en reproducciones del hit inconfundible del León santafesino, tendencia porque la cumbia romántica nunca pasa de moda y acompaña los consumos nocturnos. Las marcas gastronómicas o de birrerías pueden usar este tema de fondo en sus contenidos para generar un clima bien barrial yATR.",
+"titulo": "Me Preocupa, Sin Ti — canción de Leo Mattioli que vuelve a sonar",
+"explicacion": "El clásico de Leo Mattioli resurge en YouTube y playlists, generando nostalgia entre los seguidores del cuarteto. Es tendencia musical y de bajo riesgo, ideal para ambientar eventos de marcas premium.",
 "tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
-"#leomattioli",
-"#cumbia",
-"#romantico"
+"#LeoMattioli",
+"#canción"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede usarse en playlists de eventos y ambientar áreas comunes"
+},
+{
+"cliente": "Kérastase",
+"por_que": "Crea atmósfera relajada en salones durante tratamientos"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "ufclaluchadorabrasileranormadumontletirobilletesypreservativosalaargentinaailinp": {
 "id": "ufclaluchadorabrasileranormadumontletirobilletesypreservativosalaargentinaailinp",
-"titulo": "Careo picante en la UFC entre Norma Dumont y Ailin Pérez con chicanas insólitas",
-"explicacion": "Es el revuelo en redes por el cruce bizarro donde la brasileña le tiró plata y preservativos a la luchadora argentina en la previa del combate. No conviene para marcas debido a la alta carga de polémica, agresividad y temática sensible del cruce.",
-"tipo": "Noticia",
-"categoria": "Deportes",
+"titulo": "UFC Norma Dumont — lanza billetes y preservativos antes del combate",
+"explicacion": "Una pelea de UFC se volvió viral porque la brasileña Norma Dumont tiró dinero y condones a la argentina Ailin Pérez antes del round. Es tendencia por el shock y el humor del gesto, pero su carga sexual lo hace de riesgo medio para marcas.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
 "hashtags": [
-"#ufc",
-"#ailinperez",
-"#normadumont"
+"#UFC",
+"#NormaDumont",
+"#viral"
 ],
-"ts": 1790565258.482726
+"riesgo": "medio",
+"riesgo_motivo": "Contenido sexual y potencial polémico",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "asisevivelapreviadelfestivalprimaveraenembalse2026": {
 "id": "asisevivelapreviadelfestivalprimaveraenembalse2026",
@@ -467,16 +499,20 @@
 },
 "milito": {
 "id": "milito",
-"titulo": "Milito — tendencia en X por declaraciones, gestión o su peso en la política de Racing",
-"explicacion": "Es el nombre de la figura de Víctor Blanco / Diego Milito y el mundo académico sonando fuerte en el debate futbolero de la plataforma. Las marcas de indumentaria deportiva o sponsors del fútbol pueden aprovechar el debate si logran alinear sus valores con la gestión institucional.",
-"tipo": "Real time",
+"titulo": "Milito — conversación sobre el exfutbolista",
+"explicacion": "Diego Milito vuelve a ser tema en redes tras su participación en un programa de televisión. La nostalgia futbolera lo mantiene en tendencia y una marca deportiva podría usar su imagen para contenido de inspiración.",
+"tipo": "Deportes",
 "categoria": "Deportes",
 "hashtags": [
-"#milito",
-"#racing",
-"#futbol"
+"#Milito",
+"#FutbolArgentino",
+"#Leyenda"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "cardenalcomiendounamilanesanapolitana": {
 "id": "cardenalcomiendounamilanesanapolitana",
@@ -497,16 +533,24 @@
 },
 "dumbboy": {
 "id": "dumbboy",
-"titulo": "Dumb Boy — el nuevo lanzamiento musical de ALMAS y NXNNI en YouTube Shorts",
-"explicacion": "Se trata de la difusión en formato short de un track emergente de la escena urbana local, tendencia por el empuje algorítmico de los artistas. Las marcas de moda urbana o bebidas energéticas pueden usar este audio para musicalizar fashion films o recortes de lifestyle.",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
+"titulo": "Dumb Boy — video corto humorístico",
+"explicacion": "Un clip de humor donde el personaje “Dumb Boy” hace situaciones absurdas, viralizando frases cómicas. Es un formato fácil de adaptar para marcas que buscan tono desenfadado.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
 "hashtags": [
-"#dumbboy",
-"#musicaurbana",
-"#shorts"
+"#DumbBoy",
+"#Humor"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede usar el formato para promocionar productos con humor"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "lisa": {
 "id": "lisa",
@@ -614,42 +658,60 @@
 },
 "primavera": {
 "id": "primavera",
-"titulo": "Primavera — Festejos, flores y la llegada de los días lindos",
-"explicacion": "La llegada de la primavera y el Día del Estudiante coparon TikTok con videos al aire libre, trends de flores amarillas y planes con amigos. Las marcas pueden activar promociones de temporada, lanzar colecciones o compartir contenido visual que celebre el cambio de estación.",
+"titulo": "#primavera — contenido estacional de primavera",
+"explicacion": "Usuarios comparten reels y fotos con flores, colores pastel y outfits primaverales. Perfecto para campañas de moda, belleza o gastronomía que quieran conectar con la energía de la estación.",
 "tipo": "Real time",
-"categoria": "Estilo de vida",
+"categoria": "Cultura y Memes",
 "hashtags": [
-"#Primavera",
-"#DiaDeLaPrimavera",
-"#Flores"
+"#primavera"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Sirve para lanzar colecciones y eventos de primavera"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "delltiendaoficial": {
 "id": "delltiendaoficial",
-"titulo": "Dell Store — Búsqueda de tecnología y notebooks oficiales",
-"explicacion": "La tienda oficial de Dell escaló en Mercado Libre debido al interés por notebooks y periféricos, impulsado por descuentos y opciones de financiamiento. Las marcas de tecnología o retailers pueden aprovechar comunicando facilidades de pago y comparativas de equipos para laburar o estudiar.",
-"tipo": "Consumo",
-"categoria": "IA y Tech",
+"titulo": "Dell tienda oficial — lanzamiento de la tienda oficial de Dell en Mercado Libre",
+"explicacion": "Dell abrió su tienda oficial en la plataforma local, generando mucho tráfico de compradores. Es una buena oportunidad para marcas de tecnología, pero no encaja con nuestros clientes actuales.",
+"tipo": "Real time",
+"categoria": "Consumo y Productos",
 "hashtags": [
 "#Dell",
-"#Notebooks",
-"#Tecnologia"
+"#tiendaoficial"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "lajoaquiwandanaravideooficial": {
 "id": "lajoaquiwandanaravideooficial",
-"titulo": "La Joaqui ft. Wanda Nara — Colaboración musical explosiva",
-"explicacion": "La Joaqui estrenó videoclip junto a Wanda Nara y el feat se posicionó de inmediato en la cima de YouTube por el cruce de dos personalidades muy fuertes. Una marca de moda, estética o consumo masivo puede sumarse montándose a los trends de baile o utilizando frases icónicas del tema.",
+"titulo": "LA JOAQUI - WANDA NARA — video oficial trending",
+"explicacion": "El videoclip de La Joaqui con Wanda Nara está generando miles de reproducciones y memes. Una marca de lifestyle puede usar el hype para asociarse a eventos musicales o de moda.",
 "tipo": "Cultura pop",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
-"#LaJoaqui",
-"#WandaNara",
-"#Música"
+"#LAJOAQUI",
+"#WandaNara"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Ideal para activaciones de moda y música en sus eventos"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "bonix": {
 "id": "bonix",
@@ -679,16 +741,24 @@
 },
 "felizprimavera": {
 "id": "felizprimavera",
-"titulo": "Feliz Primavera — Saludos y contenido estacional",
-"explicacion": "El hashtag estalló en TikTok con saludos, celebraciones y videos coloridos que marcan el arranque de la estación favorita de muchos. Las marcas pueden sumarse deseando un feliz día con sorteos express o mostrando cómo disfrutar de sus productos al aire libre.",
+"titulo": "#felizprimavera — saludo estacional de primavera en TikTok",
+"explicacion": "Los creadores suben videos celebrando la llegada de la primavera con colores y música alegre. Es ideal para marcas que quieran asociarse a la temporada y lanzar colecciones frescas.",
 "tipo": "Real time",
-"categoria": "Estilo de vida",
+"categoria": "Cultura y Memes",
 "hashtags": [
-"#FelizPrimavera",
-"#Primavera",
-"#Vibes"
+"#felizprimavera",
+"#primavera"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede promocionar eventos de moda y gastronomía primaverales"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "pareja": {
 "id": "pareja",
@@ -705,42 +775,65 @@
 },
 "cortinasblackout": {
 "id": "cortinasblackout",
-"titulo": "Cortinas blackout — Búsquedas para el hogar y buen descanso",
-"explicacion": "Con los días más largos y la llegada del calor, subieron las búsquedas de cortinas blackout en Mercado Libre para aislar luz y temperatura. Marcas de decoración, muebles o bienestar pueden aprovechar para crear contenido sobre cómo optimizar el descanso y renovar los ambientes del hogar.",
+"titulo": "Cortinas blackout — tendencia de decoración de interiores",
+"explicacion": "Se venden muchas cortinas que bloquean la luz, impulsadas por la búsqueda de ambientes más confortables. Las marcas de hogar pueden aprovechar para lanzar colecciones o combos con muebles.",
 "tipo": "Consumo",
 "categoria": "Consumo y Productos",
 "hashtags": [
-"#DecoHogar",
-"#Blackout",
-"#Hogar"
+"#cortinasblackout"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede promocionar su sección de decoración y lifestyle"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "aquienleimportaversioncuarteto": {
 "id": "aquienleimportaversioncuarteto",
-"titulo": "Luck Ra — Cover en versión cuarteto de A quién le importa",
-"explicacion": "Luck Ra presentó su reinterpretación en clave de cuarteto del himno de Thalía y Alaska, sumando millones de reproducciones en YouTube. Una marca puede utilizar este audio festivo y pegadizo para mostrar momentos divertidos, transformaciones de producto o festejos de fin de semana.",
-"tipo": "Audio",
+"titulo": "A QUIEN LE IMPORTA (VERSIÓN CUARTETO) — cover musical viral",
+"explicacion": "Un cuarteto reinterpretó la canción y el video se volvió tendencia en YouTube. Las marcas pueden usar la energía musical para patrocinar contenido o playlists.",
+"tipo": "Cultura pop",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
-"#LuckRa",
-"#AQuienLeImporta",
-"#Cuarteto"
+"#AQUIENLEIMPORTA",
+"#VersiónCuarteto"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede integrar música en eventos de moda y lifestyle"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "laquemonapt2": {
 "id": "laquemonapt2",
-"titulo": "La Quemona Pt. 2 — El tema cumbiero que conquista Shorts",
-"explicacion": "La continuación del hit fiestero de Mishelle Master Boys se volvió tendencia en Shorts con bailes y parodias humorísticas. Marcas descontracturadas y de entretenimiento pueden sumarse recreando challenges o usando el audio con humor para alivianar la semana.",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
+"titulo": "La Quemona Pt. 2 — nuevo clip viral de Mishelle Master Boys",
+"explicacion": "El segundo episodio del formato “La Quemona” se viraliza en Shorts por su humor y estilo rápido. Es contenido de bajo riesgo y puede conectar con un público joven en campañas de lifestyle.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
 "hashtags": [
 "#LaQuemona",
-"#Cumbia",
-"#Viral"
+"#viral"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Atrae a la audiencia joven en redes y eventos de moda"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "alaburar": {
 "id": "alaburar",
@@ -783,16 +876,24 @@
 },
 "celulares": {
 "id": "celulares",
-"titulo": "Celulares — Búsquedas y ofertas de telefonía móvil",
-"explicacion": "El término domina las búsquedas de Mercado Libre traccionado por usuarios que buscan renovar sus smartphones y aprovechar cuotas sin interés. Marcas de accesorios, retail o tecnología pueden lanzar comparativas de modelos, guías de compra rápida o promos especiales de accesorios.",
+"titulo": "Celulares — auge de ventas y reviews de smartphones",
+"explicacion": "Se intensifica la conversación sobre nuevos modelos, precios y comparativas en Mercado Libre. Es una oportunidad para marcas tech, aunque no encaja con nuestros clientes actuales.",
 "tipo": "Consumo",
 "categoria": "Consumo y Productos",
 "hashtags": [
-"#Celulares",
-"#Smartphones",
-"#Tecnologia"
+"#celulares",
+"#smartphones"
 ],
-"ts": 1790565258.482726
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Podría promocionar la sección de electrónica premium"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "pavaelectrica": {
 "id": "pavaelectrica",
@@ -961,29 +1062,54 @@
 },
 "marilinabertoldi": {
 "id": "marilinabertoldi",
-"titulo": "Marilina Bertoldi — la artista en el centro de la escena musical",
-"explicacion": "Es la fuerte presencia de la música argentina en las búsquedas y conversaciones por su obra y declaraciones. Las marcas vinculadas al rock nacional o la cultura independiente pueden sumarse destacando la autenticidad y el talento local.",
-"tipo": "Cultura pop",
+"titulo": "Marilina Bertoldi — rock argentino contemporáneo",
+"explicacion": "Marilina Bertoldi es una cantautora de rock que vuelve a estar en los tops de streaming tras su último álbum. La tendencia se debe a su gira y a la repercusión en medios, y una marca puede asociarse a su estilo auténtico en activaciones culturales.",
+"tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
-"MarilinaBertoldi",
-"Musica",
-"RockNacional"
+"#MarilinaBertoldi",
+"#RockArgentino",
+"#Music"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "para crear experiencias de moda con música en vivo"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "buenlunes": {
 "id": "buenlunes",
-"titulo": "#BuenLunes — buena energía para arrancar la semana",
-"explicacion": "Es el saludo positivo y motivacional que inunda las redes sociales al comenzar la semana laboral. Las marcas pueden aprovecharlo para presentar novedades semanales o arrancar el día con un mensaje inspirador y cercano a sus seguidores.",
-"tipo": "Estilo de vida",
-"categoria": "Otros",
+"titulo": "#BuenLunes — impulso positivo para iniciar la semana",
+"explicacion": "El hashtag #BuenLunes se usa para compartir mensajes motivadores cada lunes, generando buen ambiente en redes. Las marcas pueden sumarse con tips de salud o descuentos para empezar la semana con energía.",
+"tipo": "Real time",
+"categoria": "Cultura y Memes",
 "hashtags": [
 "#BuenLunes",
-"GoodMorning",
-"Semana"
+"#Motivación"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Promociones de lunes en moda y gastronomía"
+},
+{
+"cliente": "Pasito",
+"por_que": "Incentiva a caminar más al iniciar la semana"
+},
+{
+"cliente": "Entrenuts",
+"por_que": "Ofrece recetas o snacks saludables para el lunes"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "angelascanlon": {
 "id": "angelascanlon",
@@ -1052,16 +1178,24 @@
 },
 "goldetirolibredemessi": {
 "id": "goldetirolibredemessi",
-"titulo": "Gol de tiro libre de Messi — la magia eterna del capitán",
-"explicacion": "Es la reacción eufórica de los fanáticos en plataformas como Reddit tras revivir o presenciar una obra maestra de Leo Messi. Las marcas pueden utilizar la admiración por el 10 para homenajear la genialidad o lanzar activaciones conmemorativas.",
+"titulo": "Gol de tiro libre de Messi — jugada que revivió en redes",
+"explicacion": "El gol de tiro libre de Lionel Messi vuelve a ser compartido tras el último partido, reavivando la pasión futbolera. Es tendencia deportiva de bajo riesgo, útil para activaciones de marca en eventos deportivos.",
 "tipo": "Real time",
 "categoria": "Deportes",
 "hashtags": [
-"Messi",
-"TiroLibre",
-"GOAT"
+"#Messi",
+"#gol"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede usarse en promos de moda y gastronomía durante partidos"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "rasin": {
 "id": "rasin",
@@ -1169,16 +1303,25 @@
 },
 "tokyo": {
 "id": "tokyo",
-"titulo": "Tokyo — estética urbana y música con Leat’eq",
-"explicacion": "Es un concepto musical y estético asociado al tema de Leat’eq que rescata las vibras nocturnas y futuristas de la capital japonesa. Las marcas pueden usar este audio para construir reels con transiciones rápidas y visuales estridentes.",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
+"titulo": "Tokyo — inspiración urbana y cultural",
+"explicacion": "Tokyo vuelve a ser tendencia por su influencia en moda, gastronomía y tecnología. La conversación se alimenta de eventos y lanzamientos culturales, y una marca puede usar la referencia para campañas de estilo urbano.",
+"tipo": "Cultura pop",
+"categoria": "Estilo de vida",
 "hashtags": [
 "#Tokyo",
-"#Leateq",
-"#EsteticaUrbana"
+"#ModaJaponesa",
+"#Cultura"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "para lanzar colecciones inspiradas en la estética japonesa"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "theshow": {
 "id": "theshow",
@@ -1242,16 +1385,24 @@
 },
 "diadelempleadodecomercio2026": {
 "id": "diadelempleadodecomercio2026",
-"titulo": "Día del Empleado de Comercio — feriados y festejos del sector",
-"explicacion": "Es la búsqueda masiva en Google vinculada al asueto y celebración de los trabajadores mercantiles. Las marcas de retail y consumo pueden aprovecharlo para saludar a sus equipos o lanzar descuentos especiales para la fecha.",
-"tipo": "Noticia",
-"categoria": "Consumo y Productos",
+"titulo": "Día del Empleado de Comercio 2026 — conmemoración anual",
+"explicacion": "El 30 de julio se celebra el Día del Empleado de Comercio, generando menciones en redes y ofertas especiales. Es una fecha de bajo riesgo que las marcas pueden aprovechar para descuentos y agradecimientos.",
+"tipo": "Real time",
+"categoria": "Cultura pop",
 "hashtags": [
-"#DiaDelEmpleadoDeComercio",
-"#Comercio",
-"#Feriado"
+"#DíaDelEmpleado",
+"#comercio"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Descuentos y eventos especiales para empleados del sector"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "sanatsunsorocon": {
 "id": "sanatsunsorocon",
@@ -1508,29 +1659,50 @@
 },
 "teperdi": {
 "id": "teperdi",
-"titulo": "Te Perdí — el nuevo tema de cuarteto",
-"explicacion": "Es el flamante lanzamiento de Simon Aguirre junto a DesaKTa2 que está sonando en todos lados gracias al movimiento cordobés. Las marcas pueden usar el tema de fondo en TikTok para mostrar escenas de la oficina o backstage con onda.",
+"titulo": "Te Perdí — canción viral en YouTube",
+"explicacion": "El tema “Te Perdí” de Simon Aguirre & DesaKTa2 se volvió tendencia tras un video con millones de reproducciones. Es una canción emotiva que las marcas pueden usar en campañas de bienestar o storytelling.",
 "tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
-"#TePerdi",
-"#Cuarteto",
-"#SimonAguirre"
+"#TePerdí",
+"#Música"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede ambientar eventos o vitrinas con la canción"
+},
+{
+"cliente": "Entrenuts",
+"por_que": "Ideal para playlists de entrenamiento y motivación"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "bbywow": {
 "id": "bbywow",
-"titulo": "BbY WOW — el junte musical del momento",
-"explicacion": "Es un temazo que une las voces de KAROL G, Judeline y rusowsky, generando un delirio total en YouTube Shorts. Las marcas jóvenes pueden armar transiciones de outfits o productos usando este audio hiper estético.",
+"titulo": "BbY WOW — trend de TikTok con Karol G y Judeline",
+"explicacion": "Un short que combina el ritmo de Karol G con coreografías virales, generando miles de recreaciones. Las marcas pueden sumarse con sus propios bailes o usar la canción en promos.",
 "tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#BbYWOW",
 "#KarolG",
-"#Rusowsky"
+"#TikTok"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede lanzar challenges de moda con la canción"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "goodmonday": {
 "id": "goodmonday",
@@ -1690,16 +1862,25 @@
 },
 "tiempodemanana": {
 "id": "tiempodemanana",
-"titulo": "Tiempo de mañana — la búsqueda diaria del clima",
-"explicacion": "Es el pico diario de búsquedas en Google para saber qué clima va a hacer y cómo vestirse. Las marcas de indumentaria o delivery de comida pueden aprovechar los días de lluvia o calor extremo para ofrecer promos al paso.",
-"tipo": "Consumo",
-"categoria": "Otros",
+"titulo": "Tiempo de mañana — contenido sobre rutinas matutinas",
+"explicacion": "Es una tendencia que reúne videos y posts que hablan del ‘tiempo de mañana’, desde el clima hasta hábitos de bienestar al despertar. Está en auge porque la gente busca motivación matutina y una marca puede usarlo para impulsar actividades de salud o consumo temprano.",
+"tipo": "Estilo de vida",
+"categoria": "Bienestar y Fitness",
 "hashtags": [
-"#Clima",
-"#Tiempo",
-"#BuenosAires"
+"#TiempoDeMañana",
+"#RutinaMatutina",
+"#BuenosDías"
 ],
-"ts": 1790596403.96549
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Pasito",
+"por_que": "Puede incentivar caminatas matutinas con recompensas"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "mercedesbenza35": {
 "id": "mercedesbenza35",
@@ -1945,16 +2126,20 @@
 },
 "elgobierno": {
 "id": "elgobierno",
-"titulo": "El Gobierno — Discusiones sobre medidas y gestión estatal",
-"explicacion": "Topic caliente sobre las decisiones políticas y económicas de la administración actual en Argentina. No conviene para marcas debido a la alta polarización y el riesgo reputacional.",
+"titulo": "El Gobierno — extensión de concesión aeroportuaria 2049",
+"explicacion": "El Gobierno argentino acordó extender la concesión de servicios aeroportuarios hasta 2049, con una inversión estimada de 600 M USD. La noticia está en tendencia por su impacto económico y puede ser usada por marcas solo en contextos institucionales.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
-"#Politica",
-"#Argentina",
-"#Gobierno"
+"#Gobierno",
+"#Aeropuertos",
+"#Inversión"
 ],
-"ts": 1790597784.8101647
+"riesgo": "medio",
+"riesgo_motivo": "Tema político que puede dividir audiencias",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "cumbierizandoaozunaunpocoderuido": {
 "id": "cumbierizandoaozunaunpocoderuido",
@@ -2062,16 +2247,24 @@
 },
 "wrapmeinplastic": {
 "id": "wrapmeinplastic",
-"titulo": "Wrap Me In Plastic — el remix pop para reels aesthetic",
-"explicacion": "Es un tema electrónico ultra conocido que volvió a ser furor en los cortos para armar transiciones y edits visuales. Las marcas lo pueden usar de cortina musical en videos dinámicos de productos para captar la atención al toque.",
+"titulo": "Wrap Me In Plastic — tema de CHROMANCE & Marcus Layton",
+"explicacion": "Canción indie que está ganando tracción en Shorts, usada en videos de moda alternativa. Ideal para marcas que buscan un tono edgy y creativo.",
 "tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#WrapMeInPlastic",
-"#Reels",
-"#Edit"
+"#Chromance"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede ambientar desfiles o eventos de moda con sonido distintivo."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "gataonly": {
 "id": "gataonly",
@@ -2088,16 +2281,20 @@
 },
 "veron": {
 "id": "veron",
-"titulo": "Verón — la Brujita en el centro de la discusión futbolera",
-"explicacion": "El nombre del presidente de Estudiantes se volvió tendencia en redes por debates picantes sobre el fútbol nacional y las SAD. Conviene para marcas de medios o humor deportivo, pero hay que pisar con plomo para no comerse una gastada.",
-"tipo": "Cultura pop",
+"titulo": "Verón — el mediocampista vuelve a los focos",
+"explicacion": "Juan Sebastián Verón genera conversación en X por su nuevo proyecto como comentarista. La tendencia es típica de figuras del fútbol que vuelven a la esfera pública, útil para marcas que busquen asociarse al deporte local.",
+"tipo": "Deportes",
 "categoria": "Deportes",
 "hashtags": [
-"#Veron",
-"#Estudiantes",
-"#FutbolArgentino"
+"#Verón",
+"#FutbolArgentino",
+"#Leyenda"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "fakebodyfakebody": {
 "id": "fakebodyfakebody",
@@ -2114,16 +2311,25 @@
 },
 "rozeoficialtujardinconenanitoswmaxcarravalenramkyenloscontroles": {
 "id": "rozeoficialtujardinconenanitoswmaxcarravalenramkyenloscontroles",
-"titulo": "Tu jardín con enanitos por Roze Oficial — el cover ATR",
-"explicacion": "Es una reversión bien arriba del clásico de Melendi reversionada con referentes del streaming y la música local que copó Spotify. Una marca puede usar este tipo de colaboraciones inesperadas para conectar con la generacióncentennial.",
-"tipo": "Cultura pop",
+"titulo": "Roze Oficial – Tu jardín con enanitos (feat. Max Carra, Valen, RAMKY) — canción viral",
+"explicacion": "Es una canción de estilo urbano que está ganando reproducciones en Spotify Argentina. La gente la comparte por su ritmo pegajoso y colaboraciones locales, y una marca de lifestyle puede usarla en playlists de eventos o campañas de verano.",
+"tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#RozeOficial",
-"#TuJardinConEnanitos",
-"#Spotify"
+"#NuevoHit",
+"#SpotifyAR"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede incluir la canción en sus eventos de moda y gastronomía como ambientación."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "lajusticiadeformosacondenoacuatroperiodistasporunacoberturaenunacomunidadorigina": {
 "id": "lajusticiadeformosacondenoacuatroperiodistasporunacoberturaenunacomunidadorigina",
@@ -2140,29 +2346,47 @@
 },
 "nokia11002026": {
 "id": "nokia11002026",
-"titulo": "Nokia 1100 2026 — la nostalgia retro que busca la gente",
-"explicacion": "Es una búsqueda curiosa en plataformas de e-commerce impulsada por la nostalgia de los celulares indestructibles y la resistencia a la hiperconectividad. Las marcas pueden subirse con un meme tirando nostalgia de los dosmiles y el fichín de la víborita.",
+"titulo": "Nokia 1100 2026 — teléfono retro reeditado para 2026",
+"explicacion": "Es la reedición del icónico móvil básico Nokia 1100, lanzado en 2026 con colores nostálgicos y batería de larga duración. Está en tendencia porque la gente busca dispositivos simples y retro, y una marca lo puede usar en campañas de minimalismo o giveaways.",
 "tipo": "Consumo",
-"categoria": "IA y Tech",
+"categoria": "Consumo y Productos",
 "hashtags": [
 "#Nokia1100",
-"#Nostalgia",
-"#Retro"
+"#RetroTech",
+"#Minimalismo"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede promocionar el móvil en eventos tech y generar activaciones de experiencia en el shopping."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "lavarropas": {
 "id": "lavarropas",
-"titulo": "Lavarropas — se disparó la búsqueda de línea blanca",
-"explicacion": "La gente entró a masificar búsquedas de lavarropas automáticos en Mercado Libre buscando financiación y recambio para el hogar. Las marcas de electrodomésticos la rompen si lanzan promos con envío gratis y cuotas fijas al toque.",
+"titulo": "Lavarropas — electrodomésticos premium en auge",
+"explicacion": "Los lavarropas están recibiendo mucha atención en Mercado Libre por nuevas funciones de ahorro de agua y conectividad. La tendencia permite a marcas de retail destacar la tecnología y ofrecer demos en vivo dentro de sus espacios.",
 "tipo": "Consumo",
 "categoria": "Consumo y Productos",
 "hashtags": [
 "#Lavarropas",
-"#Electrodomesticos",
-"#Hogar"
+"#SmartHome",
+"#Eco"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede incluir exhibiciones de lavarropas premium en sus eventos de lifestyle."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "vivemearenabuenosaires2026": {
 "id": "vivemearenabuenosaires2026",
@@ -2283,16 +2507,25 @@
 },
 "noruegaportugal": {
 "id": "noruegaportugal",
-"titulo": "Noruega - Portugal — cruce deportivo que enloqueció las búsquedas",
-"explicacion": "Es un partido o evento de selecciones que generó alto interés en los buscadores a nivel internacional. Las marcas de apuestas o indumentaria deportiva lo pueden aprovechar para meter pronósticos o consignas en redes.",
-"tipo": "Real time",
-"categoria": "Deportes",
+"titulo": "Noruega‑Portugal — interés de viajes entre ambos países",
+"explicacion": "Incremento de búsquedas sugiere que viajeros están planificando escapadas a Noruega o Portugal. Agencias y marcas de lifestyle pueden crear contenido de destinos exóticos.",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
 "hashtags": [
 "#Noruega",
 "#Portugal",
-"#Futbol"
+"#Viaje"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede promocionar boutiques y gastronomía con temática de destinos internacionales."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "appleiphone": {
 "id": "appleiphone",
@@ -2430,42 +2663,66 @@
 },
 "dejamequemevaya2agranfiestafamovistararenaabelpintosyeugeniaquevedo": {
 "id": "dejamequemevaya2agranfiestafamovistararenaabelpintosyeugeniaquevedo",
-"titulo": "Déjame que me vaya — temazo en vivo en la fiesta ¡FA! de Mex Urtizberea",
-"explicacion": "Es la rompedora versión en vivo de Abel Pintos y Eugenia Quevedo en el Movistar Arena dentro del ciclo de Mex Urtizberea. Las marcas de entretenimiento o culturales pueden usar este cruce de géneros para apelar a la nostalgia y argentinidad.",
-"tipo": "Cultura pop",
+"titulo": "Déjame que me vaya — concierto de Abel Pintos y Eugenia Quevedo en Movistar Arena",
+"explicacion": "Es el video del recital de la segunda Gran Fiesta en el Movistar Arena, que está pegando fuerte en YouTube por la combinación de ambos artistas. Una marca puede patrocinar experiencias live o crear contenido backstage para conectar con fans de la música.",
+"tipo": "Real time",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
-"#FiestaFA",
 "#AbelPintos",
-"#MovistarArena"
+"#EugeniaQuevedo",
+"#GranFiesta"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede asociar su espacio premium con conciertos y activaciones de marca en eventos musicales."
+},
+{
+"cliente": "Kérastase",
+"por_que": "Puede lanzar experiencias de cuidado capilar en backstage o en zonas VIP del show."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "queloucura": {
 "id": "queloucura",
-"titulo": "Que Loucura — track brasileño furor para videos cortos",
-"explicacion": "Es un tema pegadizo de DJ Exe y Cacau Chuu ideal para transiciones y trends de baile en Shorts. Una marca de consumo masivo puede usar este beat acelerado para mostrar lanzamientos de productos veraniegos o juveniles.",
+"titulo": "QUE LOUCURA — sonido viral de DJ EXE y Cacau Chuu",
+"explicacion": "Un clip de audio que se volvió meme en Shorts, usado para reaccionar a situaciones inesperadas. Las marcas pueden usarlo en reels o stories para dar un toque humorístico y cercano.",
 "tipo": "Audio",
-"categoria": "Música y Entretenimiento",
+"categoria": "Cultura y Memes",
 "hashtags": [
-"#QueLoucura",
-"#DJExe",
-"#Trend"
+"#QueLocura",
+"#DJEXE",
+"#CacauChuu"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Ideal para campañas juveniles en redes que busquen tono divertido y de tendencia."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "velasco": {
 "id": "velasco",
-"titulo": "Velasco — debate político y coyuntura en X Argentina",
-"explicacion": "Es tendencia en la conversación política de la red social por declaraciones o nombramientos recientes en la agenda local. No conviene para marcas por tratarse de un tópico estrictamente político y polarizador.",
+"titulo": "Velasco — noticia de relevancia pública",
+"explicacion": "Mención de una figura pública llamada Velasco que está en los trending topics, posiblemente por un hecho político. Las marcas deben evaluar antes de asociarse por posible polarización.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
-"#Velasco",
-"#PoliticaArg",
-"#XArgentina"
+"#Velasco"
 ],
-"ts": 1790597784.8101647
+"riesgo": "medio",
+"riesgo_motivo": "Posible contenido político",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "kaeremandē": {
 "id": "kaeremandē",
@@ -2495,55 +2752,83 @@
 },
 "playstation5": {
 "id": "playstation5",
-"titulo": "PlayStation 5 — la consola de Sony lidera las búsquedas en e-commerce",
-"explicacion": "Vuelve al top de Mercado Libre impulsada por fechas especiales, financiación y recambio tecnológico en los hogares. Las marcas de gaming, fintechs y bancos pueden aprovechar para ofrecer pagos en cuotas sin interés y bundles atractivos.",
+"titulo": "Playstation 5 — alta demanda de la consola en Mercado Libre",
+"explicacion": "Búsqueda masiva de la PS5 refleja la escasez y el hype del gaming en 2026. Las marcas pueden lanzar promos cruzadas o giveaways para gamers.",
 "tipo": "Consumo",
-"categoria": "IA y Tech",
+"categoria": "Consumo y Productos",
 "hashtags": [
 "#PS5",
 "#PlayStation5",
-"#GamingArg"
+"#Gaming"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "airesacondicionados": {
 "id": "airesacondicionados",
-"titulo": "Aires acondicionados — el electrodoméstico más buscado por la suba de temperatura",
-"explicacion": "Se dispara el interés de compra en plataformas digitales ante la llegada anticipada de los días de calor agobiante en el país. Las marcas de electrodomésticos y retails deben salir con campañas agresivas de envío rápido y planes de pago.",
+"titulo": "Aires acondicionados — incremento de búsquedas en e‑commerce",
+"explicacion": "El calor del verano impulsa la compra de aires, tendencia visible en Mercado Libre. Marcas de electrodomésticos pueden usarla para campañas de verano.",
 "tipo": "Consumo",
 "categoria": "Consumo y Productos",
 "hashtags": [
 "#AireAcondicionado",
-"#Verano",
-"#MercadoLibre"
+"#Climatización"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "aguaofficialvideo": {
 "id": "aguaofficialvideo",
-"titulo": "AGUA — el nuevo videoclip oficial de Maluma que marca tendencia",
-"explicacion": "Es el flamante lanzamiento audiovisual del artista colombiano que domina los rankings de visualizaciones en el país. Una marca de bebidas o indumentaria veraniega puede usar fragmentos del video para conectar con la energía festiva del artista.",
-"tipo": "Cultura pop",
+"titulo": "AGUA (Official Video) — nuevo clip de Maluma",
+"explicacion": "El video oficial de 'AGUA' de Malura está generando millones de reproducciones, impulsado por su ritmo veraniego. Marcas de bebidas o moda pueden asociarse al look del video o lanzar ediciones limitadas.",
+"tipo": "Real time",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#Maluma",
-"#Agua",
-"#NuevoVideo"
+"#AGUA",
+"#VideoOficial"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede crear pop‑ups de moda inspirados en el estilo del video."
+},
+{
+"cliente": "Kérastase",
+"por_que": "Lanzar cuidado capilar con temática playera alineado al verano."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "lacheyenne": {
 "id": "lacheyenne",
-"titulo": "La Cheyenne — el clásico cover viralizado por El De Las R's",
-"explicacion": "Es una reversión muy popular en plataformas de videos cortos de la emblemática canción asociada a la camioneta. Las marcas automotrices o de estilo de vida rutero pueden usar este audio para conectar con la nostalgia o el humor rutero.",
-"tipo": "Audio",
+"titulo": "La Cheyenne — canción viral de El De Las R's",
+"explicacion": "Tema que está circulando en Shorts, usado como fondo para videos de humor y lifestyle. Las marcas pueden usarlo para campañas frescas y juveniles.",
+"tipo": "Formato",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#LaCheyenne",
-"#Cover",
-"#Shorts"
+"#ElDeLasRs"
 ],
-"ts": 1790597784.8101647
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Entrenuts",
+"por_que": "Puede acompañar reels de recetas saludables con ritmo pegajoso."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "palacios": {
 "id": "palacios",
@@ -2712,16 +2997,24 @@
 },
 "pastlives": {
 "id": "pastlives",
-"titulo": "Past Lives — el tema remixado para clips nostálgicos",
-"explicacion": "Es el hit de sapientdream y Slushii que rompe YouTube Shorts con videos aesthetic y recuerdos del pasado. Las marcas de turismo o indumentaria vintage lo pueden usar para armar reels súper emotivos que te toquen el corazón.",
+"titulo": "Past Lives — canción y challenge de Slushii",
+"explicacion": "Trend surgido en Shorts donde la canción ‘Past Lives’ de Slushii se usa en videos de transformación y recuerdos. La popularidad del tema lo hace útil para marcas que quieran asociarse a música electrónica y crear experiencias sensoriales.",
 "tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#PastLives",
-"#Aesthetic",
-"#Shorts"
+"#Slushii",
+"#MusicChallenge"
 ],
-"ts": 1790599572.628335,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede ambientar eventos y desfiles con la canción"
+}
+],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "copaargentina": {
@@ -2858,16 +3151,24 @@
 },
 "homecomingxbrazzilian": {
 "id": "homecomingxbrazzilian",
-"titulo": "Homecoming x Brazzilian — fusión de fiesta universitaria con estilo brasileño",
-"explicacion": "Este trend muestra jóvenes combinando la tradición de Homecoming con música y moda brasileña, y está pegando en reels por su energía multicultural. Las marcas de ropa o bebidas pueden crear colecciones o promos que celebren la mezcla cultural.",
-"tipo": "Cultura pop",
-"categoria": "Estilo de vida",
+"titulo": "Homecoming x Brazzilian — colaboración de moda",
+"explicacion": "Se trata de una colaboración entre la marca Homecoming y diseñadores brasileños, lanzada en una campaña visual que mezcla estilos urbanos. La tendencia surge por la fusión cultural y es útil para marcas que quieran posicionarse como vanguardistas en moda.",
+"tipo": "Formato",
+"categoria": "Belleza y Moda",
 "hashtags": [
 "#Homecoming",
-"#Brazilian",
-"#Monkippu"
+"#Brazzilian",
+"#FashionCollab"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede exhibir la colección en sus desfiles y eventos de moda."
+}
+],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "meowbosssuperslowed": {
@@ -3105,19 +3406,47 @@
 },
 "trustme": {
 "id": "trustme",
-"titulo": "Trust Me — tendencia de audio viral",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
-"ts": 1790601010.1547055,
-"lite": true
+"titulo": "Trust Me — formato de audio para videos de Pandora",
+"explicacion": "Un clip de audio con la frase ‘Trust me’ se viralizó en Shorts, usado para revelar productos o sorpresas, especialmente asociado a la marca Pandora. La fórmula de expectativa‑revelación lo hace atractivo para campañas de lanzamiento.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#TrustMe",
+"#Reveal",
+"#Shorts"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Kérastase",
+"por_que": "Puede usar el audio para revelar nuevas líneas de cuidado capilar"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "chopchopslide": {
 "id": "chopchopslide",
-"titulo": "Chop Chop Slide — tendencia de baile viral",
+"titulo": "Chop Chop Slide — reto de baile inspirado en ICP",
+"explicacion": "Video corto que muestra una coreografía sencilla al ritmo de una canción de Insane Clown Posse, muy usado en TikTok y Shorts. Una marca puede lanzar su propio challenge para generar UGC y visibilidad.",
 "tipo": "Formato",
 "categoria": "Cultura y Memes",
-"ts": 1790601010.1547055,
-"lite": true
+"hashtags": [
+"#ChopChopSlide",
+"#ICP",
+"#DanceChallenge"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede crear un challenge en sus eventos de moda para impulsar la interacción con el público."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "chromecast": {
 "id": "chromecast",
@@ -6711,11 +7040,25 @@
 },
 "sixers": {
 "id": "sixers",
-"titulo": "Sixers — Actualidad de la NBA",
-"tipo": "Noticia",
+"titulo": "Sixers — equipo de baloncesto de Filadelfia en foco",
+"explicacion": "Los Philadelphia Sixers están en la conversación por sus últimos partidos y fichajes. La tendencia es deportiva y una marca puede aprovecharla para activaciones vinculadas al deporte y al estilo de vida activo.",
+"tipo": "Real time",
 "categoria": "Deportes",
-"ts": 1790609511.1381342,
-"lite": true
+"hashtags": [
+"#Sixers",
+"#NBA",
+"#Baloncesto"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Pasito",
+"por_que": "para incentivar caminatas con retos deportivos"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "tablageneralmx2026": {
 "id": "tablageneralmx2026",
@@ -6999,11 +7342,20 @@
 },
 "theuk": {
 "id": "theuk",
-"titulo": "The UK — Actualidad internacional",
+"titulo": "The UK — foco mediático en Reino Unido",
+"explicacion": "Se observan picos de conversación sobre el Reino Unido, probablemente ligados a decisiones políticas o culturales. La tendencia es de tipo noticioso y su uso por marcas es limitado por su carácter genérico.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
-"ts": 1790609511.1381342,
-"lite": true
+"hashtags": [
+"#UK",
+"#ReinoUnido",
+"#News"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Puede asociarse a debates políticos internacionales",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
 },
 "eutodasegundaacaminhodaaula": {
 "id": "eutodasegundaacaminhodaaula",
@@ -7091,100 +7443,124 @@
 },
 "nadiedicenada": {
 "id": "nadiedicenada",
-"titulo": "#nadiedicenada — meme de que nada se dice",
-"explicacion": "El hashtag #nadiedicenada se viraliza en Twitter como forma de ironía cuando se quiere restar importancia a un tema. Las marcas pueden usarlo para conectar con audiencias jóvenes mostrando sentido del humor y autenticidad.",
-"tipo": "Humor",
+"titulo": "#nadiedicenada — expresión de descontento social",
+"explicacion": "El hashtag se usa en Argentina para manifestar que nada se está haciendo respecto a problemas sociales. Está en tendencia por la creciente frustración ciudadana y su uso por marcas puede percibirse como oportunismo.",
+"tipo": "Real time",
 "categoria": "Cultura y Memes",
 "hashtags": [
 "#nadiedicenada",
-"#Meme",
-"#Argentina"
+"#Argentina",
+"#Protesta"
 ],
-"ts": 1790611448.817627,
+"riesgo": "medio",
+"riesgo_motivo": "Puede leerse como oportunismo político",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "spacex": {
 "id": "spacex",
-"titulo": "SpaceX — nuevo lanzamiento que genera expectativa",
-"explicacion": "SpaceX vuelve a ser tendencia tras anunciar un nuevo lanzamiento de satélites, lo que alimenta la conversación sobre la carrera espacial. Las marcas pueden aprovechar la asociación con la innovación y el futuro para posicionarse como visionarias.",
+"titulo": "spacex — lanzamientos y Starship en foco",
+"explicacion": "SpaceX sigue generando hype con sus lanzamientos de Starship y misiones comerciales. La tendencia se alimenta de la fascinación por la exploración espacial y una marca puede usarla para asociarse a innovación y futuro tecnológico.",
 "tipo": "Noticia",
 "categoria": "IA y Tech",
 "hashtags": [
 "#SpaceX",
-"#Launch",
-"#Innovación"
+"#Starship",
+"#Tech"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "ricardosalles": {
 "id": "ricardosalles",
-"titulo": "Ricardo Salles — exministro brasileño bajo escrutinio",
-"explicacion": "Ricardo Salles vuelve a los titulares por investigaciones sobre su gestión ambiental, reavivando el debate político en Brasil. No conviene para marcas, pues la polémica puede afectar la percepción.",
+"titulo": "ricardo salles — exministro brasileño en la mira",
+"explicacion": "Ricardo Salles, exministro del medio ambiente de Brasil, vuelve a ser noticia por polémicas vinculadas a su gestión. Está en tendencia por la discusión política y no conviene para marcas por su carga polémica.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
 "#RicardoSalles",
-"#Política",
-"#Brasil"
+"#Brasil",
+"#Política"
 ],
-"ts": 1790611448.817627,
+"riesgo": "alto",
+"riesgo_motivo": "Política polarizada",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "achane": {
 "id": "achane",
-"titulo": "Achane — corredor novato que sorprende en la NFL",
-"explicacion": "Devon Achane se destaca en su debut con jugadas explosivas, generando ruido en la comunidad futbolística. Una marca de ropa deportiva puede usar su imagen para campañas de rendimiento.",
-"tipo": "Noticia",
-"categoria": "Deportes",
+"titulo": "Achane — artista de trap latino en auge",
+"explicacion": "Devon Achane es un cantante de trap que está ganando popularidad en plataformas de streaming. La tendencia surge por sus últimos lanzamientos y una marca puede usar su música en campañas juveniles para darle energía a la comunicación.",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
 "hashtags": [
 "#Achane",
-"#NFL",
-"#Deporte"
+"#TrapLatino",
+"#Music"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "para ambientar eventos de moda con música urbana"
+}
+],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "marilynmanson": {
 "id": "marilynmanson",
-"titulo": "Marilyn Manson — regreso y polémica en la escena rock",
-"explicacion": "Marilyn Manson vuelve a los focos tras lanzar nuevo álbum y polémicas en redes, reavivando el interés en el rock alternativo. Las marcas de moda alternativa pueden colaborar para ediciones limitadas con su estética.",
-"tipo": "Noticia",
+"titulo": "Marilyn Manson — figura musical y polémica en redes",
+"explicacion": "Marilyn Manson vuelve a ser noticia por su gira y su imagen controvertida. La tendencia se mantiene por su estilo provocador, y aunque puede generar engagement, el riesgo de asociación polémica es medio.",
+"tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#MarilynManson",
 "#Rock",
-"#Música"
+"#Controversia"
 ],
-"ts": 1790611448.817627,
+"riesgo": "medio",
+"riesgo_motivo": "Imagen polémica",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "bono": {
 "id": "bono",
-"titulo": "Bono — nuevo subsidio gubernamental que genera debate",
-"explicacion": "El término bono se vuelve tendencia al anunciarse un nuevo programa de ayuda económica del Estado, generando conversación sobre su alcance. Las marcas pueden comunicar sus propias iniciativas de responsabilidad social alineadas al bono.",
+"titulo": "Bono — discusión sobre subsidios y ayudas económicas",
+"explicacion": "El término “bono” vuelve a estar en los trending por debates de política fiscal y paquetes de estímulo. Es una noticia de contexto económico, con riesgo medio por su carga política.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
-"#Bono",
-"#Argentina",
-"#Economía"
+"#bono",
+"#economía"
 ],
-"ts": 1790611448.817627,
+"riesgo": "medio",
+"riesgo_motivo": "Tema político y polarizador",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "ellamentableestadodelospatrullerosenlaprovinciadebuenosaires": {
 "id": "ellamentableestadodelospatrullerosenlaprovinciadebuenosaires",
-"titulo": "Estado de los patrulleros — críticas a la flota policial de Buenos Aires",
-"explicacion": "En Reddit se viraliza la queja sobre el lamentable estado de los patrulleros de la Provincia de Buenos Aires, evidenciando problemas de infraestructura. No conviene para marcas, pues el tema es sensible y de gestión pública.",
+"titulo": "Patrulleros en Bs.As — estado crítico de los vehículos policiales",
+"explicacion": "Se discute en Reddit el deterioro de los patrulleros de la Provincia de Buenos Aires, generando debate sobre seguridad pública. Es una noticia con carga política, riesgo medio por posible polémica.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
 "#Patrulleros",
-"#BuenosAires",
-"#Infraestructura"
+"#BuenosAires"
 ],
-"ts": 1790611448.817627,
+"riesgo": "medio",
+"riesgo_motivo": "Tema político y de seguridad pública",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "cdtv": {
@@ -7203,30 +7579,39 @@
 },
 "slipknot": {
 "id": "slipknot",
-"titulo": "Slipknot — regreso del metal con nuevo álbum",
-"explicacion": "Slipknot es la legendaria banda de metal que volvió a los titulares por lanzar nuevo material y anunciar gira; la noticia pega porque el público busca energía cruda y autenticidad. Una marca de ropa o bebidas energéticas puede asociarse con la estética y la actitud del grupo para conectar con fans del rock.",
-"tipo": "Cultura pop",
+"titulo": "Slipknot — regreso del grupo de metal a los tops de streaming",
+"explicacion": "El metalero Slipknot vuelve a ser tendencia tras lanzar nuevo sencillo y videos, reactivando a su base de fans. Es contenido musical de bajo riesgo, útil para activaciones de estilo urbano y rock.",
+"tipo": "Audio",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#Slipknot",
-"#Metal",
-"#NuevoÁlbum"
+"#metal"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede acompañar eventos de moda con música rock"
+}
+],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "alud": {
 "id": "alud",
-"titulo": "Alud — avalancha que afecta zonas de la Patagonia",
-"explicacion": "Se registró un alud en la Patagonia que dejó daños y evacuaciones, y está en tendencia por la cobertura de los medios locales; la gente comparte información de seguridad y solidaridad. No conviene para marcas salvo que actúen en campañas de prevención o ayuda humanitaria.",
+"titulo": "Alud — avalancha que afecta regiones de la cordillera",
+"explicacion": "Reportes de alud en la zona andina aparecen en búsquedas, alertando a la población. Es una noticia de desastre natural, riesgo medio por sensibilidad y posible impacto emocional.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
 "#Alud",
-"#Patagonia",
-"#Seguridad"
+"#desastre"
 ],
-"ts": 1790611448.817627,
+"riesgo": "medio",
+"riesgo_motivo": "Evento de desastre natural",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "puroshow": {
@@ -7259,30 +7644,32 @@
 },
 "eurnekian": {
 "id": "eurnekian",
-"titulo": "Eurnekian — empresario argentino en foco mediático",
-"explicacion": "Eduardo Eurnekian vuelve a los titulares por una nueva inversión en infraestructura aeroportuaria, lo que genera interés por su influencia en la economía; la noticia circula en X y medios financieros. Empresas del sector de transporte o inversión pueden usar su figura para reforzar credibilidad.",
+"titulo": "Eurnekian — polémica alrededor del empresario argentino",
+"explicacion": "El nombre aparece en discusiones sobre inversiones y política en Argentina, generando debate en redes. Por su carga política y de controversia, no es recomendable que una marca lo utilice.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
-"#Eurnekian",
-"#Negocios",
-"#Argentina"
+"#Eurnekian"
 ],
-"ts": 1790611448.817627,
+"riesgo": "alto",
+"riesgo_motivo": "Política/controversia",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "4": {
 "id": "4",
-"titulo": "#ข่มขลังตอนที่4 — episodio 4 de serie viral tailandesa",
-"explicacion": "El cuarto episodio de la serie #ข่มขลัง se volvió tendencia en Tailandia por su humor sobrenatural y efectos virales; los usuarios comparten clips y reacciones. Marcas de streaming o snacks pueden insertar product placement dentro del contenido para captar a la audiencia joven.",
-"tipo": "Humor",
-"categoria": "Cultura y Memes",
+"titulo": "プロジェクト4 — proyecto misterioso en tendencia en Japón",
+"explicacion": "Es una etiqueta japonesa que alude a un proyecto cultural o tecnológico que está generando curiosidad en redes. La tendencia es ligera y sin riesgos, pero su nicho es muy específico.",
+"tipo": "Cultura pop",
+"categoria": "Otros",
 "hashtags": [
-"#ข่มขลังตอนที่4",
-"#Tailandia",
-"#Viral"
+"#プロジェクト4"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "starship": {
@@ -7301,16 +7688,19 @@
 },
 "gobirds": {
 "id": "gobirds",
-"titulo": "Go Birds — campaña de concientización sobre la protección de aves",
-"explicacion": "Go Birds es una iniciativa que invita a la gente a observar y cuidar aves locales, y se viralizó por fotos y retos en redes; el tema conecta con la creciente preocupación ambiental. Marcas de ropa outdoor o productos eco‑friendly pueden patrocinar la campaña y usar el hashtag para reforzar su compromiso verde.",
-"tipo": "Estilo de vida",
-"categoria": "Bienestar y Fitness",
+"titulo": "Go Birds — grito de aliento a equipos deportivos",
+"explicacion": "Se trata de un hashtag que los fanáticos usan para apoyar a sus equipos, sobre todo en deportes norteamericanos. La tendencia sube cuando hay partidos importantes y una marca puede incorporarlo en activaciones deportivas.",
+"tipo": "Real time",
+"categoria": "Deportes",
 "hashtags": [
 "#GoBirds",
-"#Aves",
-"#Naturaleza"
+"#Sports",
+"#Fan"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "chilememes": {
@@ -7329,44 +7719,56 @@
 },
 "antesderenunciarelinterventordelareadediscapacidadreportoquedetectosobreprecioss": {
 "id": "antesderenunciarelinterventordelareadediscapacidadreportoquedetectosobreprecioss",
-"titulo": "Sobreprecios en discapacidad — informe del interventor denuncia irregularidades",
-"explicacion": "Un informe del interventor del área de discapacidad reveló sobreprecios sistemáticos en contrataciones, generando polémica y reclamos en redes; la noticia está en tendencia por la gravedad del caso y la demanda de transparencia. No conviene para marcas salvo que adopten una postura de responsabilidad social y denuncien la corrupción.",
+"titulo": "Escándalo de sobreprecios en la Dirección de Discapacidad",
+"explicacion": "El interventor renunció denunciando sobreprecios sistemáticos, lo que generó un fuerte debate en redes argentinas. Por tratarse de un tema de corrupción, no conviene que una marca se asocie a esta conversación.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "hashtags": [
-"#Discapacidad",
-"#Corrupción",
-"#Argentina"
+"#Sobreprecios",
+"#Corrupción"
 ],
-"ts": 1790611448.817627,
+"riesgo": "alto",
+"riesgo_motivo": "Política/controversia",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "whatsthedealwithtaylorswiftssonggoingfrom137mstreamsto55min1dayandwhyarepeoplece": {
 "id": "whatsthedealwithtaylorswiftssonggoingfrom137mstreamsto55min1dayandwhyarepeoplece",
-"titulo": "Taylor Swift — caída de streams de canción genera debate",
-"explicacion": "El número de streams de una canción de Taylor Swift bajó drásticamente en un día, provocando teorías sobre algoritmos y campañas de fans; la conversación está en auge entre usuarios de música y prensa digital. Marcas de plataformas de streaming o de productos dirigidos a Gen‑Z pueden usar la polémica para lanzar promociones o contenido exclusivo.",
-"tipo": "Cultura pop",
+"titulo": "Taylor Swift — caída de streams en 24 h y debate",
+"explicacion": "Un tema de Taylor Swift pasó de 13.7 M a 5.5 M streams en un día, lo que encendió la discusión sobre algoritmos y fandoms. La tendencia musical es útil para marcas que quieren asociarse a la cultura pop sin polémica.",
+"tipo": "Noticia",
 "categoria": "Música y Entretenimiento",
 "hashtags": [
 "#TaylorSwift",
 "#Streams",
-"#Debate"
+"#Music"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede crear eventos o playlists en sus locales vinculados a la música de Taylor"
+}
+],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "chirola": {
 "id": "chirola",
-"titulo": "Chirola — slang argentino para referirse al dólar barato",
-"explicacion": "Chirola se usa en redes para describir el dólar a precios bajos, especialmente cuando hay expectativas de devaluación; la palabra está en tendencia por la discusión económica del momento. Marcas financieras o de cambio pueden aprovechar el término en campañas que ofrezcan mejores tasas o educación financiera.",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
+"titulo": "Chirola — meme sobre la inflación y el peso argentino",
+"explicacion": "Se trata de un meme que usa la palabra “chirola” para burlarse de la devaluación del peso. Aunque es gracioso, toca un tema económico sensible y puede percibirse como oportunista.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
 "hashtags": [
 "#Chirola",
-"#Dólar",
-"#Argentina"
+"#Inflación"
 ],
-"ts": 1790611448.817627,
+"riesgo": "medio",
+"riesgo_motivo": "Tema económico sensible",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "idontwanttooverreactbut": {
@@ -7441,16 +7843,19 @@
 },
 "mayoristafiguritaspaninimundial": {
 "id": "mayoristafiguritaspaninimundial",
-"titulo": "Mayorista de figuritas Panini — venta al por mayor de stickers coleccionables",
-"explicacion": "Se trata de la venta al por mayor de las figuritas Panini, muy buscadas por coleccionistas de todo el mundo. Está en tendencia porque la fiebre de los álbumes de la Copa del Mundo vuelve a crecer y una marca puede lanzar promos o kits de stickers para activar a su comunidad.",
+"titulo": "Mayorista figuritas Panini mundial — venta al por mayor de coleccionables",
+"explicacion": "Se viralizó la oferta de mayoristas de figuritas Panini a nivel mundial, generando interés entre coleccionistas y fans de fútbol. La tendencia es de consumo coleccionable y puede servir a marcas que busquen activaciones de edición limitada.",
 "tipo": "Consumo",
-"categoria": "Consumo y Productos",
+"categoria": "Cultura y Memes",
 "hashtags": [
 "#Panini",
 "#Figuritas",
-"#Coleccionismo"
+"#Colección"
 ],
-"ts": 1790611448.817627,
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
 "lite": false
 },
 "mesabimetallics": {
@@ -7501,6 +7906,1013 @@
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "ts": 1790611448.817627,
+"lite": true
+},
+"miserygirl": {
+"id": "miserygirl",
+"titulo": "Misery Girl — meme de humor melancólico",
+"explicacion": "Es un meme que muestra a una chica triste y se usa para expresar frustración o ironía. Está en tendencia porque la gente lo comparte en redes para desahogarse y una marca puede usarlo con tono irónico para conectar con público joven.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#MiseryGirl",
+"#Meme",
+"#Humor"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "para conectar con público joven en redes con tono irónico"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"nvidiaboostsstockbuyback": {
+"id": "nvidiaboostsstockbuyback",
+"titulo": "Nvidia boosts stock buyback — la mayor recompra de acciones de la historia",
+"explicacion": "Nvidia anunció una recompra de acciones de 150 mil millones de dólares, la mayor autorización de su tipo. La noticia está en tendencia por su impacto en el mercado tech y una marca puede usarla para asociarse a innovación financiera, aunque no es directamente relevante para consumo.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Nvidia",
+"#Buyback",
+"#Tech"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"andohaciendounamariaenemaguerrillerava": {
+"id": "andohaciendounamariaenemaguerrillerava",
+"titulo": "Ando haciendo una María enema guerrillera, va? — frase polémica en Reddit",
+"explicacion": "Frase surgida en Reddit con tono provocador y contenido potencialmente ofensivo. La tendencia es de nicho y no es apropiada para marcas por su carga controvertida.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#Reddit",
+"#Polémica",
+"#Meme"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Contenido ofensivo y polémico",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"cordoba": {
+"id": "cordoba",
+"titulo": "Córdoba — granizo y clima extremo en la provincia",
+"explicacion": "Los últimos informes de granizo en Córdoba aparecen en búsquedas, generando preocupación local. Es una noticia climática de bajo riesgo, sin vínculo directo con marcas de consumo.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Córdoba",
+"#clima"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"keenum": {
+"id": "keenum",
+"titulo": "Keenum — caso judicial o referencia legal en EE.UU.",
+"explicacion": "El término “Keenum” aparece en búsquedas vinculadas a un caso judicial estadounidense, sin mayor contexto local. Es una tendencia informativa de bajo riesgo, sin aplicación clara para marcas argentinas.",
+"tipo": "Noticia",
+"categoria": "Otros",
+"hashtags": [
+"#Keenum"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"javiermileienlnmaquiavelosebusca20millonesdevecespordiaeninternetenelmomentodeld": {
+"id": "javiermileienlnmaquiavelosebusca20millonesdevecespordiaeninternetenelmomentodeld",
+"titulo": "Javier Milei — discurso que genera 80 M de vistas",
+"explicacion": "El discurso de Javier Milei se vuelve viral, con cifras de búsquedas que superan los 80 millones, provocando fuerte polarización política. Es una tendencia de alto riesgo por su carga partidaria y polémica.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Milei",
+"#política"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Contenido político altamente polarizador",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"minutodesilencio": {
+"id": "minutodesilencio",
+"titulo": "Minuto de silencio — homenaje colectivo en redes",
+"explicacion": "Se difunde un minuto de silencio en redes como forma de recuerdo o protesta, generando participación masiva. Es una tendencia de bajo riesgo, pero su contexto puede variar según la causa.",
+"tipo": "Real time",
+"categoria": "Cultura pop",
+"hashtags": [
+"#MinutoDeSilencio"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"kchbday": {
+"id": "kchbday",
+"titulo": "#KC_HBDay — celebración del cumpleaños de KC en redes",
+"explicacion": "Los usuarios comparten mensajes y videos para festejar el cumpleaños de una figura conocida con las siglas KC. La tendencia es ligera y puede usarse para activaciones de cumpleaños de marcas.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#KC_HBDay"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"2026": {
+"id": "2026",
+"titulo": "#岸優太誕生祭2026 — aniversario del cantante japonés Kishi Yuta",
+"explicacion": "Fans japoneses celebran el cumpleaños de Kishi Yuta con memes y videos. Es una tendencia de nicho que puede servir a marcas con enfoque en cultura pop asiática.",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#岸優太誕生祭2026"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"bail": {
+"id": "bail",
+"titulo": "Bail — meme de reacción que dice “Bail” en redes",
+"explicacion": "Es un formato de meme donde la gente escribe “Bail” como respuesta graciosa a situaciones inesperadas. Está en tendencia porque se viralizó en X y TikTok, y una marca puede usarlo para conectar con un público joven y desenfadado.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#Bail",
+"#Meme",
+"#Trending"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede usar el meme en sus redes para promocionar eventos de moda con tono divertido"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"mlbwildcardseriesairsonpeacock": {
+"id": "mlbwildcardseriesairsonpeacock",
+"titulo": "MLB Wild Card Series en Peacock — fans molestos por streaming",
+"explicacion": "Los partidos de la serie de comodines de la MLB se transmitieron solo por Peacock, lo que provocó reclamos de seguidores que prefieren TV abierta. La noticia es de actualidad deportiva y una marca puede usarla para promociones vinculadas al deporte.",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"hashtags": [
+"#MLB",
+"#Peacock",
+"#Deportes"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"ア・ポステリオリ": {
+"id": "ア・ポステリオリ",
+"titulo": "ア・ポステリオリ — tendencia cultural japonesa",
+"explicacion": "Se trata de una referencia a la obra o concepto “A Posteriori” que está circulando en foros de cultura pop japonesa. La gente lo comparte por su estética y temática, y marcas de moda o arte pueden usarlo como inspiración visual.",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#APosteriori",
+"#Japon",
+"#CulturaPop"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"lebronjames": {
+"id": "lebronjames",
+"titulo": "LeBron James — noticia del baloncesto mundial",
+"explicacion": "LeBron James vuelve a ser noticia tras anunciar una nueva línea de zapatillas con una marca deportiva. La tendencia está impulsada por su influencia global y puede servir a marcas que busquen asociarse al deporte de alto rendimiento.",
+"tipo": "Deportes",
+"categoria": "Deportes",
+"hashtags": [
+"#LeBronJames",
+"#NBA",
+"#Sneakers"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"sortingoutstufffrommydecadesfatherhewasanengineerworkinginsojaandsunfloweroilref": {
+"id": "sortingoutstufffrommydecadesfatherhewasanengineerworkinginsojaandsunfloweroilref",
+"titulo": "Sorting out stuff from my decades father — historia familiar en Reddit",
+"explicacion": "Un usuario de Reddit narra la vida de su padre ingeniero en la industria del aceite de soja y girasol, generando curiosidad sobre la historia industrial argentina. Es tendencia por el interés en relatos de época, y una marca de alimentos podría usarlo para contenido de heritage.",
+"tipo": "Noticia",
+"categoria": "Otros",
+"hashtags": [
+"#HistoriaIndustrial",
+"#RedditStory",
+"#Argentina"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Entrenuts",
+"por_que": "Puede aprovechar la historia para reforzar su vínculo con la tradición alimentaria local."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"本と彗星": {
+"id": "本と彗星",
+"titulo": "本と彗星 — libro y cometa en la cultura japonesa",
+"explicacion": "Título japonés que refiere a una novela o manga reciente que combina literatura y astronomía, generando conversación en foros de anime. La gente lo comparte por su estética y narrativa, y marcas de cultura pop pueden usarlo como referencia visual.",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#本と彗星",
+"#Manga",
+"#Anime"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"meanttobe": {
+"id": "meanttobe",
+"titulo": "Meant To Be — canción viral de Cuntsniffer",
+"explicacion": "Fragmento de la canción que está circulando en Shorts, usado como fondo para videos románticos. Las marcas pueden usarla en campañas de amor propio o productos de pareja.",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#MeantToBe",
+"#Cuntsniffer"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Entrenuts",
+"por_que": "Puede acompañar contenido de estilo de vida saludable y bienestar."
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"cadenadetelevision": {
+"id": "cadenadetelevision",
+"titulo": "Cadena de televisión — tendencias de búsqueda de series y canales",
+"explicacion": "Muchos usuarios buscan información sobre cadenas y series, reflejando consumo de contenido audiovisual. Las marcas pueden colocar spots o patrocinar programas populares.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Televisión",
+"#Series"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"reallyreally": {
+"id": "reallyreally",
+"titulo": "Really Really — meme de reacción exagerada",
+"explicacion": "Es un meme que surgió en X donde la gente responde con la frase “Really really?” para expresar sorpresa o incredulidad. Está en tendencia porque se viralizó con videos cortos y puede servir a marcas para conectar de forma desenfadada con audiencias jóvenes.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#ReallyReally",
+"#Meme",
+"#Viral"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede usar el meme en campañas de moda y eventos para tono fresco"
+},
+{
+"cliente": "Kérastase",
+"por_que": "Puede crear reels divertidos con sus productos"
+},
+{
+"cliente": "Entrenuts",
+"por_que": "Puede usar humor para promocionar snacks saludables"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"porzingis": {
+"id": "porzingis",
+"titulo": "Porzingis — noticia sobre la estrella de la NBA",
+"explicacion": "Se trata de la creciente conversación en X sobre el jugador Kristaps Porzingis, tras su último partido y rumores de traspaso. La tendencia es deportiva y puede ser aprovechada por marcas que quieran asociarse al mundo del baloncesto, aunque nuestros clientes no están directamente en ese rubro.",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"hashtags": [
+"#Porzingis",
+"#NBA",
+"#Baloncesto"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"googlemapsupdatesthierimages": {
+"id": "googlemapsupdatesthierimages",
+"titulo": "Google Maps Updates Their Images — cambios en imágenes satelitales",
+"explicacion": "Usuarios de Reddit comentan que Google Maps está renovando sus imágenes, lo que genera curiosidad sobre lugares y turismo. Es tendencia tech y puede servir a marcas para lanzar campañas de descubrimiento local.",
+"tipo": "Noticia",
+"categoria": "IA y Tech",
+"hashtags": [
+"#GoogleMaps",
+"#TechNews",
+"#Descubrí"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Puede promocionar locales dentro del shopping usando mapas actualizados"
+}
+],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"microondas": {
+"id": "microondas",
+"titulo": "Microondas — aumento de ventas en Mercado Libre",
+"explicacion": "En Mercado Libre se observa un pico de búsquedas y ofertas de microondas, impulsado por la vuelta a la cocina casera post‑pandemia. La tendencia es de consumo de electrodomésticos y puede ser aprovechada por marcas de cocina o retailers.",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"hashtags": [
+"#Microondas",
+"#Cocina",
+"#Electrodomésticos"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1790612594.7144613,
+"lite": false
+},
+"memes": {
+"id": "memes",
+"titulo": "Memes — Contenido viral y humorístico",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"joelembiid": {
+"id": "joelembiid",
+"titulo": "Joel Embiid — Actualidad del jugador de la NBA",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"webuiltthelibrary": {
+"id": "webuiltthelibrary",
+"titulo": "We built the library — Tendencia de conversación en Reddit",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"poohpavelgoldennightfeed": {
+"id": "poohpavelgoldennightfeed",
+"titulo": "POOHPAVEL GOLDEN NIGHT FEED — Contenido de fans en redes",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"7billiondividedby37is1893times": {
+"id": "7billiondividedby37is1893times",
+"titulo": "7 Billion divided by 37 is 189 3 times — Curiosidad matemática",
+"tipo": "Formato",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"khomkhlangep4": {
+"id": "khomkhlangep4",
+"titulo": "KHOM KHLANG EP4 — Lanzamiento de episodio de serie",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"mekhibecton": {
+"id": "mekhibecton",
+"titulo": "Mekhi Becton — Novedades sobre el jugador de NFL",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"tosoundlikethegoodguy": {
+"id": "tosoundlikethegoodguy",
+"titulo": "To sound like the good guy — Debate sobre narrativa personal",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"mediaday": {
+"id": "mediaday",
+"titulo": "Media Day — Evento de prensa deportiva",
+"tipo": "Real time",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"76ers": {
+"id": "76ers",
+"titulo": "76ers — Actualidad del equipo de la NBA",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"gov": {
+"id": "gov",
+"titulo": "gov — Búsquedas sobre servicios gubernamentales",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"니노선데이": {
+"id": "니노선데이",
+"titulo": "니노선데이 — Tendencia de entretenimiento coreano",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"nvda": {
+"id": "nvda",
+"titulo": "$NVDA — Movimientos en el mercado bursátil de NVIDIA",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"mcmsinpueblo": {
+"id": "mcmsinpueblo",
+"titulo": "#MCMSinPueblo — Conversación social y política",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"arshitalkshow": {
+"id": "arshitalkshow",
+"titulo": "Arshi Talk Show — Programa de entrevistas viral",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"amilcarolan": {
+"id": "amilcarolan",
+"titulo": "Amilcar Olan — Figura de interés periodístico",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"キャリハピ": {
+"id": "キャリハピ",
+"titulo": "キャリハピ — Tendencia de estilo de vida japonés",
+"tipo": "Estilo de vida",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"ocigavemyextrafoodtoahomelessmanthismorningthenastrangeronmyflightunexpectedlyga": {
+"id": "ocigavemyextrafoodtoahomelessmanthismorningthenastrangeronmyflightunexpectedlyga",
+"titulo": "Acto de bondad viral — Historia compartida en Reddit",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"arrolla": {
+"id": "arrolla",
+"titulo": "Arrolla — Búsqueda de tendencia en español",
+"tipo": "Consumo",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"felizdia": {
+"id": "felizdia",
+"titulo": "Feliz Día — Saludos y efemérides",
+"tipo": "Estilo de vida",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"31": {
+"id": "31",
+"titulo": "岸くん31歳 — Celebración de cumpleaños de celebridad",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"justannounced": {
+"id": "justannounced",
+"titulo": "JUST ANNOUNCED — Anuncios de lanzamientos",
+"tipo": "Real time",
+"categoria": "Consumo y Productos",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"zimbabuexrdcongo": {
+"id": "zimbabuexrdcongo",
+"titulo": "Zimbabue vs RD Congo — Encuentro deportivo internacional",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"bitcoinl1": {
+"id": "bitcoinl1",
+"titulo": "Bitcoin L1 — Novedades sobre tecnología blockchain",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"tyresemaxey": {
+"id": "tyresemaxey",
+"titulo": "Tyrese Maxey — Actualidad del jugador de la NBA",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"crianca": {
+"id": "crianca",
+"titulo": "Criança — Búsquedas relacionadas a la niñez",
+"tipo": "Estilo de vida",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"inss": {
+"id": "inss",
+"titulo": "INSS — Búsquedas sobre seguridad social",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"voutacarnapeka": {
+"id": "voutacarnapeka",
+"titulo": "Vou Tacar na Peka — Tendencia musical funk",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"britney": {
+"id": "britney",
+"titulo": "Britney — Actualidad sobre la artista pop",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"thelastofus": {
+"id": "thelastofus",
+"titulo": "The Last of Us — Interés en la franquicia de juegos/serie",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"闇古戦場": {
+"id": "闇古戦場",
+"titulo": "闇古戦場 — Evento de juego online",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"starlinkv3": {
+"id": "starlinkv3",
+"titulo": "Starlink V3 — Avances en tecnología satelital",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"jjmccarthy": {
+"id": "jjmccarthy",
+"titulo": "JJ McCarthy — Actualidad deportiva",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"chasethedreamwithjxj": {
+"id": "chasethedreamwithjxj",
+"titulo": "CHASE THE DREAM WITH JXJ — Campaña o contenido de marca",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"mikepreston": {
+"id": "mikepreston",
+"titulo": "Mike Preston — Análisis deportivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"ukrainewouldgoduckhuntingwithgermantanksandsupplylineswithdrones": {
+"id": "ukrainewouldgoduckhuntingwithgermantanksandsupplylineswithdrones",
+"titulo": "Análisis geopolítico — Debate sobre conflicto bélico",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"zimbabwevsdrcongo": {
+"id": "zimbabwevsdrcongo",
+"titulo": "Zimbabwe vs DR Congo — Encuentro deportivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"georgiaxucrania": {
+"id": "georgiaxucrania",
+"titulo": "Geórgia x Ucrânia — Encuentro deportivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"jenniferlovehewitt": {
+"id": "jenniferlovehewitt",
+"titulo": "Jennifer Love Hewitt — Interés en la actriz",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"openreach": {
+"id": "openreach",
+"titulo": "Openreach — Servicios de infraestructura de red",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"somebodyishappytotakeabreakfromhercone": {
+"id": "somebodyishappytotakeabreakfromhercone",
+"titulo": "Mascota recuperándose — Contenido viral de animales",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"georgiavsukraine": {
+"id": "georgiavsukraine",
+"titulo": "Georgia vs Ukraine — Encuentro deportivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"greeneaccusesgopovercaravanfears": {
+"id": "greeneaccusesgopovercaravanfears",
+"titulo": "Greene vs GOP — Controversia política",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"doordashagreesto131millionsettlementwithnewyorkcityoverwagetheftclaims": {
+"id": "doordashagreesto131millionsettlementwithnewyorkcityoverwagetheftclaims",
+"titulo": "DoorDash — Acuerdo legal por reclamos laborales",
+"tipo": "Noticia",
+"categoria": "Consumo y Productos",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"stvnews": {
+"id": "stvnews",
+"titulo": "STV News — Actualidad informativa",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"catdistributioncenter": {
+"id": "catdistributioncenter",
+"titulo": "Cat Distribution Center — Meme sobre adopción de gatos",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"deborahannwoll": {
+"id": "deborahannwoll",
+"titulo": "Deborah Ann Woll — Interés en la actriz",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"bardella": {
+"id": "bardella",
+"titulo": "Bardella — Figura de interés político",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"funkmonocleultraslowed": {
+"id": "funkmonocleultraslowed",
+"titulo": "FUNK MONOCLE (Ultra Slowed) — Tendencia musical",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"magicthegatheringrealityfractureset": {
+"id": "magicthegatheringrealityfractureset",
+"titulo": "Magic: The Gathering — Lanzamiento de nuevo set",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"portugalvs": {
+"id": "portugalvs",
+"titulo": "Portugal vs — Búsqueda de evento deportivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"posicionesdenecaxacontraclubamerica": {
+"id": "posicionesdenecaxacontraclubamerica",
+"titulo": "Necaxa vs América — Tabla de posiciones de fútbol",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"オートチューン": {
+"id": "オートチューン",
+"titulo": "オートチューン — Tendencia sobre tecnología de audio",
+"tipo": "Audio",
+"categoria": "IA y Tech",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"albertaseparatismreferendumpoll": {
+"id": "albertaseparatismreferendumpoll",
+"titulo": "Referéndum Alberta — Debate político",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"lionelmessi": {
+"id": "lionelmessi",
+"titulo": "Lionel Messi — Actualidad del astro del fútbol",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"cbcreviveshockeynightincanadawithpwhl": {
+"id": "cbcreviveshockeynightincanadawithpwhl",
+"titulo": "Hockey Night in Canada — Regreso de la liga femenina",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"meowmeowslowed": {
+"id": "meowmeowslowed",
+"titulo": "Meow Meow (Slowed) — Tendencia musical viral",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"polarvortex": {
+"id": "polarvortex",
+"titulo": "Polar Vortex — Fenómeno climático",
+"tipo": "Noticia",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"岸くん誕生日": {
+"id": "岸くん誕生日",
+"titulo": "岸くん誕生日 — Celebración de cumpleaños",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"tyresehaliburton": {
+"id": "tyresehaliburton",
+"titulo": "Tyrese Haliburton — Actualidad deportiva NBA",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"asta": {
+"id": "asta",
+"titulo": "Asta — tendencia viral en X sobre el personaje de Black Clover",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"eclipser": {
+"id": "eclipser",
+"titulo": "ECLIPSER — tendencia de gaming y cultura pop vinculada a Pinky Smash",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"broughthomethisbeautyqueenyesterday": {
+"id": "broughthomethisbeautyqueenyesterday",
+"titulo": "Brought home this beauty queen — tendencia sobre mascotas o autos",
+"tipo": "Estilo de vida",
+"categoria": "Otros",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"msrachelpostedasearingstatementongazatrytoconvinceyourselfthatitiscontroversialt": {
+"id": "msrachelpostedasearingstatementongazatrytoconvinceyourselfthatitiscontroversialt",
+"titulo": "Ms. Rachel sobre Gaza — declaración viral sobre crisis humanitaria",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"youtuberaswanthkokhasbeentakenintopolicecustodyaftercausinganaccidentwhiledrivin": {
+"id": "youtuberaswanthkokhasbeentakenintopolicecustodyaftercausinganaccidentwhiledrivin",
+"titulo": "Arresto de Aswanth Kok — noticia sobre influencer y accidente vial",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"lipreaderexposesdonaldtrumpschillingfourwordthreatashesnuggleswithnatalieharp": {
+"id": "lipreaderexposesdonaldtrumpschillingfourwordthreatashesnuggleswithnatalieharp",
+"titulo": "Trump y Natalie Harp — análisis de lectura de labios sobre amenaza",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"hernameisscraperandshelovestodangle": {
+"id": "hernameisscraperandshelovestodangle",
+"titulo": "Scraper — tendencia sobre una mascota que ama colgarse",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"whatacoincidence": {
+"id": "whatacoincidence",
+"titulo": "What a coincidence — frase irónica usada como formato de meme",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"allisaidwasiwasntexcitedforgta6": {
+"id": "allisaidwasiwasntexcitedforgta6",
+"titulo": "GTA 6 — debate viral sobre expectativas del videojuego",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"browhatt": {
+"id": "browhatt",
+"titulo": "Bro whatt — expresión de sorpresa usada en reacciones virales",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"ourboyisgoingviralwiththenormiesforbasedtakes": {
+"id": "ourboyisgoingviralwiththenormiesforbasedtakes",
+"titulo": "Based takes — tendencia sobre opiniones virales y polémicas",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"thefirstsuperemotionalfamilyguy": {
+"id": "thefirstsuperemotionalfamilyguy",
+"titulo": "Family Guy emocional — tendencia sobre clips virales de la serie",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"cantarguewithfacts": {
+"id": "cantarguewithfacts",
+"titulo": "Can't argue with facts — formato de meme sobre verdades irrefutables",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"kachelmannliefertab": {
+"id": "kachelmannliefertab",
+"titulo": "Kachelmann liefert ab — tendencia sobre el meteorólogo alemán",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"whatwasgoingthroughhismind": {
+"id": "whatwasgoingthroughhismind",
+"titulo": "What was going through his mind — formato de video de reacción",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"yunglean": {
+"id": "yunglean",
+"titulo": "Yung Lean — tendencia musical sobre el artista de sad rap",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"planbfronteo": {
+"id": "planbfronteo",
+"titulo": "Plan B - Fronteo — tendencia de música urbana en Spotify",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1790612594.7144613,
+"lite": true
+},
+"japonvs": {
+"id": "japonvs",
+"titulo": "Japón vs — tendencia de búsqueda sobre eventos deportivos",
+"tipo": "Real time",
+"categoria": "Deportes",
+"ts": 1790612594.7144613,
 "lite": true
 }
 }
