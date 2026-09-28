@@ -2,7 +2,7 @@ import json
 import re
 import sqlite3
 import unicodedata
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 DB = Path(__file__).with_name("radar.db")
@@ -29,7 +29,14 @@ TIKTOK_INDUSTRY = {
     "Travel": "Cultura y Memes",
     "Life": "Bienestar y Fitness",
 }
-EXPERIENCE_FRIENDLY = {"Belleza y Moda", "Comida y Bebida", "Bienestar y Fitness", "IA y Tech", "Música y Entretenimiento", "Cultura y Memes"}
+SOURCE_CATEGORY = {
+    "Memes": "Cultura y Memes",
+    "Mercado Libre": "Consumo y Productos",
+    "YouTube": "Música y Entretenimiento",
+    "Shorts": "Música y Entretenimiento",
+    "Spotify": "Música y Entretenimiento",
+}
+EXPERIENCE_FRIENDLY = {"Consumo y Productos", "Belleza y Moda", "Comida y Bebida", "Bienestar y Fitness", "IA y Tech", "Música y Entretenimiento", "Cultura y Memes"}
 
 
 def norm(s):
@@ -45,6 +52,17 @@ def categorize(text):
     if text.startswith("#") or "what is going on" in t or "meme" in t or "what's going on" in t:
         return "Cultura y Memes"
     return "Otros"
+
+
+MONTHS = {"ene": 1, "feb": 2, "mar": 3, "abr": 4, "may": 5, "jun": 6, "jul": 7, "ago": 8, "sep": 9, "oct": 10, "nov": 11, "dic": 12}
+
+
+def days_since(spanish_date):
+    """'17 sept 2026' -> days ago."""
+    m = re.match(r"(\d{1,2}) ([a-z]{3})\w*\.? (\d{4})", spanish_date.lower())
+    if not m or m.group(2) not in MONTHS:
+        return None
+    return (date.today() - date(int(m.group(3)), MONTHS[m.group(2)], int(m.group(1)))).days
 
 
 def stage_for(t):
@@ -66,6 +84,23 @@ def stage_for(t):
         if t["first_seen_hours"] <= 6 and n < 50e6:
             return "Emergente"
         return "Pico" if n >= 100e6 else "Creciendo"
+    if t["source"] in ("Shorts", "Spotify"):
+        e = t["extra"]
+        days = e.get("days_on_chart", 99)
+        prev = e.get("rank_prev_day")
+        climbed = (prev - t["rank"]) if prev else 0
+        if e.get("is_new") or e.get("change", "").upper() in ("NEW", "RE") or days <= 3:
+            return "Emergente"
+        if climbed >= 5 or e.get("change", "").startswith("+") or days <= 10:
+            return "Creciendo"
+        return "Saturado" if days > 45 else "Pico"
+    if t["source"] == "YouTube":
+        age = days_since(t["extra"].get("released", ""))
+        if age is None:
+            return "Pico"
+        return "Emergente" if age <= 3 else "Creciendo" if age <= 10 else "Pico"
+    if t["source"] in ("Mercado Libre", "Wikipedia"):
+        return "Creciendo"
     if t["source"] in ("Memes", "Bluesky"):
         h = t["first_seen_hours"]
         return "Emergente" if h <= 24 else "Creciendo" if h <= 72 else "Pico"
@@ -195,7 +230,7 @@ def analyze():
     trends = load_latest(conn)
     conn.close()
     for t in trends:
-        t["category"] = "Cultura y Memes" if t["source"] == "Memes" else categorize(t["keyword"] + " " + t["extra"].get("news", ""))
+        t["category"] = SOURCE_CATEGORY.get(t["source"]) or categorize(t["keyword"] + " " + t["extra"].get("news", ""))
         if t["category"] in ("Otros", "Cultura y Memes") and t["extra"].get("industry") in TIKTOK_INDUSTRY:
             t["category"] = TIKTOK_INDUSTRY[t["extra"]["industry"]]
         t["stage"] = stage_for(t)

@@ -220,8 +220,98 @@ def browser_sources(tiktok_countries=TIKTOK_COUNTRIES, google_geos=GOOGLE_GEOS):
                     results[f"Google {geo}"] = google_trends(geo)  # RSS fallback
                 except Exception as e:
                     results[f"Google {geo}"] = f"FALLA: {type(e).__name__}: {e}"
+        for name, fn in (("Mercado Libre AR", _mercadolibre), ("YouTube AR", _youtube_music), ("Shorts AR", _youtube_shorts)):
+            try:
+                results[name] = fn(page)
+            except Exception as e:
+                results[name] = f"FALLA: {type(e).__name__}: {e}"
         browser.close()
     return results
+
+
+def _lines(page):
+    return [l.strip() for l in page.locator("body").inner_text().splitlines() if l.strip()]
+
+
+def _mercadolibre(page):
+    page.goto("https://tendencias.mercadolibre.com.ar/", timeout=60000)
+    page.get_by_text("MÁS DESEADA").first.wait_for(timeout=30000)
+    lines, out = _lines(page), []
+    for i, l in enumerate(lines[:-1]):
+        m = re.fullmatch(r"(\d+)º MÁS (DESEADA|POPULAR)", l)
+        if m:
+            kind = "Más deseada" if m.group(2) == "DESEADA" else "Más popular"
+            kw = lines[i + 1]
+            out.append(item("Mercado Libre", "AR", kw, int(m.group(1)), traffic=kind,
+                            url="https://listado.mercadolibre.com.ar/" + urllib.parse.quote(kw.lower().replace(" ", "-")),
+                            extra={"kind": kind}))
+    return out
+
+
+def _youtube_music(page):
+    page.goto("https://charts.youtube.com/charts/TrendingVideos/ar/RightNow", timeout=60000)
+    page.get_by_text("Clasificación").first.wait_for(timeout=30000)
+    page.wait_for_timeout(2000)
+    lines, out = _lines(page), []
+    for i in range(len(lines) - 3):
+        if lines[i].isdigit() and int(lines[i]) == len(out) + 1 and re.search(r"\d{4}$", lines[i + 3]):
+            title, artist = lines[i + 1], lines[i + 2]
+            out.append(item("YouTube", "AR", title, int(lines[i]), traffic=artist,
+                            url="https://www.youtube.com/results?search_query=" + urllib.parse.quote(f"{title} {artist}"),
+                            extra={"artist": artist, "released": lines[i + 3]}))
+    return out[:30]
+
+
+def _youtube_shorts(page):
+    """Daily chart of the songs creators use most in Shorts: rank, change (● = same/new), title, artist, yesterday, days."""
+    page.goto("https://charts.youtube.com/charts/TopShortsSongs/ar/daily", timeout=60000)
+    page.get_by_text("Clasificación").first.wait_for(timeout=30000)
+    page.wait_for_timeout(2000)
+    lines, out = _lines(page), []
+    rows = lines[lines.index("Días en el gráfico") + 1 :]
+    for k in range(0, len(rows) - 5, 6):
+        rank, change, title, artist, yesterday, days = rows[k : k + 6]
+        if not (rank.isdigit() and days.isdigit()):
+            break
+        is_new = change.lower() in ("new", "nuevo")
+        out.append(item("Shorts", "AR", title, int(rank),
+                        traffic=f"{artist} · " + ("entró hoy" if is_new else f"{days} días"),
+                        url="https://www.youtube.com/results?search_query=" + urllib.parse.quote(f"{title} {artist}"),
+                        extra={"artist": artist, "is_new": is_new,
+                               "rank_prev_day": int(yesterday) if yesterday.isdigit() else None, "days_on_chart": int(days)}))
+    return out[:40]
+
+
+def spotify_rising(region="AR"):
+    """kworb.net mirrors Spotify's daily chart; keep new entries and big climbers."""
+    code = {"AR": "ar", "MUNDO": "global"}[region]
+    page = _get(f"https://kworb.net/spotify/country/{code}_daily.html")
+    rows = re.findall(r'<tr><td class="np">(\d+)</td>\s*<td class="np">([^<]*)</td>\s*<td class="text mp"><div>(.*?)</div></td>\s*<td>(\d+)</td>', page, re.S)
+    out = []
+    for pos, change, cell, days in rows:
+        name = html.unescape(re.sub(r"<[^>]+>", "", cell)).strip()
+        change = change.strip()
+        climb = int(change[1:]) if re.fullmatch(r"\+\d+", change) else 0
+        if change.upper() in ("NEW", "RE") or climb >= 10 or int(days) <= 7:
+            out.append(item("Spotify", region, name, int(pos),
+                            traffic="Entrada nueva" if change.upper() in ("NEW", "RE") else f"Subió {climb} puestos" if climb else f"{days} días",
+                            url="https://open.spotify.com/search/" + urllib.parse.quote(name),
+                            extra={"change": change, "days_on_chart": int(days)}))
+    return out[:25]
+
+
+def wikipedia_es():
+    import datetime
+    day = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y/%m/%d")
+    data = json.loads(_get(f"https://wikimedia.org/api/rest_v1/metrics/pageviews/top/es.wikipedia/all-access/{day}"))
+    out = []
+    for a in data["items"][0]["articles"]:
+        t = a["article"]
+        if ":" in t or t in ("Wikipedia", "Cleopatra") or len(out) >= 25:
+            continue
+        out.append(item("Wikipedia", "MUNDO", t.replace("_", " "), len(out) + 1, traffic=f"{a['views']:,} visitas".replace(",", "."),
+                        url="https://es.wikipedia.org/wiki/" + urllib.parse.quote(t)))
+    return out
 
 
 def know_your_meme():
@@ -249,5 +339,7 @@ def bluesky_trending():
 def all_sources():
     jobs = [(f"X {r}", lambda r=r: x_trends(r)) for r in X_REGIONS]
     jobs += [("Memes (Know Your Meme)", know_your_meme), ("Bluesky", bluesky_trending)]
+    jobs += [("Spotify AR", lambda: spotify_rising("AR")), ("Spotify Mundo", lambda: spotify_rising("MUNDO"))]
+    jobs += [("Wikipedia ES", wikipedia_es)]
     jobs += [(f"Reddit {r}", lambda r=r: reddit_rising(r)) for r in REDDIT_SUBS]
     return jobs
