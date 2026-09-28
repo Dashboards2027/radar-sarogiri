@@ -243,6 +243,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
     <label>Subir brief en archivo (PDF, TXT o MD)<input type="file" id="c-file" accept=".pdf,.txt,.md,text/plain,application/pdf"></label>
     <div class="hint" id="c-filename"></div>
     <label>Tono de voz<textarea id="c-tone" rows="3" placeholder="Ej: cercano, con humor, voseo, sin tecnicismos"></textarea></label>
+    <label>Competidores y palabras a vigilar (separadas por coma)<input type="text" id="c-watch" placeholder="Ej: Natura, L'Oréal, cabello, alisado"></label>
     <label>A dónde lo queremos llevar (posicionamiento futuro, info que no está en internet)<textarea id="c-future" rows="3"></textarea></label>
     <div><div style="font-size:13px;font-weight:600;margin-bottom:6px">Redes que le manejamos</div><div class="nets" id="c-nets"></div></div>
     <div class="actions">
@@ -284,6 +285,7 @@ const QUESTIONS=[
   {id:"brands",label:"¿Cómo la usan las marcas?"},
   {id:"why",label:"¿Por qué tiene sentido para [marca]?"},
   {id:"join",label:"¿Cómo nos sumamos? Ideas concretas"},
+  {id:"script",label:"🎬 Guion de video de 15–30 s"},
   {id:"exp",label:"Idea de experiencia presencial"},
   {id:"comp",label:"¿Qué hace la competencia?"},
 ];
@@ -329,6 +331,18 @@ function renderDates(){
     c.append(el("b",null,d.name),el("span","d",d.days===0?"¡Hoy!":`faltan ${d.days} días · ${d.date.toLocaleDateString("es-AR",{day:"numeric",month:"short"})}`),el("span","hint",d.hint));
     box.append(c);
   });
+}
+// Brand / competitor mentions: a trend that names a client or something the client wants watched.
+const norm=x=>x.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+function mentions(t){
+  const hay=" "+norm([t.keyword,titleOf(t),info(t).explanation||"",...t.members.map(m=>m.keyword)].join(" "))+" ";
+  const out=[];
+  clients.forEach(c=>{
+    const words=[c.name,...(c.watch||[])].filter(w=>w&&w.length>=3);
+    const hit=words.find(w=>new RegExp("[^a-z0-9]"+norm(w).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"[^a-z0-9]").test(hay));
+    if(hit)out.push({client:c.name,word:hit});
+  });
+  return out;
 }
 const isComing=t=>isStarting(t)&&isWorld(t)&&!isAR(t);
 const cleanKw=t=>t.keyword.replace(/^#/,"").replace(/\s+-\s+.*$/,"").slice(0,80);
@@ -408,6 +422,7 @@ function card(t,big){
   top.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category));
   if(isHot(t))top.append(el("span","hotb","🔥 HOT"));
   if(isSaved(currentClient(),t))top.append(el("span","star","★"));
+  mentions(t).forEach(m=>top.append(el("span","risk medio","📣 "+m.word+" → "+m.client)));
   if(t.risk==="alto")top.append(el("span","risk alto","⚠ Sensible"));
   else if(t.risk==="medio")top.append(el("span","risk medio","⚠ Con cuidado"));
   top.append(el("span","score",Math.round(t.score)));
@@ -466,6 +481,7 @@ function passesRest(t,skip){
   if(skip!=="stage"&&state.stage.size&&!state.stage.has(t.stage))return false;
   if(state.jump&&!t.jumped)return false;
   if(state.exp&&!t.experience_friendly)return false;
+  if(state.ment&&!mentions(t).length)return false;
   return true;
 }
 function passes(t,skip){
@@ -482,6 +498,7 @@ function passes(t,skip){
   if(skip!=="stage"&&state.stage.size&&!state.stage.has(t.stage))return false;
   if(state.jump&&!t.jumped)return false;
   if(state.exp&&!t.experience_friendly)return false;
+  if(state.ment&&!mentions(t).length)return false;
   return true;
 }
 
@@ -514,7 +531,7 @@ function renderFilters(){
   filterGroup("f-cat","Categoría","cat",[...new Set(state.data.map(t=>t.category))].sort(),(t,v)=>t.category===v);
   filterGroup("f-stage","Etapa","stage",STAGES,(t,v)=>t.stage===v);
   const g=document.getElementById("f-flags");g.replaceChildren(el("span","mono","Otros"));
-  [["jump","Solo las que saltaron"],["exp","Aptas para experiencia"]].forEach(([k,label])=>{
+  [["jump","Solo las que saltaron"],["exp","Aptas para experiencia"],["ment","📣 Mencionan marcas vigiladas"]].forEach(([k,label])=>{
     const b=el("button","fopt"+(state[k]?" on":""),label);b.type="button";b.onclick=()=>{state[k]=!state[k];render();};g.append(b);
   });
 }
@@ -716,6 +733,7 @@ REGLAS
 
 const PROMPTS={
   ideas:c=>`Dame sugerencias de contenido para subirse a esta tendencia, separadas por cada red que le manejamos a ${c.name} (${(c.networks||[]).join(", ")||"elegí las más adecuadas"}). Para cada red: formato, idea, hook de los primeros segundos o primera línea, copy de ejemplo en el tono de voz de la marca, y cuándo publicarlo (la ventana de la tendencia). Cerrá con cuál harías primero y por qué.`,
+  script:c=>`Escribí un guion de video vertical de 15 a 30 segundos para ${c.name} usando esta tendencia, en su tono de voz. Incluí: hook de los primeros 2 segundos, escenas numeradas con duración, texto en pantalla, qué se dice en off o a cámara, audio sugerido (el de la tendencia si aplica), cierre con llamado a la acción y en qué red funciona mejor.`,
   exp:c=>`Proponé 2 ideas de experiencia presencial o activación de comunidad para ${c.name} basadas en esta tendencia: concepto, formato, lugar, cantidad de gente, qué contenido sale de ahí y en qué plazo habría que hacerla.`,
 };
 
@@ -838,6 +856,7 @@ function openClient(c){
   document.getElementById("c-brief").value=c?c.brief||"":"";
   document.getElementById("c-tone").value=c?c.tone||"":"";
   document.getElementById("c-future").value=c?c.future||"":"";
+  document.getElementById("c-watch").value=c?(c.watch||[]).join(", "):"";
   document.getElementById("c-file").value="";
   document.getElementById("c-filename").textContent=c&&c.file?"Archivo cargado: "+c.file.name:"";
   nets.querySelectorAll("input").forEach(i=>i.checked=!!(c&&(c.networks||[]).includes(i.value)));
@@ -862,6 +881,7 @@ document.getElementById("client-form").onsubmit=e=>{
   const name=document.getElementById("c-name").value.trim();if(!name)return;
   const data={name,industry:document.getElementById("c-industry").value.trim(),brief:document.getElementById("c-brief").value.trim(),
     tone:document.getElementById("c-tone").value.trim(),future:document.getElementById("c-future").value.trim(),
+    watch:document.getElementById("c-watch").value.split(",").map(x=>x.trim()).filter(Boolean),
     networks:[...nets.querySelectorAll("input:checked")].map(i=>i.value)};
   if(editing){Object.assign(editing,data);if(pendingFile)editing.file=pendingFile;}
   else{const c={id:"c"+Date.now().toString(36),...data};if(pendingFile)c.file=pendingFile;clients.push(c);state.clientId=c.id;store.set("radar.client",c.id);}
