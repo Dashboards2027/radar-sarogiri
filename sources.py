@@ -314,6 +314,31 @@ def wikipedia_es():
     return out
 
 
+def instagram_audio():
+    """CreatorDB's free weekly chart of trending Reels audio (no Instagram login needed)."""
+    page = _get("https://creatordb.app/free-tools/trending-instagram-audio/")
+    text = re.sub(r"<script.*?</script>|<style.*?</style>", "", page, flags=re.S)
+    text = html.unescape(re.sub(r"<[^>]+>", "|", text))
+    cells = [c.strip() for c in re.split(r"\|+", re.sub(r"\s+", " ", text)) if c.strip()]
+    chart = cells[cells.index("Reels") + 1 :] if "Reels" in cells else []
+    formats = {}
+    if "How creators are using every sound, in plain words" in cells:
+        f = cells[cells.index("How creators are using every sound, in plain words") + 1 :]
+        for k in range(len(f) - 5):
+            if f[k].isdigit() and f[k + 3].startswith("Heat"):
+                formats[f[k + 1]] = f[k + 5]
+    out = []
+    for k in range(0, len(chart) - 7, 8):
+        rank, audio, artist, fmt, heat, momentum, also, reels = chart[k : k + 8]
+        if not (rank.isdigit() and heat.isdigit()):
+            break
+        out.append(item("Instagram", "MUNDO", audio, int(rank), traffic=f"{artist} · {reels} reels",
+                        url="https://www.instagram.com/explore/search/keyword/?q=" + urllib.parse.quote(f"{audio} {artist}"),
+                        extra={"artist": artist, "format": fmt, "heat": int(heat), "momentum": momentum,
+                               "also": also, "reels": reels, "news": f"Formato: {fmt}. {formats.get(audio, '')}".strip()}))
+    return out
+
+
 def know_your_meme():
     page = _get("https://knowyourmeme.com/memes/submissions")
     out = []
@@ -339,6 +364,7 @@ def bluesky_trending():
 def all_sources():
     jobs = [(f"X {r}", lambda r=r: x_trends(r)) for r in X_REGIONS]
     jobs += [("Memes (Know Your Meme)", know_your_meme), ("Bluesky", bluesky_trending)]
+    jobs += [("Instagram (audios de Reels)", instagram_audio)]
     jobs += [("Spotify AR", lambda: spotify_rising("AR")), ("Spotify Mundo", lambda: spotify_rising("MUNDO"))]
     jobs += [("Wikipedia ES", wikipedia_es)]
     jobs += [(f"Reddit {r}", lambda r=r: reddit_rising(r)) for r in REDDIT_SUBS]

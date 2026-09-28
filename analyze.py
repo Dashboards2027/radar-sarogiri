@@ -34,6 +34,7 @@ SOURCE_CATEGORY = {
     "Mercado Libre": "Consumo y Productos",
     "YouTube": "Música y Entretenimiento",
     "Shorts": "Música y Entretenimiento",
+    "Instagram": "Música y Entretenimiento",
     "Spotify": "Música y Entretenimiento",
 }
 EXPERIENCE_FRIENDLY = {"Consumo y Productos", "Belleza y Moda", "Comida y Bebida", "Bienestar y Fitness", "IA y Tech", "Música y Entretenimiento", "Cultura y Memes"}
@@ -96,6 +97,9 @@ def stage_for(t):
         if climbed >= 15 or days <= 7:
             return "Creciendo"
         return "Saturado" if days > 45 else "Pico"
+    if t["source"] == "Instagram":
+        m = t["extra"].get("momentum", "").lower()
+        return "Emergente" if m in ("new", "nuevo") else "Creciendo" if m == "rising" else "Pico"
     if t["source"] == "YouTube":
         age = days_since(t["extra"].get("released", ""))
         if age is None:

@@ -76,7 +76,7 @@ h2{font-family:"Archivo Black";font-size:22px;margin:0 0 2px;color:var(--blue);t
 .b-Emergente{background:var(--emergente)} .b-Creciendo{background:var(--creciendo)} .b-Pico{background:var(--pico)} .b-Saturado{background:var(--saturado)}
 .cat{border-radius:999px;padding:3px 9px;font-size:12px;background:var(--blue-soft);color:var(--blue)}
 .plat{border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;color:#fff}
-.p-X{background:var(--x);color:var(--paper)} .p-Google{background:var(--google)} .p-Reddit{background:var(--reddit)} .p-TikTok{background:var(--tiktok)} .p-Memes{background:var(--memes)} .p-Bluesky{background:var(--bluesky)} .p-YouTube,.p-Shorts{background:var(--youtube)} .p-Spotify{background:var(--spotify)} .p-MercadoLibre{background:var(--ml);color:#141414} .p-Wikipedia{background:var(--wiki)}
+.p-X{background:var(--x);color:var(--paper)} .p-Google{background:var(--google)} .p-Reddit{background:var(--reddit)} .p-TikTok{background:var(--tiktok)} .p-Memes{background:var(--memes)} .p-Bluesky{background:var(--bluesky)} .p-YouTube,.p-Shorts{background:var(--youtube)} .p-Spotify{background:var(--spotify)} .p-Instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)} .p-MercadoLibre{background:var(--ml);color:#141414} .p-Wikipedia{background:var(--wiki)}
 .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--line);max-width:100%}
 .ar{border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;background:#75aadb;color:#fff}
 .flag{font-size:12px;color:var(--emergente);font-weight:600}
@@ -242,7 +242,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
 <script src="clients.js"></script>
 <script>
 const STAGES=["Emergente","Creciendo","Pico","Saturado"];
-const SOURCES=["X","TikTok","Google","Shorts","YouTube","Spotify","Mercado Libre","Reddit","Memes","Bluesky","Wikipedia"];
+const SOURCES=["X","TikTok","Instagram","Google","Shorts","YouTube","Spotify","Mercado Libre","Reddit","Memes","Bluesky","Wikipedia"];
 const platCls=p=>"plat p-"+p.replace(/\s+/g,"");
 const NETWORKS=["Instagram","TikTok","X","YouTube","LinkedIn","Facebook","Threads","Pinterest"];
 const REGION_LABEL={AR:"Argentina",MUNDO:"Mundo",US:"EE.UU.",GB:"Reino Unido",BR:"Brasil",MX:"México",ES:"España",EXPLICA:"OutOfTheLoop"};
@@ -364,6 +364,7 @@ function card(t,big){
   else if(t.source==="Google"&&t.extra.started_hours_ago!=null){bits.push(`Arrancó hace ${t.extra.started_hours_ago<1?"menos de 1":t.extra.started_hours_ago}h en Google ${regionName(t.region)}`);if(t.extra.growth)bits.push("+"+t.extra.growth);if(t.extra.active===false)bits.push("ya terminó");}
   else if(t.source==="Memes")bits.push("Formato nuevo en Know Your Meme");
   else if(t.source==="Shorts"){const e=t.extra;bits.push(`#${t.rank} en audios de Shorts AR`);if(e.is_new)bits.push("entró hoy");else if(e.rank_prev_day&&e.rank_prev_day>t.rank)bits.push(`subió desde #${e.rank_prev_day}`);}
+  else if(t.source==="Instagram")bits.push(`#${t.rank} en audios de Reels · formato «${t.extra.format}» · ${t.extra.momentum==="Rising"?"subiendo":t.extra.momentum}`);
   else if(t.source==="YouTube")bits.push(`#${t.rank} en YouTube AR · salió el ${t.extra.released}`);
   else if(t.source==="Spotify")bits.push(`#${t.rank} en Spotify ${regionName(t.region)}`);
   else if(t.source==="Mercado Libre")bits.push(`#${t.rank} ${t.extra.kind.toLowerCase()} en Mercado Libre`);
