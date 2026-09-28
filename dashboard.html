@@ -54,7 +54,17 @@ h2{font-family:"Archivo Black";font-size:22px;margin:0 0 2px;color:var(--blue);t
 .card:hover{border-color:var(--blue)}
 .card.big{border:2px solid var(--blue)}
 .card.sel{box-shadow:0 0 0 3px var(--blue)}
-.card .kw{font-family:"Archivo Black";font-size:18px;line-height:1.15;word-break:break-word}
+.card .kw{font-family:"Archivo Black";font-size:18px;line-height:1.15;word-break:break-word;text-wrap:balance}
+.orig{font-family:"Space Mono",monospace;font-size:11px;color:var(--muted);word-break:break-word}
+.exp{font-size:14px;line-height:1.45;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card.big .exp{-webkit-line-clamp:4}
+.tags{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)}
+.type{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:6px;padding:2px 6px;color:var(--muted)}
+.hotb{border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;background:var(--emergente);color:#fff}
+.pexp{font-size:14px;line-height:1.5}
+.qtoggle{align-self:flex-start;background:none;border:0;padding:0;color:var(--blue);font-size:13px;text-decoration:underline}
+.brandhead{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brandhead b{color:var(--emergente)}
 .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .badge{border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600;color:#fff}
 .b-Emergente{background:var(--emergente)} .b-Creciendo{background:var(--creciendo)} .b-Pico{background:var(--pico)} .b-Saturado{background:var(--saturado)}
@@ -139,9 +149,11 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
 <div class="layout">
   <aside class="filters" aria-label="Filtros">
     <input type="search" id="q" placeholder="Buscar tendencia…" aria-label="Buscar tendencia">
+    <div class="fgroup" id="f-moment"></div>
     <div class="fgroup" id="f-region"></div>
     <div class="fgroup" id="f-source"></div>
     <div class="fgroup" id="f-cat"></div>
+    <div class="fgroup" id="f-type"></div>
     <div class="fgroup" id="f-stage"></div>
     <div class="fgroup" id="f-flags"></div>
     <button class="clear" id="clear" type="button">Limpiar filtros</button>
@@ -245,8 +257,13 @@ const store={
   get(k,def){try{const v=localStorage.getItem(k);return v==null?def:JSON.parse(v);}catch(e){return def;}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){return false;}},
 };
-const state={data:[],q:"",region:new Set(["AR"]),source:new Set(),cat:new Set(),stage:new Set(),jump:false,exp:false,open:new Set(),
-  trend:null,clientId:store.get("radar.client",null),chats:{},busy:false};
+const state={data:[],q:"",moment:"all",region:new Set(["AR"]),source:new Set(),cat:new Set(),type:new Set(),stage:new Set(),jump:false,exp:false,open:new Set(),
+  trend:null,clientId:store.get("radar.client",null),chats:{},busy:false,showQs:true,explaining:null,hotCut:Infinity};
+const explained=store.get("radar.explain",{});
+const info=t=>t.explanation?t:(explained[trendId(t)]||{});
+const titleOf=t=>info(t).title||t.keyword;
+const isStarting=t=>t.stage==="Emergente"||t.stage==="Creciendo";
+const isHot=t=>isStarting(t)&&t.score>=state.hotCut;
 let clients=store.get("radar.clients",null)||JSON.parse(JSON.stringify(window.SEED_CLIENTS||[]));
 
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
@@ -269,10 +286,20 @@ const trendId=t=>t.source+"|"+t.region+"|"+t.keyword;
 
 function card(t,big){
   const c=el("article","card"+(big?" big":"")+(state.trend&&trendId(state.trend)===trendId(t)?" sel":""));
-  const top=el("div","row");top.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category),el("span","score",Math.round(t.score)));
+  const top=el("div","row");
+  const ty=info(t).type;
+  if(ty)top.append(el("span","type",ty));
+  top.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category));
+  if(isHot(t))top.append(el("span","hotb","🔥 HOT"));
+  top.append(el("span","score",Math.round(t.score)));
   c.append(top);
   if(t.extra&&t.extra.image&&/^https:\/\//.test(t.extra.image)){const im=el("img","thumb");im.src=t.extra.image;im.alt=t.keyword;im.loading="lazy";im.referrerPolicy="no-referrer";c.append(im);}
-  c.append(el("div","kw",t.keyword));
+  c.append(el("div","kw",titleOf(t)));
+  if(titleOf(t)!==t.keyword)c.append(el("div","orig",t.keyword));
+  const ex=info(t).explanation;
+  if(ex)c.append(el("div","exp",ex));
+  const hs=info(t).hashtags;
+  if(hs&&hs.length){const tg=el("div","tags");hs.forEach(h=>tg.append(el("span",null,h)));c.append(tg);}
   const plats=el("div","row");
   if(isAR(t))plats.append(el("span","ar","AR"));
   t.platforms.forEach(p=>plats.append(el("span",platCls(p),p)));
@@ -310,7 +337,10 @@ function card(t,big){
 }
 
 function passes(t,skip){
-  if(state.q&&!(t.keyword+" "+t.members.map(m=>m.keyword).join(" ")).toLowerCase().includes(state.q))return false;
+  if(state.q&&!(t.keyword+" "+titleOf(t)+" "+(info(t).explanation||"")+" "+t.members.map(m=>m.keyword).join(" ")).toLowerCase().includes(state.q))return false;
+  if(skip!=="moment"&&state.moment==="start"&&!isStarting(t))return false;
+  if(skip!=="moment"&&state.moment==="hot"&&!isHot(t))return false;
+  if(skip!=="type"&&state.type.size&&!state.type.has(info(t).type))return false;
   if(skip!=="region"&&state.region.size&&!((state.region.has("AR")&&isAR(t))||(state.region.has("MUNDO")&&isWorld(t))))return false;
   if(skip!=="source"&&state.source.size&&!t.platforms.some(p=>state.source.has(p)))return false;
   if(skip!=="cat"&&state.cat.size&&!state.cat.has(t.category))return false;
@@ -332,6 +362,15 @@ function filterGroup(id,title,key,values,test,labels){
   });
 }
 function renderFilters(){
+  const gm=document.getElementById("f-moment");gm.replaceChildren(el("span","mono","Momento"));
+  const pool=state.data.filter(t=>passes(t,"moment"));
+  [["all","Todas",pool.length],["start","🚀 Arrancando ahora",pool.filter(isStarting).length],["hot","🔥 Solo HOT",pool.filter(isHot).length]].forEach(([v,label,n])=>{
+    const b=el("button","fopt"+(state.moment===v?" on":""));b.type="button";b.append(el("span",null,label),el("span","n",n));
+    b.onclick=()=>{state.moment=v;render();};gm.append(b);
+  });
+  const types=[...new Set(state.data.map(t=>info(t).type).filter(Boolean))].sort();
+  if(types.length)filterGroup("f-type","Tipo","type",types,(t,v)=>info(t).type===v);
+  else document.getElementById("f-type").replaceChildren();
   filterGroup("f-region","Zona","region",["AR","MUNDO"],(t,v)=>v==="AR"?isAR(t):isWorld(t),{AR:"Argentina",MUNDO:"Mundo"});
   filterGroup("f-source","Plataforma","source",SOURCES,(t,v)=>t.platforms.includes(v));
   filterGroup("f-cat","Categoría","cat",[...new Set(state.data.map(t=>t.category))].sort(),(t,v)=>t.category===v);
@@ -343,6 +382,8 @@ function renderFilters(){
 }
 
 function render(){
+  const sc=state.data.map(t=>t.score).sort((a,b)=>b-a);
+  state.hotCut=sc.length?sc[Math.min(sc.length-1,Math.floor(sc.length*0.12))]:Infinity;
   renderFilters();
   const list=state.data.filter(t=>passes(t));
   document.getElementById("k-total").textContent=list.length;
@@ -365,7 +406,8 @@ const currentClient=()=>clients.find(c=>c.id===state.clientId)||null;
 const chatKey=()=>state.trend&&state.clientId?trendId(state.trend)+"::"+state.clientId:null;
 
 function selectTrend(t){
-  state.trend=t;render();renderPanel();
+  state.trend=t;state.showQs=true;render();renderPanel();
+  if(!info(t).explanation&&store.get("radar.key",""))explainTrend(t);
   if(window.matchMedia("(max-width:1250px)").matches)document.querySelector(".panel").scrollIntoView({behavior:"smooth"});
 }
 
@@ -373,9 +415,14 @@ function renderPanel(){
   const box=document.getElementById("p-trend");box.replaceChildren();
   if(state.trend){
     const t=state.trend;
-    box.append(el("span","mono","Analizando"),el("div","kw",t.keyword));
-    const r=el("div","row");r.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category));t.platforms.forEach(p=>r.append(el("span",platCls(p),p)));
-    box.append(r,el("div","meta","En: "+t.seen_in.map(s=>{const[a,b]=s.split(" ");return a+" "+regionName(b);}).join(", ")));
+    box.append(el("span","mono","Analizando"),el("div","kw",titleOf(t)));
+    if(titleOf(t)!==t.keyword)box.append(el("div","orig",t.keyword));
+    const r=el("div","row");if(info(t).type)r.append(el("span","type",info(t).type));r.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category));t.platforms.forEach(p=>r.append(el("span",platCls(p),p)));
+    box.append(r);
+    if(info(t).explanation)box.append(el("div","pexp",info(t).explanation));
+    else if(state.explaining===trendId(t)){const w=el("div","hint");w.append(el("span","loading"),document.createTextNode(" Buscando de qué se trata…"));box.append(w);}
+    else if(store.get("radar.key","")){const b=el("button","qtoggle","Explicar esta tendencia");b.type="button";b.onclick=()=>explainTrend(t);box.append(b);}
+    box.append(el("div","meta","En: "+t.seen_in.map(s=>{const[a,b]=s.split(" ");return a+" "+regionName(b);}).join(", ")));
   } else box.append(el("span","hint","Elegí una tendencia con «Analizar»."));
 
   const cl=document.getElementById("p-clients");cl.replaceChildren();
@@ -392,7 +439,13 @@ function renderPanel(){
   const brand=cur?cur.name:"la marca";
   const qs=document.getElementById("p-qs");qs.replaceChildren();
   const ready=!!(state.trend&&cur)&&!state.busy;
-  QUESTIONS.forEach(q=>{
+  const history=state.chats[chatKey()]||[];
+  if(history.length){
+    const head=el("div","brandhead");head.append(document.createTextNode("Marca: "),el("b",null,cur?cur.name:""));qs.append(head);
+    const tg=el("button","qtoggle",state.showQs?"Ocultar opciones":"Ver opciones");tg.type="button";
+    tg.onclick=()=>{state.showQs=!state.showQs;renderPanel();};qs.append(tg);
+  }
+  if(!history.length||state.showQs)QUESTIONS.forEach(q=>{
     const b=el("button","q"+(q.main?" main":""),q.label.replace("[marca]",brand));b.type="button";b.disabled=!ready;
     b.onclick=()=>ask(q.label.replace("[marca]",brand),q.id);qs.append(b);
   });
@@ -451,7 +504,7 @@ function systemPrompt(client,trend,enhance){
   return `Sos estratega creativa de SAROGIRI, una agencia de Buenos Aires que crea contenido, comunidad y experiencias presenciales para marcas. Respondés en español rioplatense (voseo), concreto y accionable, sin relleno. Usá títulos cortos y viñetas.
 
 TENDENCIA
-"${trend.keyword}" — etapa ${trend.stage}, categoría ${trend.category}.
+"${trend.keyword}" — etapa ${trend.stage}, categoría ${trend.category}.${info(trend).explanation?"\nDe qué se trata: "+titleOf(trend)+". "+info(trend).explanation:""}
 Detectada en:
 ${members}
 ${extra.join("\n")}
@@ -489,6 +542,45 @@ async function pickFlashModel(key){
   }catch(e){return null;}
 }
 
+async function gemini(body){
+  const key=store.get("radar.key","");
+  const call=m=>fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}:generateContent`,{
+    method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":key},body:JSON.stringify(body)});
+  const chain=[...new Set([store.get("radar.model",DEFAULT_MODEL)||DEFAULT_MODEL,...FALLBACK_MODELS])];
+  let r;
+  for(const m of chain){
+    r=await call(m);
+    if(r.status===404){const picked=await pickFlashModel(key);if(picked&&!chain.includes(picked))chain.push(picked);continue;}
+    if(r.status!==503&&r.status!==429&&r.status!==500)break;
+  }
+  const j=await r.json();
+  if(!r.ok){
+    const msg=(j.error&&j.error.message)||r.statusText;
+    throw new Error(r.status===429?"Se alcanzó el límite gratuito de Gemini por ahora. Probá en un rato.":r.status===503?"Gemini está saturado en este momento. Probá de nuevo en unos minutos.":r.status===400&&/API key/i.test(msg)?"La clave de Gemini no es válida. Revisala en «IA».":msg);
+  }
+  return j;
+}
+
+async function explainTrend(t){
+  const id=trendId(t);
+  if(state.explaining)return;
+  state.explaining=id;renderPanel();
+  const src=t.members.slice(0,6).map(m=>`${m.source} ${regionName(m.region)} #${m.rank} "${m.keyword}"`).join("; ");
+  const ctx=(t.extra&&(t.extra.news||t.extra.artist))||"";
+  try{
+    const j=await gemini({
+      contents:[{role:"user",parts:[{text:`Explicá esta tendencia para una agencia creativa argentina. Tendencia: "${t.keyword}". Aparece en: ${src}.${ctx?" Contexto: "+ctx:""}
+Buscá en Google qué es y por qué está en tendencia hoy. Respondé SOLO un JSON con: "titulo" (formato "Nombre — de qué se trata", máx. 80 caracteres), "explicacion" (2 o 3 oraciones en español rioplatense: qué es, por qué está en tendencia ahora y cómo podría sumarse una marca, o "No conviene para marcas" si es tragedia, política o polémica), "tipo" (Formato, Audio, Real time, Cultura pop, Humor, Estilo de vida, Consumo o Noticia).`}]}],
+      tools:[{google_search:{}}]});
+    const txt=(((j.candidates||[])[0]||{}).content||{parts:[]}).parts.map(p=>p.text||"").join("");
+    const m=txt.match(/\{[\s\S]*\}/);
+    let d={};try{d=m?JSON.parse(m[0]):{};}catch(e){}
+    explained[id]={title:d.titulo||t.keyword,explanation:d.explicacion||txt.trim().slice(0,500),type:d.tipo||null};
+    store.set("radar.explain",explained);
+  }catch(e){toast(e.message||"No se pudo explicar la tendencia");}
+  state.explaining=null;render();renderPanel();
+}
+
 async function ask(text,qid){
   const client=currentClient(),trend=state.trend,key=store.get("radar.key","");
   if(!client||!trend)return;
@@ -506,25 +598,12 @@ async function ask(text,qid){
     });
     const body={system_instruction:{parts:[{text:systemPrompt(client,trend,enhance)}]},contents};
     if(enhance)body.tools=[{google_search:{}}];
-    const call=m=>fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}:generateContent`,{
-      method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":key},body:JSON.stringify(body)});
-    // Free-tier models get overloaded (503) or hit quota (429); fall through a chain of free Flash models.
-    const chain=[...new Set([store.get("radar.model",DEFAULT_MODEL)||DEFAULT_MODEL,...FALLBACK_MODELS])];
-    let r;
-    for(const m of chain){
-      r=await call(m);
-      if(r.status===404){const picked=await pickFlashModel(key);if(picked&&!chain.includes(picked))chain.push(picked);continue;}
-      if(r.status!==503&&r.status!==429&&r.status!==500)break;
-    }
-    const j=await r.json();
-    if(!r.ok){
-      const msg=(j.error&&j.error.message)||r.statusText;
-      throw new Error(r.status===429?"Se alcanzó el límite gratuito de Gemini por ahora. Probá en un rato.":r.status===503?"Gemini está saturado en este momento. Probá de nuevo en unos minutos.":r.status===400&&/API key/i.test(msg)?"La clave de Gemini no es válida. Revisala en «IA».":msg);
-    }
+    const j=await gemini(body);
     const cand=(j.candidates||[])[0];
     const out=cand&&cand.content&&cand.content.parts?cand.content.parts.map(p=>p.text||"").join(""):"";
     const sources=((cand&&cand.groundingMetadata&&cand.groundingMetadata.groundingChunks)||[]).map(c=>c.web).filter(Boolean);
     hist.push({role:"model",text:out||"No hubo respuesta. Probá reformular la pregunta.",sources});
+    state.showQs=false;
   }catch(e){
     hist.pop();toast(e.message||"No se pudo consultar a Gemini");
   }

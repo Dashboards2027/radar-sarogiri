@@ -223,7 +223,7 @@ def cluster(trends):
     return cards
 
 
-def analyze():
+def analyze(generate=False):
     if not DB.exists():
         return {"updated_at": None, "trends": []}
     conn = sqlite3.connect(DB)
@@ -241,12 +241,16 @@ def analyze():
         t["score"] = score(t)
     cards = cluster(trends)
     cards.sort(key=lambda t: -t["score"])
+    from explain import enrich
+    made = enrich(cards, generate=generate)
+    if generate:
+        print(f"Explicaciones nuevas con IA: {made}")
     return {"updated_at": max((t["fetched_at"] for t in trends), default=None), "trends": cards}
 
 
 def export_static(path=Path(__file__).with_name("data.js")):
     """Lets dashboard.html work when opened directly from disk, without the server."""
-    payload = json.dumps(analyze(), ensure_ascii=True).replace("</", "<\\/")
+    payload = json.dumps(analyze(generate=True), ensure_ascii=True).replace("</", "<\\/")
     path.write_text(f"window.RADAR_DATA = {payload};\n", encoding="utf-8")
 
 

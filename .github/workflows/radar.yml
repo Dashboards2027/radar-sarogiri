@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore: ["radar.db", "data.js"]
+    paths-ignore: ["radar.db", "data.js", "explanations.json"]
 
 permissions:
   contents: write
@@ -37,13 +37,15 @@ jobs:
           python -m playwright install --with-deps chromium
 
       - name: Buscar tendencias
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python collect.py
 
       - name: Guardar historial
         run: |
           git config user.name "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          git add radar.db data.js
+          touch explanations.json && git add radar.db data.js explanations.json
           git diff --cached --quiet || git commit -m "Actualizar tendencias"
           git pull --rebase -X ours || true
           git push
