@@ -111,7 +111,7 @@ dialog.prop{width:min(820px,calc(100vw - 32px))}
 .b-Emergente{background:var(--emergente)} .b-Creciendo{background:var(--creciendo)} .b-Pico{background:var(--pico)} .b-Saturado{background:var(--saturado)}
 .cat{border-radius:999px;padding:3px 9px;font-size:12px;background:var(--blue-soft);color:var(--blue)}
 .plat{border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;color:#fff}
-.p-X{background:var(--x);color:var(--paper)} .p-Google{background:var(--google)} .p-Reddit{background:var(--reddit)} .p-TikTok{background:var(--tiktok)} .p-Memes{background:var(--memes)} .p-Bluesky{background:var(--bluesky)} .p-YouTube,.p-Shorts{background:var(--youtube)} .p-Spotify{background:var(--spotify)} .p-Instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)} .p-MercadoLibre{background:var(--ml);color:#141414} .p-Wikipedia{background:var(--wiki)}
+.p-X{background:var(--x);color:var(--paper)} .p-Google{background:var(--google)} .p-Reddit{background:var(--reddit)} .p-TikTok{background:var(--tiktok)} .p-Memes{background:var(--memes)} .p-Bluesky{background:var(--bluesky)} .p-YouTube,.p-Shorts{background:var(--youtube)} .p-Spotify{background:var(--spotify)} .p-Pinterest{background:#e60023} .p-Instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)} .p-MercadoLibre{background:var(--ml);color:#141414} .p-Wikipedia{background:var(--wiki)}
 .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--line);max-width:100%}
 .ar{border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;background:#75aadb;color:#fff}
 .flag{font-size:12px;color:var(--emergente);font-weight:600}
@@ -270,7 +270,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
 <script src="clients.js"></script>
 <script>
 const STAGES=["Emergente","Creciendo","Pico","Saturado"];
-const SOURCES=["X","TikTok","Instagram","Google","Shorts","YouTube","Spotify","Mercado Libre","Reddit","Memes","Bluesky","Wikipedia"];
+const SOURCES=["X","TikTok","Instagram","Pinterest","Google","Shorts","YouTube","Spotify","Mercado Libre","Reddit","Memes","Bluesky","Wikipedia"];
 const platCls=p=>"plat p-"+p.replace(/\s+/g,"");
 const NETWORKS=["Instagram","TikTok","X","YouTube","LinkedIn","Facebook","Threads","Pinterest"];
 const REGION_LABEL={AR:"Argentina",MUNDO:"Mundo",US:"EE.UU.",GB:"Reino Unido",BR:"Brasil",MX:"México",ES:"España",EXPLICA:"OutOfTheLoop"};

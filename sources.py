@@ -12,6 +12,7 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like 
 
 X_REGIONS = {"AR": "argentina/", "MUNDO": "", "US": "united-states/"}
 GOOGLE_GEOS = ["AR", "US", "GB", "BR", "MX", "ES"]
+PINTEREST_COUNTRIES = ["AR", "MX", "US"]
 TIKTOK_COUNTRIES = ["AR", "US", "MX", "BR", "ES", "GB"]
 REDDIT_SUBS = {"MUNDO": "all", "AR": "argentina", "EXPLICA": "OutOfTheLoop"}
 
@@ -220,6 +221,11 @@ def browser_sources(tiktok_countries=TIKTOK_COUNTRIES, google_geos=GOOGLE_GEOS):
                     results[f"Google {geo}"] = google_trends(geo)  # RSS fallback
                 except Exception as e:
                     results[f"Google {geo}"] = f"FALLA: {type(e).__name__}: {e}"
+        for cc in PINTEREST_COUNTRIES:
+            try:
+                results[f"Pinterest {cc}"] = _pinterest(page, cc)
+            except Exception as e:
+                results[f"Pinterest {cc}"] = f"FALLA: {type(e).__name__}: {e}"
         for name, fn in (("Mercado Libre AR", _mercadolibre), ("YouTube AR", _youtube_music), ("Shorts AR", _youtube_shorts)):
             try:
                 results[name] = fn(page)
@@ -231,6 +237,32 @@ def browser_sources(tiktok_countries=TIKTOK_COUNTRIES, google_geos=GOOGLE_GEOS):
 
 def _lines(page):
     return [l.strip() for l in page.locator("body").inner_text().splitlines() if l.strip()]
+
+
+def _pinterest(page, cc):
+    """Pinterest Trends' fastest-growing searches; the JSON is only served to its own page."""
+    captured = []
+    handler = lambda r: captured.append(r) if "top_trends_filtered" in r.url and "trendsPreset=3" in r.url else None
+    page.on("response", handler)
+    try:
+        page.goto(f"https://trends.pinterest.com/?country={cc}", timeout=60000)
+        for _ in range(30):
+            if captured:
+                break
+            page.wait_for_timeout(500)
+        data = captured[0].json() if captured else {}
+    finally:
+        page.remove_listener("response", handler)
+    out = []
+    for v in sorted(data.get("values", []), key=lambda v: -v.get("reverseRank", 0)):
+        wow = (v.get("wow_change") or {}).get("value") or 0
+        mom = (v.get("mom_change") or {}).get("value") or 0
+        region = "AR" if cc == "AR" else cc
+        out.append(item("Pinterest", region, v["term"], len(out) + 1,
+                        traffic=f"+{round(wow)}% semana · +{round(mom)}% mes",
+                        url="https://www.pinterest.com/search/pins/?q=" + urllib.parse.quote(v["term"]),
+                        extra={"wow": wow, "mom": mom}))
+    return out
 
 
 def _mercadolibre(page):

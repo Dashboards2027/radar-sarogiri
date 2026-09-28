@@ -97,6 +97,9 @@ def stage_for(t):
         if climbed >= 15 or days <= 7:
             return "Creciendo"
         return "Saturado" if days > 45 else "Pico"
+    if t["source"] == "Pinterest":
+        wow, mom = t["extra"].get("wow", 0), t["extra"].get("mom", 0)
+        return "Emergente" if wow >= 30 else "Creciendo" if mom >= 50 else "Pico"
     if t["source"] == "Instagram":
         m = t["extra"].get("momentum", "").lower()
         return "Emergente" if m in ("new", "nuevo") else "Creciendo" if m == "rising" else "Pico"
