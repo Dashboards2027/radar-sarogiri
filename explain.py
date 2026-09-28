@@ -14,13 +14,15 @@ from analyze import norm
 
 CACHE = Path(__file__).with_name("explanations.json")
 MODELS = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest", "gemini-2.5-flash-lite"]
+# Lite models answer big classification batches much faster.
+LITE_MODELS = ["gemini-flash-lite-latest", "gemini-2.5-flash-lite", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
 TYPES = ["Formato", "Audio", "Real time", "Cultura pop", "Humor", "Estilo de vida", "Consumo", "Noticia"]
 CATEGORIES = ["Belleza y Moda", "Bienestar y Fitness", "Comida y Bebida", "Consumo y Productos", "Cultura y Memes",
               "Deportes", "IA y Tech", "Música y Entretenimiento", "Noticias y Política", "Otros"]
-BATCH = 25
+BATCH = 15
 FULL_TOP = 150       # trends that get a full explanation
-LITE_BATCH = 100     # the rest get a quick title/type/category in large batches
-MAX_CALLS_PER_RUN = 14  # keeps each hourly run well inside Gemini's free quota
+LITE_BATCH = 60      # the rest get a quick title/type/category in large batches
+MAX_CALLS_PER_RUN = 18  # keeps each hourly run well inside Gemini's free quota
 KEEP_DAYS = 10
 
 
@@ -35,19 +37,19 @@ def load_cache():
         return {}
 
 
-def _call(api_key, prompt):
+def _call(api_key, prompt, models=MODELS):
     body = json.dumps({
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {"response_mime_type": "application/json", "temperature": 0.4},
     }).encode()
     last = None
-    for model in MODELS:
+    for model in models:
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
             data=body, headers={"Content-Type": "application/json", "x-goog-api-key": api_key},
         )
         try:
-            with urllib.request.urlopen(req, timeout=90) as r:
+            with urllib.request.urlopen(req, timeout=240) as r:
                 data = json.loads(r.read())
             text = "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
             return json.loads(text)
@@ -56,6 +58,9 @@ def _call(api_key, prompt):
             if e.code in (404, 429, 500, 503):
                 continue
             raise
+        except (TimeoutError, urllib.error.URLError, json.JSONDecodeError, KeyError, IndexError) as e:
+            last = e  # slow or malformed answer: try the next model
+            continue
     raise last
 
 
@@ -100,11 +105,10 @@ def _run(api_key, batches, prompt_fn, cache, now, lite, budget):
             break
         budget[0] -= 1
         try:
-            result = _call(api_key, prompt_fn(batch))
+            result = _call(api_key, prompt_fn(batch), LITE_MODELS if lite else MODELS)
         except Exception as e:
             print(f"Gemini no respondió ({type(e).__name__}): {e}")
-            budget[0] = 0
-            break
+            continue
         for r in result if isinstance(result, list) else []:
             if isinstance(r, dict) and r.get("id"):
                 r["ts"] = now
