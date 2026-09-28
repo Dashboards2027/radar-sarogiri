@@ -10,7 +10,7 @@
 :root{
   --blue:#1f1bf2; --blue-soft:#e8e7ff; --paper:#f5f2ea; --card:#fffdf8; --ink:#141414; --muted:#6b675f; --line:#dcd6c8;
   --emergente:#ff4d2e; --creciendo:#f5a300; --pico:#1f1bf2; --saturado:#9a958b;
-  --x:#141414; --google:#1a73e8; --reddit:#ff4500; --tiktok:#ee1d52; --ok:#1d9a5b;
+  --x:#141414; --google:#1a73e8; --reddit:#ff4500; --tiktok:#ee1d52; --memes:#7a3cc9; --bluesky:#0a7aff; --ok:#1d9a5b;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --blue:#7c78ff; --blue-soft:#1d1b4a; --paper:#111114; --card:#1a1a1f; --ink:#f1efe9; --muted:#9a968d; --line:#2c2c33;
@@ -60,7 +60,8 @@ h2{font-family:"Archivo Black";font-size:22px;margin:0 0 2px;color:var(--blue);t
 .b-Emergente{background:var(--emergente)} .b-Creciendo{background:var(--creciendo)} .b-Pico{background:var(--pico)} .b-Saturado{background:var(--saturado)}
 .cat{border-radius:999px;padding:3px 9px;font-size:12px;background:var(--blue-soft);color:var(--blue)}
 .plat{border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;color:#fff}
-.p-X{background:var(--x);color:var(--paper)} .p-Google{background:var(--google)} .p-Reddit{background:var(--reddit)} .p-TikTok{background:var(--tiktok)}
+.p-X{background:var(--x);color:var(--paper)} .p-Google{background:var(--google)} .p-Reddit{background:var(--reddit)} .p-TikTok{background:var(--tiktok)} .p-Memes{background:var(--memes)} .p-Bluesky{background:var(--bluesky)}
+.thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--line);max-width:100%}
 .ar{border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;background:#75aadb;color:#fff}
 .flag{font-size:12px;color:var(--emergente);font-weight:600}
 .meta{color:var(--muted);font-size:13px}
@@ -223,7 +224,7 @@ dialog::backdrop{background:rgba(10,10,30,.55)}
 <script src="clients.js"></script>
 <script>
 const STAGES=["Emergente","Creciendo","Pico","Saturado"];
-const SOURCES=["X","TikTok","Google","Reddit"];
+const SOURCES=["X","TikTok","Google","Reddit","Memes","Bluesky"];
 const NETWORKS=["Instagram","TikTok","X","YouTube","LinkedIn","Facebook","Threads","Pinterest"];
 const REGION_LABEL={AR:"Argentina",MUNDO:"Mundo",US:"EE.UU.",GB:"Reino Unido",BR:"Brasil",MX:"México",ES:"España",EXPLICA:"OutOfTheLoop"};
 const DEFAULT_MODEL="gemini-flash-latest";
@@ -268,7 +269,9 @@ const trendId=t=>t.source+"|"+t.region+"|"+t.keyword;
 function card(t,big){
   const c=el("article","card"+(big?" big":"")+(state.trend&&trendId(state.trend)===trendId(t)?" sel":""));
   const top=el("div","row");top.append(el("span","badge b-"+t.stage,t.stage),el("span","cat",t.category),el("span","score",Math.round(t.score)));
-  c.append(top,el("div","kw",t.keyword));
+  c.append(top);
+  if(t.extra&&t.extra.image&&/^https:\/\//.test(t.extra.image)){const im=el("img","thumb");im.src=t.extra.image;im.alt=t.keyword;im.loading="lazy";im.referrerPolicy="no-referrer";c.append(im);}
+  c.append(el("div","kw",t.keyword));
   const plats=el("div","row");
   if(isAR(t))plats.append(el("span","ar","AR"));
   t.platforms.forEach(p=>plats.append(el("span","plat p-"+p,p)));
@@ -276,8 +279,11 @@ function card(t,big){
   c.append(plats);
   const bits=[];
   if(t.source==="X"){const e=t.extra;bits.push(e.is_new?"Nuevo en X esta hora":`${e.hours_in_trending}h en tendencia en X`);if(e.rank_prev_hour)bits.push(`#${e.rank_prev_hour} → #${t.rank}`);}
+  else if(t.source==="Google"&&t.extra.started_hours_ago!=null){bits.push(`Arrancó hace ${t.extra.started_hours_ago<1?"menos de 1":t.extra.started_hours_ago}h en Google ${regionName(t.region)}`);if(t.extra.growth)bits.push("+"+t.extra.growth);if(t.extra.active===false)bits.push("ya terminó");}
+  else if(t.source==="Memes")bits.push("Formato nuevo en Know Your Meme");
   else bits.push(`#${t.rank} en ${t.source} ${regionName(t.region)}`);
   if(t.traffic)bits.push(t.source==="Google"?t.traffic+" búsquedas":t.traffic);
+  if(t.source==="Bluesky"&&t.extra.news)bits.push(t.extra.news);
   c.append(el("div","meta",bits.join(" · ")));
   if(t.source==="X"&&t.extra.rank_history){const s=sparkline(t.extra.rank_history);if(s)c.append(s);}
   const id=trendId(t);
@@ -434,7 +440,9 @@ function systemPrompt(client,trend,enhance){
   const members=trend.members.map(m=>`- ${m.source} ${regionName(m.region)} · puesto #${m.rank} · "${m.keyword}"${m.traffic?" · "+m.traffic:""}`).join("\n");
   const extra=[];
   if(trend.source==="X")extra.push(`En X lleva ${trend.extra.hours_in_trending}h en tendencia (puesto anterior: ${trend.extra.rank_prev_hour||"—"}).`);
-  if(trend.extra&&trend.extra.news)extra.push("Noticia asociada: "+trend.extra.news);
+  if(trend.source==="Google"&&trend.extra.started_hours_ago!=null)extra.push(`En Google arrancó hace ${trend.extra.started_hours_ago}h, crecimiento ${trend.extra.growth||"—"}, ${trend.extra.active===false?"ya terminó":"sigue activa"}.`);
+  if(trend.source==="Memes")extra.push("Es un formato o meme nuevo documentado en Know Your Meme: "+trend.url);
+  if(trend.extra&&trend.extra.news)extra.push("Contexto / búsquedas relacionadas: "+trend.extra.news);
   return `Sos estratega creativa de SAROGIRI, una agencia de Buenos Aires que crea contenido, comunidad y experiencias presenciales para marcas. Respondés en español rioplatense (voseo), concreto y accionable, sin relleno. Usá títulos cortos y viñetas.
 
 TENDENCIA

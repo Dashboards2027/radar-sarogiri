@@ -3,7 +3,7 @@ import sqlite3
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from sources import all_sources, tiktok_trends
+from sources import all_sources, browser_sources
 
 DB = Path(__file__).with_name("radar.db")
 KEEP_DAYS = 7
@@ -51,11 +51,10 @@ def run():
         except Exception as e:
             report[name] = f"FALLA: {type(e).__name__}: {e}"
     try:
-        tiktok = tiktok_trends()
+        browser = browser_sources()
     except Exception as e:
-        tiktok = {"*": f"FALLA: {type(e).__name__}: {e}"}
-    for cc, items in tiktok.items():
-        name = f"TikTok {cc}"
+        browser = {"Navegador": f"FALLA: {type(e).__name__}: {e}"}
+    for name, items in browser.items():
         if isinstance(items, str):
             report[name] = items
             continue
@@ -86,6 +85,9 @@ if __name__ == "__main__":
             if i["source"] == "X":
                 e = i["extra"]
                 tag = " [NUEVO]" if e["is_new"] else f" ({e['hours_in_trending']}h, antes #{e['rank_prev_hour']})"
+            elif i["source"] == "Google" and "growth" in i["extra"]:
+                e = i["extra"]
+                tag = f" ({i['traffic']}, {e['growth']}, hace {e['started_hours_ago']}h, {'activa' if e['active'] else 'terminada'})"
             elif i["traffic"]:
                 tag = f" ({i['traffic']})"
             print(f"  {i['rank']:>2}. {i['keyword'][:90]}{tag}")

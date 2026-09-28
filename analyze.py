@@ -42,7 +42,7 @@ def categorize(text):
     for cat, pattern in CATEGORIES.items():
         if re.search(pattern, t):
             return cat
-    if text.startswith("#") or "what is going on" in t or "what's going on" in t:
+    if text.startswith("#") or "what is going on" in t or "meme" in t or "what's going on" in t:
         return "Cultura y Memes"
     return "Otros"
 
@@ -66,7 +66,17 @@ def stage_for(t):
         if t["first_seen_hours"] <= 6 and n < 50e6:
             return "Emergente"
         return "Pico" if n >= 100e6 else "Creciendo"
-    traffic = int(re.sub(r"\D", "", t["traffic"] or "0") or 0)
+    if t["source"] in ("Memes", "Bluesky"):
+        h = t["first_seen_hours"]
+        return "Emergente" if h <= 24 else "Creciendo" if h <= 72 else "Pico"
+    traffic = int(re.sub(r"\D", "", t["traffic"] or "0") or 0) * (1000 if "K" in t["traffic"] else 1_000_000 if "M" in t["traffic"] else 1)
+    started = t["extra"].get("started_hours_ago")
+    if started is not None:
+        if not t["extra"].get("active", True):
+            return "Saturado"
+        if started <= 4:
+            return "Emergente"
+        return "Creciendo" if started <= 12 and traffic < 500_000 else "Pico"
     if t["first_seen_hours"] <= 3 and traffic < 10000:
         return "Emergente"
     if traffic >= 10000:
@@ -96,13 +106,8 @@ def load_latest(conn):
 
 
 def cross_platform(trends):
-    keys = [(norm(t["keyword"]), t) for t in trends]
-    for k, t in keys:
-        if len(k) < 4:
-            t["seen_in"] = [f"{t['source']} {t['region']}"]
-            continue
-        hits = {f"{o['source']} {o['region']}" for k2, o in keys
-                if len(k2) >= 4 and (k in k2 or k2 in k)}
+    for t in trends:
+        hits = {f"{o['source']} {o['region']}" for o in trends if o is t or same_trend(t["keyword"], o["keyword"])}
         t["seen_in"] = sorted(hits)
 
 
@@ -119,9 +124,28 @@ def score(t):
     return s
 
 
+def words(s):
+    s = unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ignore").decode() or s.lower()
+    return tuple(re.findall(r"[a-z0-9]+", s))
+
+
+def same_trend(a, b):
+    """Same trend if the compact text matches, or the shorter phrase appears as whole words in a short-ish longer one."""
+    ka, kb = norm(a), norm(b)
+    if len(ka) >= 4 and ka == kb:
+        return True
+    wa, wb = words(a), words(b)
+    short, long_ = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+    if not short or len("".join(short)) < 5:
+        return False
+    if len(short) == 1 and len(long_) > 4:
+        return False
+    n = len(short)
+    return any(long_[i : i + n] == short for i in range(len(long_) - n + 1))
+
+
 def cluster(trends):
     """Merge items that name the same trend across sources/regions into one card."""
-    keys = [norm(t["keyword"]) for t in trends]
     parent = list(range(len(trends)))
 
     def find(i):
@@ -130,10 +154,9 @@ def cluster(trends):
             i = parent[i]
         return i
 
-    for i, a in enumerate(keys):
-        for j in range(i + 1, len(keys)):
-            b = keys[j]
-            if len(a) >= 4 and len(b) >= 4 and (a in b or b in a):
+    for i in range(len(trends)):
+        for j in range(i + 1, len(trends)):
+            if same_trend(trends[i]["keyword"], trends[j]["keyword"]):
                 parent[find(i)] = find(j)
     groups = {}
     for i, t in enumerate(trends):
@@ -172,7 +195,7 @@ def analyze():
     trends = load_latest(conn)
     conn.close()
     for t in trends:
-        t["category"] = categorize(t["keyword"] + " " + t["extra"].get("news", ""))
+        t["category"] = "Cultura y Memes" if t["source"] == "Memes" else categorize(t["keyword"] + " " + t["extra"].get("news", ""))
         if t["category"] in ("Otros", "Cultura y Memes") and t["extra"].get("industry") in TIKTOK_INDUSTRY:
             t["category"] = TIKTOK_INDUSTRY[t["extra"]["industry"]]
         t["stage"] = stage_for(t)

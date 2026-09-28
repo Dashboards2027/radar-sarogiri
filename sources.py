@@ -1,4 +1,5 @@
 import html
+import json
 import re
 import time
 import urllib.error
@@ -138,7 +139,56 @@ def _parse_tiktok(text, region):
     return out
 
 
-def tiktok_trends(countries=TIKTOK_COUNTRIES):
+def _hours_ago(text):
+    m = re.search(r"(\d+)\s*(min|hour|hora|day|d[ií]a)", text, re.I)
+    if not m:
+        return None
+    n, unit = int(m.group(1)), m.group(2).lower()
+    return round(n / 60, 1) if unit.startswith("min") else n * 24 if unit[0] == "d" else n
+
+
+def _parse_google_now(text, geo):
+    """Google Trends 'Trending now' rows: title, volume (200K+), arrow, growth %, 'N hours ago', icon, status, related..."""
+    lines = [l.strip() for l in text.splitlines() if l.strip()]
+    out = []
+    for i, line in enumerate(lines):
+        if not (re.fullmatch(r"\d[\d.,]*\s?[KMkm]?\+", line) and i > 0 and i + 4 < len(lines)):
+            continue
+        if "arrow" not in lines[i + 1]:
+            continue
+        title = lines[i - 1]
+        growth = lines[i + 2] if "%" in lines[i + 2] else ""
+        started = next((l for l in lines[i + 2 : i + 5] if _hours_ago(l) is not None), "")
+        status_idx = next((j for j in range(i + 3, min(i + 7, len(lines))) if lines[j] in ("Activa", "Active", "Duró", "Lasted")), None)
+        active = status_idx is not None and lines[status_idx] in ("Activa", "Active")
+        related = []
+        if status_idx is not None:
+            for l in lines[status_idx + 1 : status_idx + 6]:
+                if re.fullmatch(r"\d[\d.,]*\s?[KMkm]?\+", l) or l.startswith("y ") or l.startswith("+ "):
+                    break
+                related.append(l)
+            related = related[:-1] if related else related  # last one is the next row's title
+        out.append(
+            item(
+                "Google",
+                geo,
+                title,
+                len(out) + 1,
+                traffic=line,
+                url="https://www.google.com/search?q=" + urllib.parse.quote(title),
+                extra={
+                    "growth": growth,
+                    "started_hours_ago": _hours_ago(started),
+                    "active": active,
+                    "news": ", ".join(related[:3]),
+                },
+            )
+        )
+    return out
+
+
+def browser_sources(tiktok_countries=TIKTOK_COUNTRIES, google_geos=GOOGLE_GEOS):
+    """TikTok Creative Center and Google Trends 'Trending now' only render in a real browser."""
     from playwright.sync_api import sync_playwright
 
     results = {}
@@ -146,22 +196,58 @@ def tiktok_trends(countries=TIKTOK_COUNTRIES):
         browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
         ctx = browser.new_context(locale="es-AR", user_agent=UA, viewport={"width": 1366, "height": 900})
         page = ctx.new_page()
-        for cc in countries:
+        for cc in tiktok_countries:
             try:
                 page.goto(
                     f"https://ads.tiktok.com/creative/creativeCenter/trends/hashtag?countryCode={cc}&period=7&region={cc}",
                     timeout=60000,
                 )
                 page.get_by_text("Posts", exact=True).first.wait_for(timeout=30000)
-                results[cc] = _parse_tiktok(page.locator("body").inner_text(), cc)
+                results[f"TikTok {cc}"] = _parse_tiktok(page.locator("body").inner_text(), cc)
             except Exception as e:
-                results[cc] = f"FALLA: {type(e).__name__}: {e}"
+                results[f"TikTok {cc}"] = f"FALLA: {type(e).__name__}: {e}"
+        for geo in google_geos:
+            try:
+                page.goto(f"https://trends.google.com/trending?geo={geo}&hours=24", timeout=60000)
+                page.wait_for_function("document.body.innerText.includes('arrow_upward')", timeout=30000)
+                page.wait_for_timeout(1500)
+                items = _parse_google_now(page.locator("body").inner_text(), geo)
+                if not items:
+                    raise ValueError("sin filas")
+                results[f"Google {geo}"] = items
+            except Exception:
+                try:
+                    results[f"Google {geo}"] = google_trends(geo)  # RSS fallback
+                except Exception as e:
+                    results[f"Google {geo}"] = f"FALLA: {type(e).__name__}: {e}"
         browser.close()
     return results
 
 
+def know_your_meme():
+    page = _get("https://knowyourmeme.com/memes/submissions")
+    out = []
+    for href, img, title in re.findall(
+        r'<a class="result" href="(/memes/[^"/]+)">\s*<img[^>]*?src="([^"]+)"[^>]*>\s*<span>\s*(.*?)\s*</span>', page, re.S
+    ):
+        out.append(
+            item("Memes", "MUNDO", html.unescape(title), len(out) + 1,
+                 url="https://knowyourmeme.com" + href, extra={"image": img})
+        )
+    return out[:25]
+
+
+def bluesky_trending():
+    data = json.loads(_get("https://public.api.bsky.app/xrpc/app.bsky.unspecced.getTrendingTopics?limit=25"))
+    return [
+        item("Bluesky", "MUNDO", t.get("displayName") or t["topic"], rank,
+             url="https://bsky.app" + t.get("link", ""), extra={"news": t.get("description", "")})
+        for rank, t in enumerate(data.get("topics", []), 1)
+    ]
+
+
 def all_sources():
     jobs = [(f"X {r}", lambda r=r: x_trends(r)) for r in X_REGIONS]
-    jobs += [(f"Google {g}", lambda g=g: google_trends(g)) for g in GOOGLE_GEOS]
+    jobs += [("Memes (Know Your Meme)", know_your_meme), ("Bluesky", bluesky_trending)]
     jobs += [(f"Reddit {r}", lambda r=r: reddit_rising(r)) for r in REDDIT_SUBS]
     return jobs
