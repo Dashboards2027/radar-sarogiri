@@ -24998,23 +24998,19 @@
 },
 "flydubai": {
 "id": "flydubai",
-"titulo": "Flydubai — La aerolínea de bajo costo en el centro de las búsquedas",
-"explicacion": "La aerolínea Flydubai es tendencia global, posiblemente por nuevas rutas o promociones de viajes internacionales. Las marcas de lifestyle pueden colgarse del deseo de viajar de la gente para proponer contenidos sobre armar la valija o destinos soñados.",
+"titulo": "Flydubai — Investigación por incidente aéreo de la aerolínea",
+"explicacion": "La aerolínea de bajo costo de Dubái está bajo la lupa tras la investigación de un incidente de vuelo que se viralizó en redes. No conviene para marcas.",
 "tipo": "Noticia",
-"categoria": "Otros",
+"categoria": "Noticias y Política",
 "hashtags": [
 "#Flydubai",
-"#Viajes",
-"#Turismo"
+"#Aviation",
+"#FlightSafety"
 ],
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Se puede armar una curaduría de looks viajeros premium para volar con estilo."
-}
-],
-"ts": 1790812355.2415385,
+"riesgo": "alto",
+"riesgo_motivo": "Se trata de un incidente de seguridad aérea bajo investigación oficial.",
+"encaja": [],
+"ts": 1791047986.0517557,
 "lite": false
 },
 "christapikescheduledexecution": {
@@ -51069,18 +51065,19 @@
 },
 "zachbryanwearsfreepalestineshirt": {
 "id": "zachbryanwearsfreepalestineshirt",
-"titulo": "Zach Bryan — El cantante lució una remera a favor de Palestina",
-"explicacion": "El músico de country causó revuelo al presentarse en su recital con una remera que decía 'Free Palestine'. No conviene para marcas por involucrar un conflicto bélico y político internacional de extrema sensibilidad.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
+"titulo": "Zach Bryan — El cantante de country usa una remera a favor de Palestina",
+"explicacion": "El músico estadounidense Zach Bryan generó revuelo al usar una remera con la consigna 'Free Palestine' durante un show en Massachusetts. No conviene para marcas.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
 "hashtags": [
 "#ZachBryan",
 "#FreePalestine",
-"#Música"
+"#MusicNews"
 ],
-"riesgo_motivo": "Conflicto bélico y geopolítico altamente polarizante.",
+"riesgo": "alto",
+"riesgo_motivo": "Involucra el conflicto geopolítico de Medio Oriente y posicionamientos políticos altamente sensibles.",
 "encaja": [],
-"ts": 1791031052.5431664,
+"ts": 1791047986.0517557,
 "lite": false
 },
 "verstappen": {
@@ -51999,11 +51996,20 @@
 },
 "tuckercarlsonquestionsworldwarii": {
 "id": "tuckercarlsonquestionsworldwarii",
-"titulo": "Tucker Carlson WWII — controversia sobre dichos históricos",
+"titulo": "Tucker Carlson — Polémica por cuestionar la Segunda Guerra Mundial",
+"explicacion": "El polémico conductor estadounidense abrió un debate histórico muy sensible al cuestionar el rol de Gran Bretaña frente a Hitler. No conviene para marcas.",
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
-"ts": 1791031052.5431664,
-"lite": true
+"hashtags": [
+"#TuckerCarlson",
+"#WWII",
+"#HistoryDebate"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Involucra revisionismo histórico de la Segunda Guerra Mundial y el nazismo, temas extremadamente sensibles.",
+"encaja": [],
+"ts": 1791047986.0517557,
+"lite": false
 },
 "sabadodepreguntasboludas": {
 "id": "sabadodepreguntasboludas",
@@ -54824,6 +54830,528 @@
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "ts": 1791047042.906681,
+"lite": true
+},
+"union": {
+"id": "union",
+"titulo": "Boca vs Unión — El partido clave de la Liga Profesional",
+"explicacion": "El club santafesino Unión se enfrenta a Boca Juniors, manteniendo en vilo a los hinchas del fútbol local en las redes sociales. Una marca de entretenimiento o bienestar puede sumarse comentando el partido en vivo o incentivando a la comunidad a moverse antes del pitazo inicial.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Union",
+"#Boca",
+"#LigaProfesional"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Ideal para reaccionar en vivo durante sus programas de streaming y conectar con la audiencia futbolera."
+},
+{
+"cliente": "Pasito",
+"por_que": "Se puede proponer una caminata previa al partido para calmar la ansiedad y sumar pasos en la app."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"climatucuman": {
+"id": "climatucuman",
+"titulo": "Clima en Tucumán — Búsquedas masivas por el pronóstico del tiempo",
+"explicacion": "Los usuarios tucumanos están buscando intensamente el pronóstico del tiempo debido a cambios bruscos de temperatura en la región. Las marcas de alimentos saludables o bienestar pueden aprovechar para recomendar planes de interior o snacks ideales para este clima.",
+"tipo": "Real time",
+"categoria": "Otros",
+"hashtags": [
+"#ClimaTucuman",
+"#Tucuman",
+"#Pronostico"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Entrenuts",
+"por_que": "Pueden recomendar recetas con manteca de maní ideales para un día lluvioso o frío en el norte."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"defensayjusticiasanlorenzo": {
+"id": "defensayjusticiasanlorenzo",
+"titulo": "Defensa y Justicia vs San Lorenzo — Cruce picante en el fútbol local",
+"explicacion": "El partido entre el Halcón de Varela y el Ciclón genera mucha expectativa y debate táctico entre los hinchas argentinos. Los canales de entretenimiento pueden usarlo para generar encuestas interactivas y debatir los resultados con su comunidad.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#SanLorenzo",
+"#DefensayJusticia",
+"#LigaProfesional"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Excelente para generar debate picante en redes y hacer encuestas sobre el resultado del partido."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"saudi_qatar": {
+"id": "saudi_qatar",
+"titulo": "#السعوديه_قطر — El clásico de Medio Oriente en el centro del debate",
+"explicacion": "Este hashtag agrupa la conversación sobre el enfrentamiento deportivo o diplomático entre Arabia Saudita y Qatar. Al ser un tema de nicho geográfico y con posibles aristas geopolíticas, no conviene para marcas locales.",
+"tipo": "Real time",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#السعوديه_قطر",
+"#SaudiArabia",
+"#Qatar"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Asunto de interés geopolítico y deportivo extranjero ajeno al mercado local argentino.",
+"encaja": [],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"bangchan": {
+"id": "bangchan",
+"titulo": "Bang Chan — El fandom de Stray Kids celebra al líder de la banda",
+"explicacion": "Las fans argentinas de K-pop inundaron las redes con mensajes de apoyo y orgullo hacia Bang Chan, líder de Stray Kids. Una marca de entretenimiento o lifestyle puede sumarse saludando al artista para ganarse el amor de una de las comunidades más activas de internet.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#BangChan",
+"#StrayKids",
+"#STAY"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Pueden poner música de Stray Kids en sus programas y reaccionar al hashtag para fidelizar al fandom K-pop."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"thepowerofgodandanime": {
+"id": "thepowerofgodandanime",
+"titulo": "The Power of God and Anime — El regreso del meme clásico de internet",
+"explicacion": "Este icónico meme de una nena gritando que tiene el poder de Dios y del anime de su lado volvió a viralizarse en formatos nostálgicos. Las marcas de entretenimiento o podcasts pueden usarlo de forma humorística para ilustrar esa sensación de sentirse invencibles antes de un desafío.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#GodAndAnime",
+"#MemeNostalgia",
+"#AnimeCommunity"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Ideal para meterlo en placas humorísticas de Instagram o recrear el audio en TikTok con los conductores."
+},
+{
+"cliente": "Juntala Podcast",
+"por_que": "Se puede usar con humor para graficar la actitud de alguien que va a invertir por primera vez sin saber mucho."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"kidimmitatingherclassmates": {
+"id": "kidimmitatingherclassmates",
+"titulo": "Kid Imitating Classmates — Nenes imitando los tics de sus compañeros",
+"explicacion": "Se viralizó un tierno y divertido video de una nena imitando a la perfección los gestos y modismos de sus compañeros de escuela. Las marcas pueden replicar este formato pidiéndole a sus creadores de contenido que imiten con humor los 'tipos de clientes' o 'tipos de compañeros de oficina'.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#KidImitating",
+"#HumorEscolar",
+"#ViralVideo"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Los conductores pueden imitarse entre sí recreando el formato en clips cortos para TikTok."
+},
+{
+"cliente": "Pasito",
+"por_que": "Pueden hacer un video imitando los distintos tipos de caminadores que se cruzan en la plaza."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"moneyprintergobrrr": {
+"id": "moneyprintergobrrr",
+"titulo": "Money Printer Go Brrr — El meme de la maquinita de imprimir billetes",
+"explicacion": "Este meme clásico que ironiza sobre la emisión descontrolada de dinero volvió a reactivarse por debates económicos globales. Es ideal para marcas de finanzas o podcasts de economía que buscan explicar conceptos complejos de inflación y emisión con un tono descontracturado.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#MoneyPrinter",
+"#GoBrrr",
+"#FinanceMemes"
+],
+"riesgo": "medio",
+"riesgo_motivo": "En Argentina, la emisión monetaria es un tema central del debate político y económico actual.",
+"encaja": [
+{
+"cliente": "Juntala Podcast",
+"por_que": "Perfecto para usar de portada o recurso visual en un episodio sobre inflación y cómo proteger los ahorros."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"hadakanboutachi": {
+"id": "hadakanboutachi",
+"titulo": "#はだかんぼうたち — Tendencia de nicho de la cultura pop japonesa",
+"explicacion": "Este hashtag en japonés está marcando tendencia global y suponemos que se debe al lanzamiento de un contenido de nicho de la cultura pop asiática. Al ser un fenómeno muy específico de la comunidad otaku o del J-pop, no tiene un anclaje claro para marcas masivas locales.",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#はだかんぼうたち",
+"#JPop",
+"#AnimeCulture"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"tryinghardtoignore": {
+"id": "tryinghardtoignore",
+"titulo": "Trying Hard to Ignore — El meme de ignorar lo obvio para no estresarse",
+"explicacion": "Este formato viral muestra situaciones cotidianas donde la gente hace un esfuerzo descomunal por ignorar un problema evidente. Las marcas pueden usarlo de forma súper empática para reírse de las tentaciones cotidianas, como ignorar los gastos hormiga o las ganas de comerse un snack a deshoras.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#TryingHardToIgnore",
+"#MemeFormat",
+"#Relatable"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Entrenuts",
+"por_que": "Ideal para un meme sobre intentar ignorar el frasco de manteca de maní en la alacena para no comérselo entero."
+},
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Se puede usar para mostrar la tentación de ignorar las vidrieras de nueva temporada para cuidar la billetera."
+},
+{
+"cliente": "Juntala Podcast",
+"por_que": "Perfecto para graficar humorísticamente el momento en que intentás ignorar el resumen de la tarjeta de crédito."
+},
+{
+"cliente": "Kérastase",
+"por_que": "Se puede usar para mostrar con humor el intento de ignorar que ya toca lavarse el pelo o hacerse un tratamiento de nutrición."
+}
+],
+"ts": 1791047986.0517557,
+"lite": false
+},
+"posicionesdebocajuniorscontraclubatleticounion": {
+"id": "posicionesdebocajuniorscontraclubatleticounion",
+"titulo": "Posiciones Boca Juniors vs Unión — Tabla de posiciones del fútbol",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"catsorbitinghishumanlikeatinyfluffysatellite": {
+"id": "catsorbitinghishumanlikeatinyfluffysatellite",
+"titulo": "Gato satélite — Gato orbitando a su humano como un satélite",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"xwikipediahatergotnoted": {
+"id": "xwikipediahatergotnoted",
+"titulo": "Hater de Wikipedia — Crítico de Wikipedia expuesto con Context Notes",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"shluzoveuro": {
+"id": "shluzoveuro",
+"titulo": "Её парень — Tendencia musical o de pareja en Shorts",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"coaxedintofolklorecreatures": {
+"id": "coaxedintofolklorecreatures",
+"titulo": "Criaturas del folclore — Parodias de mitos y leyendas populares",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"hagamosunwhatifdeargentinaelijanunmomentohistoricoyloquepodriahaberpasadosinoseh": {
+"id": "hagamosunwhatifdeargentinaelijanunmomentohistoricoyloquepodriahaberpasadosinoseh",
+"titulo": "What If argentino — Debate sobre historia alternativa nacional",
+"tipo": "Cultura pop",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"wolvesvstrinity": {
+"id": "wolvesvstrinity",
+"titulo": "Wolves vs Trinity — Partido de rugby del Wakefield Trinity",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"hatedtropeseriesthhatethatetheirtargetaudiences": {
+"id": "hatedtropeseriesthhatethatetheirtargetaudiences",
+"titulo": "Tropos odiados — Series que desprecian a su propia audiencia",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"hottakejacoboneofthebestsidecharactersintheshow": {
+"id": "hottakejacoboneofthebestsidecharactersintheshow",
+"titulo": "Hot Take de Jacob — Considerado el mejor personaje secundario",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"wakeupoc": {
+"id": "wakeupoc",
+"titulo": "Wake Up OC — Obra de arte o animación original",
+"tipo": "Formato",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"selecaobrasil": {
+"id": "selecaobrasil",
+"titulo": "Seleção Brasil — Actualidad de la selección de fútbol de Brasil",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"mansourarabic": {
+"id": "mansourarabic",
+"titulo": "Mansour — Contenido viral en árabe sobre personajes",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"wasthisthebestqberaorwasthereaqberathatwasbetter": {
+"id": "wasthisthebestqberaorwasthereaqberathatwasbetter",
+"titulo": "Mejor era de QB — Debate sobre mariscales de campo en la NFL",
+"tipo": "Cultura pop",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"terremotogranada": {
+"id": "terremotogranada",
+"titulo": "Terremoto en Granada — Sismo y reporte de actividad sísmica",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"therealreasonstevesteppeddownasleader": {
+"id": "therealreasonstevesteppeddownasleader",
+"titulo": "Por qué renunció Steve — Teorías sobre la salida de un líder",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"chorwacjaanglia": {
+"id": "chorwacjaanglia",
+"titulo": "Croacia vs Inglaterra — Enfrentamiento histórico de fútbol",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"etitulo": {
+"id": "etitulo",
+"titulo": "E Título — Aplicación electoral y documento digital en Brasil",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"kiev": {
+"id": "kiev",
+"titulo": "Kiev — Últimas noticias y situación en la capital de Ucrania",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"chinesepopsongtears": {
+"id": "chinesepopsongtears",
+"titulo": "Canción triste pop — Tema viral romántico en plataformas",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"gloucestervsharlequins": {
+"id": "gloucestervsharlequins",
+"titulo": "Gloucester vs Harlequins — Partido de la Premiership de rugby",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"frozensaudiarabiawin": {
+"id": "frozensaudiarabiawin",
+"titulo": "Triunfo de Arabia Saudita — Celebración deportiva histórica",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"chillinwithmybuddy": {
+"id": "chillinwithmybuddy",
+"titulo": "Relax con mi amigo — Fotos tiernas y divertidas de mascotas",
+"tipo": "Estilo de vida",
+"categoria": "Otros",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"toldagirlhernipsareslippingoutgotcalledaspervandthrownoutofgym": {
+"id": "toldagirlhernipsareslippingoutgotcalledaspervandthrownoutofgym",
+"titulo": "Incidente en el gimnasio — Malentendido sobre vestimenta",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"muskjoinspentagontaskforce": {
+"id": "muskjoinspentagontaskforce",
+"titulo": "Musk en el Pentágono — Elon lidera grupo sobre guerra futura",
+"tipo": "Noticia",
+"categoria": "IA y Tech",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"suellabravermandefinesenglishness": {
+"id": "suellabravermandefinesenglishness",
+"titulo": "Identidad inglesa — Debate sobre linaje y la polémica política",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"salmankhanshouldhavealsoexposedmahi": {
+"id": "salmankhanshouldhavealsoexposedmahi",
+"titulo": "Caso Salman Khan — Polémicas declaraciones y exposición",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"blubinthepool": {
+"id": "blubinthepool",
+"titulo": "Blub en la pileta — Animación o meme acuático absurdo",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"chapter5didnotmeetmyexpectations": {
+"id": "chapter5didnotmeetmyexpectations",
+"titulo": "Capítulo 5 decepcionante — Expectativas vs realidad en series",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"beatchicago": {
+"id": "beatchicago",
+"titulo": "Ganarle a Chicago — Rivalidad deportiva en ligas norteamericanas",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"raposupportsntrregardingthemisuse": {
+"id": "raposupportsntrregardingthemisuse",
+"titulo": "Debate sobre NTR — Discusión de nicho sobre géneros de ficción",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"onlytwopicturesicouldfindofmenotinahat": {
+"id": "onlytwopicturesicouldfindofmenotinahat",
+"titulo": "Sin gorra por primera vez — Superación de la calvicie",
+"tipo": "Estilo de vida",
+"categoria": "Bienestar y Fitness",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"congratulationsyouplayedyourself": {
+"id": "congratulationsyouplayedyourself",
+"titulo": "Te jugaste solo — El clásico meme de autoboicot",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"aconcernedparentinnorthtexashassomethingtosay": {
+"id": "aconcernedparentinnorthtexashassomethingtosay",
+"titulo": "Escándalo en Texas — Acusaciones contra figuras públicas",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"thepersonwhoshowsupisalwaystheonewhowins": {
+"id": "thepersonwhoshowsupisalwaystheonewhowins",
+"titulo": "Estar presente es ganar — Reflexión sobre constancia",
+"tipo": "Estilo de vida",
+"categoria": "Bienestar y Fitness",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"luizinacioluladasilva": {
+"id": "luizinacioluladasilva",
+"titulo": "Lula da Silva — Sondeos y panorama electoral rumbo a 2026",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
+"lite": true
+},
+"ohiolayoffsbeforetrumprally": {
+"id": "ohiolayoffsbeforetrumprally",
+"titulo": "Despidos en Ohio — Cierre de planta antes de mitin político",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1791047986.0517557,
 "lite": true
 }
 }
