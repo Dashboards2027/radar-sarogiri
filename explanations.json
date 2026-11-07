@@ -7,28 +7,6 @@
 "ts": 1793468793.2802098,
 "lite": true
 },
-"italiano": {
-"id": "italiano",
-"titulo": "Italiano — Mención al club Sportivo Italiano o a la gastronomía",
-"explicacion": "Es tendencia en Argentina por búsquedas vinculadas al club Sportivo Italiano o por temas culturales y gastronómicos. Se puede usar sumándose desde el lado lifestyle y de cocina con estética e ingredientes de Italia.",
-"tipo": "Cultura pop",
-"categoria": "Comida y Bebida",
-"hashtags": [
-"#Italiano",
-"#Gastronomia",
-"#Cultura"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Sirve para promocionar la oferta gastronómica italiana y restaurantes de comida de autor en el shopping."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
 "diegoarmandomaradona": {
 "id": "diegoarmandomaradona",
 "titulo": "Diego Armando Maradona — Homenajes y recuerdo constante al Diez",
@@ -83,23 +61,6 @@
 "riesgo_motivo": "",
 "encaja": [],
 "ts": 1793235582.9564755,
-"lite": false
-},
-"5": {
-"id": "5",
-"titulo": "Sismo en Japón — Terremoto escala 5 débil registrado en el país",
-"explicacion": "Es un reporte de sismo de intensidad 5 débil registrado en Japón que movilizó la conversación en redes. No conviene para marcas.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Japon",
-"#Sismo",
-"#Earthquake"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Desastre natural o movimiento sísmico",
-"encaja": [],
-"ts": 1793203530.8377554,
 "lite": false
 },
 "pitbull": {
@@ -645,28 +606,6 @@
 "ts": 1793404182.7043266,
 "lite": false
 },
-"elpais": {
-"id": "elpais",
-"titulo": "El País — cobertura de robots en Córdoba y noticias del diario español",
-"explicacion": "La prensa española y los reportes de robots en Córdoba aparecen en los feeds, mezclando tecnología y actualidad. Es una tendencia informativa que puede usarse para contenidos de innovación.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#ElPais",
-"#Robots",
-"#Tecnología"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede producir contenido de actualidad tecnológica para su audiencia"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
 "graysonallen": {
 "id": "graysonallen",
 "titulo": "Grayson Allen — Destacada actuación en la NBA",
@@ -704,28 +643,6 @@
 }
 ],
 "ts": 1793755414.904888,
-"lite": false
-},
-"manu": {
-"id": "manu",
-"titulo": "Manu — Novedades y conversación en redes sobre la figura",
-"explicacion": "Es tendencia en Argentina por noticias, declaraciones o hitos vinculados a un personaje público llamado Manu. Se puede utilizar comentando la noticia o haciendo guiños a su trayectoria profesional.",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Manu",
-"#Deportes",
-"#CulturaPop"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Ideal para debatirlo en vivo si se trata de un tema de agenda mediática o deportiva."
-}
-],
-"ts": 1793203530.8377554,
 "lite": false
 },
 "bryceyoung": {
@@ -1405,23 +1322,6 @@
 "ts": 1793576329.7053158,
 "lite": true
 },
-"santiagocaputo": {
-"id": "santiagocaputo",
-"titulo": "Santiago Caputo — El asesor presidencial en el centro del debate",
-"explicacion": "El principal estratega político del oficialismo genera conversación por decisiones de gestión y armado territorial. No conviene para marcas por el fuerte sesgo político y la polarización que genera su figura.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#SantiagoCaputo",
-"#Gobierno",
-"#Politica"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Figura central del gobierno con alta polarización política.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
 "montagemcozesabece": {
 "id": "montagemcozesabece",
 "titulo": "Montagem Cozes Abece — Funk brasileño viral para edits dinámicos",
@@ -1473,1163 +1373,6 @@
 "ts": 1793468793.2802098,
 "lite": false
 },
-"lionelscaloni": {
-"id": "lionelscaloni",
-"titulo": "Lionel Scaloni — falleció su madre, Eulalia Marzetti",
-"explicacion": "Es la noticia del fallecimiento de la madre del director técnico de la Selección Argentina, lo que genera gran cobertura mediática. No conviene para marcas por el carácter sensible del tema.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#LionelScaloni",
-"#Fútbol",
-"#Argentina"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Muerte de familiar",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"toledo": {
-"id": "toledo",
-"titulo": "Toledo — menciones en redes sobre la ciudad o figura pública",
-"explicacion": "Se observan picos de conversación en X sobre Toledo, posiblemente por eventos culturales o turísticos. Es una tendencia neutra que puede aprovecharse para contenidos de viaje o lifestyle.",
-"tipo": "Noticia",
-"categoria": "Cultura pop",
-"hashtags": [
-"#Toledo",
-"#Viaje",
-"#Cultura"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Puede crear activaciones de moda y gastronomía vinculadas a la cultura de Toledo"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"rivermessicup": {
-"id": "rivermessicup",
-"titulo": "River Messi Cup — torneo o desafío entre River Plate y la figura de Messi",
-"explicacion": "Se trata de un evento o meme que combina la pasión por River Plate con la figura de Messi, generando mucho ruido en redes. Ideal para marcas que buscan conectar con fanáticos del fútbol.",
-"tipo": "Real time",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#RiverMessiCup",
-"#Fútbol",
-"#RiverPlate"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Puede patrocinar experiencias y merchandising durante el hype futbolístico"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"justintucker": {
-"id": "justintucker",
-"titulo": "Justin Tucker — récord de patada en la NFL que vuelve a trending",
-"explicacion": "El kicker de los Ravens vuelve a ser noticia tras romper un récord de field goal, generando conversación entre fanáticos del deporte. Una buena excusa para marcas que quieren asociarse al alto rendimiento.",
-"tipo": "Real time",
-"categoria": "Cultura pop",
-"hashtags": [
-"#JustinTucker",
-"#NFL",
-"#Deporte"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede crear contenido deportivo y de alto impacto"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"urda": {
-"id": "urda",
-"titulo": "Urda — menciones en redes sin contexto claro",
-"explicacion": "Aparecen referencias a 'Urda' en distintas plataformas, aunque no está claro si es persona, lugar o marca; la tendencia parece superficial. No presenta riesgo y puede usarse como gancho de curiosidad.",
-"tipo": "Noticia",
-"categoria": "Cultura pop",
-"hashtags": [
-"#Urda"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"enhypen": {
-"id": "enhypen",
-"titulo": "#ENHYPEN — grupo K‑pop que vuelve a estar en tendencia",
-"explicacion": "El grupo surcoreano ENHYPEN genera nuevo buzz en TikTok y X, impulsado por su último lanzamiento. Ideal para marcas que buscan conectar con la audiencia joven y fan de la música urbana.",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"hashtags": [
-"#ENHYPEN",
-"#Kpop",
-"#Música"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede incluir videos y entrevistas exclusivas con el grupo"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"novakdjokovic": {
-"id": "novakdjokovic",
-"titulo": "Novak Djokovic — resultados y polémicas en torneos recientes",
-"explicacion": "El tenista serbio sigue en los titulares por sus actuaciones y controversias, manteniendo alta visibilidad en redes. Las marcas pueden aprovechar su imagen de alto rendimiento y resiliencia.",
-"tipo": "Cultura pop",
-"categoria": "Deportes",
-"hashtags": [
-"#NovakDjokovic",
-"#Tenis",
-"#Deporte"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede producir contenido deportivo y entrevistas"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"huelgamaquinistasrenfe": {
-"id": "huelgamaquinistasrenfe",
-"titulo": "Huelga maquinistas Renfe — paro de trenes en España",
-"explicacion": "Los maquinistas de Renfe están en huelga, lo que genera interrupciones y mucho debate en medios. Es una noticia de actualidad que puede servir a marcas con mensajes de movilidad o alternativas de viaje.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Renfe",
-"#Huelga",
-"#Transporte"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede cubrir la noticia y ofrecer alternativas de transporte"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"passaglia": {
-"id": "passaglia",
-"titulo": "Passaglia — referencia a jugador o figura del fútbol argentino",
-"explicacion": "Se menciona a Passaglia, probablemente el arquero o exjugador, en discusiones deportivas. La tendencia es de bajo riesgo y útil para contenidos futbolísticos.",
-"tipo": "Cultura pop",
-"categoria": "Deportes",
-"hashtags": [
-"#Passaglia",
-"#Fútbol"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede crear contenido de historia del fútbol"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"convosentodas": {
-"id": "convosentodas",
-"titulo": "#convosentodas — meme o reto viral en redes sociales",
-"explicacion": "El hashtag se usa para compartir conversaciones o retos que se vuelven virales, generando gran interacción. Es una tendencia de humor que las marcas pueden usar para campañas participativas.",
-"tipo": "Humor",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#convosentodas",
-"#Meme",
-"#Viral"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede lanzar un challenge propio para su audiencia"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"iryo": {
-"id": "iryo",
-"titulo": "Iryo — nombre que aparece en tendencias internacionales",
-"explicacion": "Iryo aparece en menciones de X y noticias, aunque no está claro si es una persona, marca o evento; se asume una tendencia emergente. Riesgo bajo y potencial para contenido de descubrimiento.",
-"tipo": "Noticia",
-"categoria": "Cultura pop",
-"hashtags": [
-"#Iryo"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"estaeslarojamasobviadelahistoria": {
-"id": "estaeslarojamasobviadelahistoria",
-"titulo": "Esta es la roja más obvia de la historia — meme futbolístico",
-"explicacion": "Frase que circula como meme sobre una tarjeta roja polémica, generando risas y debates entre fanáticos. Ideal para marcas que buscan humor deportivo.",
-"tipo": "Humor",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#RojaObvia",
-"#Meme",
-"#Fútbol"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede crear un segmento cómico sobre momentos de fútbol"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"lavidadeunfiletero": {
-"id": "lavidadeunfiletero",
-"titulo": "La vida de un filetero — relato humorístico sobre un filetero",
-"explicacion": "Se comparte una historia cómica sobre la vida de un filetero, generando identificación y risas. Es una tendencia de humor que puede ser aprovechada por marcas con tono cercano.",
-"tipo": "Humor",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Filetero",
-"#Humor"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Puede producir sketches o podcasts de humor"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"nuevapublicidaddemercadolibreparalascarrerasenlaregion": {
-"id": "nuevapublicidaddemercadolibreparalascarrerasenlaregion",
-"titulo": "Nueva publicidad de Mercado Libre para las carreras en la región",
-"explicacion": "Mercado Libre lanza una campaña enfocada en carreras y movilidad, combinando e‑commerce con deporte. Es una tendencia de consumo que puede inspirar activaciones de marca y alianzas locales.",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"hashtags": [
-"#MercadoLibre",
-"#Carreras",
-"#Ecommerce"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Puede asociarse a la campaña con eventos de moda y gastronomía para corredores"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"mileicomplice": {
-"id": "mileicomplice",
-"titulo": "#MileiComplice — Reclamo opositor contra el gobierno nacional",
-"explicacion": "Es un hashtag impulsado en X por sectores opositores para cuestionar decisiones del presidente Javier Milei. No conviene para marcas por tratarse de confrontación política partidaria.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#MileiComplice",
-"#PoliticaArgentina"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Tema de fuerte polarización política partidaria.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"comparelospreciosdeunos2900supermercados": {
-"id": "comparelospreciosdeunos2900supermercados",
-"titulo": "Comparativa de 2.900 supermercados — Análisis viral de precios",
-"explicacion": "Un usuario de Reddit armó una base de datos analizando la dispersión de precios en casi 3.000 supermercados del país. Una marca puede sumarse compartiendo tips de ahorro inteligente y consumo informado en tiempos de inflación.",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"hashtags": [
-"#Supermercados",
-"#Precios",
-"#Ahorro"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Juntala Podcast",
-"por_que": "Ideal para analizar en un episodio la dispersión de precios y dar herramientas prácticas para cuidar el bolsillo."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"mientrasesperabaamicompaenlapuertadesucasaviestosantiguosmedidoresdeluzymepintoe": {
-"id": "mientrasesperabaamicompaenlapuertadesucasaviestosantiguosmedidoresdeluzymepintoe",
-"titulo": "Foto en el medidor de luz — Creatividad improvisada en la calle",
-"explicacion": "Un usuario compartió en Reddit cómo improvisó un autorretrato estético usando un nicho de medidor de luz como trípode mientras hacía tiempo. Las marcas pueden usarlo como disparador para mostrar cómo crear contenido visual copado con lo que encontrás a mano.",
-"tipo": "Formato",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#FotografiaUrbana",
-"#Creatividad",
-"#POV"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Permite proponer ángulos fotográficos y spots no convencionales para mostrar looks urbanos."
-},
-{
-"cliente": "Luzu TV",
-"por_que": "Buen disparador para que los conductores cuenten o muestren fotos bizarras que se sacaron haciendo tiempo."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"sannicolas": {
-"id": "sannicolas",
-"titulo": "San Nicolás — Movimiento y novedades en la ciudad bonaerense",
-"explicacion": "La localidad bonaerense es tendencia por eventos regionales y actualidad de la zona. Salvo que una marca tenga una activación puntual o presencia física en la ciudad, no amerita sumarse sin contexto.",
-"tipo": "Real time",
-"categoria": "Otros",
-"hashtags": [
-"#SanNicolas",
-"#ProvinciaDeBuenosAires"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Falta de anclaje temático claro y relevancia principalmente local.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"pujato": {
-"id": "pujato",
-"titulo": "Pujato — El pueblo natal de Lionel Scaloni en el centro de la escena",
-"explicacion": "El pueblo santafesino vuelve a sonar en redes vinculado a declaraciones o novedades del DT de la Selección Argentina. Las marcas pueden subirse desde el humor y la mística futbolera que rodea a la Scaloneta.",
-"tipo": "Real time",
-"categoria": "Deportes",
-"hashtags": [
-"#Pujato",
-"#Scaloni",
-"#Scaloneta"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Encaja perfecto con el tono futbolero y descontracturado del streaming para charlar sobre Scaloni."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"miami": {
-"id": "miami",
-"titulo": "Miami — Conversación sobre el Inter de Messi y lifestyle",
-"explicacion": "La ciudad estadounidense es tendencia en Argentina por la actividad del Inter Miami de Messi y el movimiento de figuras locales que viajan allí. Las marcas pueden aprovechar la temática para hablar de viajes, verano anticipado o actualidad deportiva.",
-"tipo": "Real time",
-"categoria": "Deportes",
-"hashtags": [
-"#Miami",
-"#Messi",
-"#InterMiami"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Excelente tema de sobremesa para debatir la campaña del Inter Miami o anécdotas de viajes al exterior."
-},
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Sirve para conectar con colecciones de media estación o estética de viaje resort."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"nationalfirstrespondersday": {
-"id": "nationalfirstrespondersday",
-"titulo": "#NationalFirstRespondersDay — Homenaje a rescatistas en EE.UU.",
-"explicacion": "Es una efeméride estadounidense que reconoce la labor de bomberos, policías y personal médico de emergencia. No conviene para marcas locales porque es una fecha ajena al calendario y contexto cultural argentino.",
-"tipo": "Real time",
-"categoria": "Otros",
-"hashtags": [
-"#NationalFirstRespondersDay",
-"#FirstResponders"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Efeméride exclusiva del mercado estadounidense sin impacto directo en Argentina.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"cardcrush": {
-"id": "cardcrush",
-"titulo": "#CARDCRUSH — Tendencia de fandoms y coleccionismo",
-"explicacion": "Hashtag impulsado por comunidades anglosajonas de fanáticos para presumir tarjetas coleccionables o artistas favoritos. Salvo para nichos de coleccionismo o fandom muy marcados, tiene escasa tracción comercial local.",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"hashtags": [
-"#CARDCRUSH",
-"#Photocard"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"gravedenunciadeunainstagrameruncapitulodelossimpsonshabriasidoeditadoportelefesi": {
-"id": "gravedenunciadeunainstagrameruncapitulodelossimpsonshabriasidoeditadoportelefesi",
-"titulo": "Los Simpsons en Telefe — Polémica por supuesta censura de Malvinas",
-"explicacion": "Se viralizó el debate por una escena de Los Simpsons presuntamente recortada en televisión argentina donde se mencionaba a Malvinas. Se puede tomar desde la nostalgia y el fanatismo argentino por la serie, pero evitando entrar en discusiones de censura o heridas históricas.",
-"tipo": "Humor",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#LosSimpsons",
-"#Telefe",
-"#Malvinas"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Toca una temática sensible como Malvinas y cuestionamientos a un canal de aire.",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Permite abrir una charla al aire sobre capítulos icónicos de Los Simpsons y memorias televisivas de la infancia."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"ferraro": {
-"id": "ferraro",
-"titulo": "Ferraro — Declaraciones del diputado Maximiliano Ferraro",
-"explicacion": "El presidente de la Coalición Cívica es tendencia por sus posturas y votos en el Congreso nacional. No conviene para marcas por tratarse de debate legislativo y política partidaria.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Ferraro",
-"#Congreso",
-"#Politica"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Tema netamente político partidario y legislativo.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"evangelinaanderson": {
-"id": "evangelinaanderson",
-"titulo": "Evangelina Anderson — Rumores y foco en la vida personal de la modelo",
-"explicacion": "La modelo y jurado televisiva es tendencia en búsquedas por novedades y trascendidos relacionados con su entorno familiar. No conviene para marcas porque meterse en rumores de farándula puede verse invasivo u oportunista.",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"hashtags": [
-"#EvangelinaAnderson",
-"#Farandula"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Chimentos del espectáculo e intimidad personal.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"ivote": {
-"id": "ivote",
-"titulo": "I VOTE — Campañas masivas de votación en fandoms",
-"explicacion": "La frase explota en X cuando comunidades de fans votan masivamente por sus artistas preferidos en entregas de premios. Las marcas pueden replicar la mecánica invitando a su audiencia a votar encuestas lúdicas sobre gustos o hábitos cotidianos.",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"hashtags": [
-"#IVote",
-"#Awards",
-"#Fandom"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Ideal para armar votaciones en vivo mediante encuestas en el chat de YouTube sobre temas random."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"fabian": {
-"id": "fabian",
-"titulo": "Fabián — Menciones varias a personalidades mediáticas",
-"explicacion": "Es una tendencia ambigua que suele responder a momentos mediáticos de figuras como Fabián Cubero, Doman o personajes de reality shows. Al no haber un evento unificado ni claro, no se aconseja sumarse a ciegas.",
-"tipo": "Cultura pop",
-"categoria": "Otros",
-"hashtags": [
-"#Fabian",
-"#Tendencias"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Nombre propio genérico sin contexto claro ni relevancia de marca.",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"pension": {
-"id": "pension",
-"titulo": "Pensión — Consultas por cobros y auditorías de ANSES",
-"explicacion": "El término crece en búsquedas por novedades en los calendarios de pago, bonos y revisiones de pensiones por parte del Estado. Las marcas de educación financiera pueden abordarlo con contenido explicativo y de servicio para ordenar presupuestos familiares.",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"hashtags": [
-"#Pension",
-"#ANSES",
-"#Jubilaciones"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Tema socioeconómico sensible vinculado a sectores vulnerables y trámites estatales.",
-"encaja": [
-{
-"cliente": "Juntala Podcast",
-"por_que": "Permite explicar en formato didáctico las novedades de haberes y planificación para adultos mayores."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"marleyymirko": {
-"id": "marleyymirko",
-"titulo": "Marley y Mirko — Tendencia por momentos familiares de la famosa dupla",
-"explicacion": "Es tendencia por la repercusión de nuevos momentos virales compartidos por Marley junto a su hijo Mirko. Se puede aprovechar para crear contenido sobre experiencias familiares, viajes o estilo de vida.",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Marley",
-"#Mirko",
-"#CulturaPop"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Para comentar la repercusión del tema en la mesa de streaming o reaccionar a los videos virales."
-},
-{
-"cliente": "Pasito",
-"por_que": "Para promocionar actividades o salidas en familia para sumar pasos en la ciudad."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"x": {
-"id": "x",
-"titulo": "X特別地上奪還作戦 — Campaña o evento de videojuegos en Japón",
-"explicacion": "Supongo que se trata de una campaña promocional de un videojuego o anime que se volvió tendencia en Japón. No conviene para marcas locales por ser un nicho muy específico del mercado asiático.",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Gaming",
-"#Japan",
-"#Anime"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Tendencia en idioma e interés exclusivo de la comunidad gamer japonesa",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"参戦報告": {
-"id": "参戦報告",
-"titulo": "参戦報告 — Reportes de participación en eventos en Japón",
-"explicacion": "Supongo que es un formato donde usuarios japoneses publican su asistencia a un torneo de videojuegos o concierto. No conviene para marcas locales por la barrera idiomática y de audiencia.",
-"tipo": "Formato",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Gaming",
-"#Eventos",
-"#Japan"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Formato dirigido únicamente al mercado japonés",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"profugo": {
-"id": "profugo",
-"titulo": "Prófugo — Noticia policial sobre la búsqueda de un prófugo",
-"explicacion": "Es tendencia en Argentina por la cobertura mediática sobre la búsqueda de un prófugo de la justicia. No conviene para marcas.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Noticias",
-"#Policiales",
-"#Argentina"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Información sobre delitos y delincuencia policial",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"究極の大決戦": {
-"id": "究極の大決戦",
-"titulo": "究極の大決戦 — Campaña promocional de videojuegos en Japón",
-"explicacion": "Supongo que es el título de una batalla o evento especial dentro de una franquicia de entretenimiento en Japón. No conviene para marcas sin presencia en la escena del gaming japonés.",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Gaming",
-"#Anime",
-"#Japan"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Tema de nicho sin alcance en el público local",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"あなたの参戦": {
-"id": "あなたの参戦",
-"titulo": "あなたの参戦 — Promoción interactiva en redes sociales de Japón",
-"explicacion": "Supongo que es un llamado a la acción publicitario para sumar participantes a una campaña en Japón. No conviene para marcas por ser ajeno al contexto local.",
-"tipo": "Formato",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Japan",
-"#Viral",
-"#X"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Contenido enfocado en la audiencia asiática",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"fechadecobroauhnoviembre2026": {
-"id": "fechadecobroauhnoviembre2026",
-"titulo": "AUH Noviembre 2026 — Consulta del calendario de cobro de asignación",
-"explicacion": "Es tendencia por las búsquedas de los beneficiarios sobre el esquema de pagos de la AUH en Argentina. Se puede aprovechar ofreciendo consejos prácticos sobre presupuesto, ahorro y administración de ingresos.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#AUH",
-"#Economia",
-"#Finanzas"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Juntala Podcast",
-"por_que": "Para generar contenido sobre cómo planificar la economía del hogar a partir de la fecha de cobro."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"人類の未来": {
-"id": "人類の未来",
-"titulo": "人類の未来 — Debates sobre el futuro de la humanidad en X Japón",
-"explicacion": "Supongo que es una consigna o campaña en Japón con discusiones sobre tecnología o ciencia ficción. No conviene para marcas si no hay una adaptación clara al mercado argentino.",
-"tipo": "Cultura pop",
-"categoria": "IA y Tech",
-"hashtags": [
-"#Tech",
-"#Futuro",
-"#Japan"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Conversación abstracta dirigida a otro mercado",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"thechiefs": {
-"id": "thechiefs",
-"titulo": "The Chiefs — Partido y novedades de los Kansas City Chiefs",
-"explicacion": "Es tendencia mundial por el último partido o novedades deportivas del equipo de la NFL Kansas City Chiefs. Se puede usar sumándose a la conversación sobre deportes americanos o hábitos de consumo durante eventos deportivos.",
-"tipo": "Real time",
-"categoria": "Deportes",
-"hashtags": [
-"#Chiefs",
-"#NFL",
-"#Deportes"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Para repasar los momentos más destacados o la presencia de famosos en el partido dentro de la grilla."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"地震大丈夫": {
-"id": "地震大丈夫",
-"titulo": "地震大丈夫 — Consultas de seguridad tras el terremoto en Japón",
-"explicacion": "Es una tendencia donde usuarios en Japón preguntan por el estado de sus allegados tras un movimiento telúrico. No conviene para marcas.",
-"tipo": "Real time",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Japon",
-"#Sismo",
-"#Earthquake"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Situación de emergencia y desastre natural",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"mileiviajaaneuquenparalainauguraciondeltemploevangelicodelafamiliadelasenadorama": {
-"id": "mileiviajaaneuquenparalainauguraciondeltemploevangelicodelafamiliadelasenadorama",
-"titulo": "Milei viaja a Neuquén — Visita del presidente por evento religioso",
-"explicacion": "Es tendencia por la agenda institucional del presidente Javier Milei en su viaje a la provincia de Neuquén. No conviene para marcas.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Milei",
-"#Neuquen",
-"#Politica"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Política partidaria y asuntos de gobierno",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"chinodarin": {
-"id": "chinodarin",
-"titulo": "Chino Darín — Novedades sobre el reconocido actor argentino",
-"explicacion": "Es tendencia por apariciones públicas, estrenos o declaraciones del actor Chino Darín en los medios. Se puede utilizar comentando su estilo, sus producciones audiovisuales o sus frases más virales.",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#ChinoDarin",
-"#CineArgentino",
-"#CulturaPop"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "Para comentar sus declaraciones, invitarlo al programa o reaccionar a sus momentos virales."
-},
-{
-"cliente": "Alcorta Shopping",
-"por_que": "Para tomar sus looks como referente de tendencia y moda masculina de vanguardia."
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"bolivia": {
-"id": "bolivia",
-"titulo": "Bolivia — menciones y memes sobre el país",
-"explicacion": "Es una ola de menciones a Bolivia en X, impulsada por memes y comentarios de usuarios. Está en tendencia por la viralidad de contenidos humorísticos y una reciente noticia deportiva, y una marca podría usarlo para asociarse a la cultura latinoamericana sin riesgos.",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#Bolivia",
-"#Tendencia"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"alguienrecuerdaeso": {
-"id": "alguienrecuerdaeso",
-"titulo": "Alguien recuerda eso? — formato de nostalgia viral",
-"explicacion": "Se trata de un formato donde usuarios comparten recuerdos de objetos o momentos del pasado, generando interacción y humor. Está en tendencia porque la nostalgia conecta en redes, y una marca puede aprovecharlo para lanzar campañas retro que resuenen con su audiencia.",
-"tipo": "Formato",
-"categoria": "Cultura y Memes",
-"hashtags": [
-"#AlguienRecuerdaEso",
-"#Nostalgia"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "puede crear contenido retro vinculando moda y gastronomía"
-},
-{
-"cliente": "Luzu TV",
-"por_que": "puede programar secciones de recuerdos para su audiencia"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"migraciones": {
-"id": "migraciones",
-"titulo": "Migraciones — debate sobre flujos migratorios",
-"explicacion": "Tema de actualidad que aborda la movilidad de personas y sus implicancias sociales y económicas en la región. Está en tendencia por debates políticos y datos recientes; una marca podría usarlo para posicionarse como inclusiva, aunque el tema genera opiniones divididas.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Migraciones",
-"#Inclusión"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Tema polarizado",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"maxi": {
-"id": "maxi",
-"titulo": "Maxi — menciones al supermercado y sus promos",
-"explicacion": "Se viralizan publicaciones sobre ofertas y experiencias de compra en la cadena Maxi. La tendencia surge de campañas de descuentos y memes de compradores, y una marca puede asociarse a promociones conjuntas o patrocinios en puntos de venta.",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"hashtags": [
-"#Maxi",
-"#Descuentos"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Alcorta Shopping",
-"por_que": "puede aliarse en eventos de retail y moda con ofertas"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"groksaigeneratedodysseyclip": {
-"id": "groksaigeneratedodysseyclip",
-"titulo": "Grok AI‑generated Odyssey clip — video creado con IA",
-"explicacion": "Es un clip de la serie Odyssey generado por la IA Grok Imagine, tras la promesa de Musk de superar a Nolan. La novedad está en tendencia por el hype de la IA en producción audiovisual; una marca puede usarlo para mostrar innovación tecnológica en su contenido.",
-"tipo": "Formato",
-"categoria": "IA y Tech",
-"hashtags": [
-"#Grok",
-"#AI",
-"#Odyssey"
-],
-"riesgo": "bajo",
-"riesgo_motivo": "",
-"encaja": [
-{
-"cliente": "Luzu TV",
-"por_que": "puede difundir contenido de IA como parte de su programación"
-}
-],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"laautomotrizstellantisparalizosusplantasdecordobayelpalomarporlacaidadelasventas": {
-"id": "laautomotrizstellantisparalizosusplantasdecordobayelpalomarporlacaidadelasventas",
-"titulo": "Stellantis paraliza plantas — caída de ventas en Córdoba y El Palomar",
-"explicacion": "Noticia sobre la suspensión de producción en dos plantas de Stellantis por baja demanda. Está en tendencia por la preocupación del sector automotriz y su impacto económico; una marca debería evitar usarla por su carga negativa.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Stellantis",
-"#IndustriaAutomotriz"
-],
-"riesgo": "medio",
-"riesgo_motivo": "Impacto económico negativo",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"delincuente": {
-"id": "delincuente",
-"titulo": "Delincuente — contenido relacionado con crímenes",
-"explicacion": "Se viralizan videos y comentarios que etiquetan actos delictivos como 'delincuente'. La tendencia es sensible y está vinculada a violencia, por lo que no es recomendable para marcas.",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"hashtags": [
-"#Delincuente"
-],
-"riesgo": "alto",
-"riesgo_motivo": "Asociado a violencia y delito",
-"encaja": [],
-"ts": 1793203530.8377554,
-"lite": false
-},
-"wednesdaymotivation": {
-"id": "wednesdaymotivation",
-"titulo": "#WednesdayMotivation — energía y motivación para arrancar el miércoles",
-"tipo": "Formato",
-"categoria": "Bienestar y Fitness",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"posicionesdeargentinosjuniorscontraindependienterivadavia": {
-"id": "posicionesdeargentinosjuniorscontraindependienterivadavia",
-"titulo": "Posiciones — cómo van en la tabla Argentinos Juniors e Ind. Rivadavia",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"arietto": {
-"id": "arietto",
-"titulo": "Arietto — repercusiones y debates sobre dichos políticos",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"loscabos": {
-"id": "loscabos",
-"titulo": "Los Cabos — destino turístico de lujo en tendencia global",
-"tipo": "Estilo de vida",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"johnhealeydeliversfirstbudget": {
-"id": "johnhealeydeliversfirstbudget",
-"titulo": "Presupuesto — el ministro británico presenta sus nuevas medidas económicas",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"highspeedtraincrashreportedinspain": {
-"id": "highspeedtraincrashreportedinspain",
-"titulo": "Tragedia — choque de trenes de alta velocidad en España",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"tancredoneves": {
-"id": "tancredoneves",
-"titulo": "Tancredo Neves — recuerdo histórico de la política brasileña",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"alconentfailshumanity": {
-"id": "alconentfailshumanity",
-"titulo": "#AlconEntFailsHumanity — críticas virales a prácticas corporativas",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"medvedev": {
-"id": "medvedev",
-"titulo": "Medvedev — declaraciones y movimientos del líder político ruso",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"uktoscrapgasstandingcharges": {
-"id": "uktoscrapgasstandingcharges",
-"titulo": "Energía — Reino Unido elimina cargos fijos diarios de gas",
-"tipo": "Noticia",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"googledeepmind": {
-"id": "googledeepmind",
-"titulo": "Google DeepMind — nuevos avances y publicaciones en inteligencia artificial",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"chinabacklashyao": {
-"id": "chinabacklashyao",
-"titulo": "Polémica — debate en redes sociales de Beijing",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"counciltaxbands": {
-"id": "counciltaxbands",
-"titulo": "Impuestos — cambios en las categorías de tasas municipales en UK",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"bairesfly": {
-"id": "bairesfly",
-"titulo": "Baires Fly — novedades sobre aviación y vuelos privados en Argentina",
-"tipo": "Estilo de vida",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"applenews": {
-"id": "applenews",
-"titulo": "Apple News — actualizaciones y noticias destacadas en la plataforma",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"xabialonso": {
-"id": "xabialonso",
-"titulo": "Xabi Alonso — rumores y novedades sobre su carrera como DT",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"nasa": {
-"id": "nasa",
-"titulo": "NASA — nuevos descubrimientos desde su observatorio espacial",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"nicorobin": {
-"id": "nicorobin",
-"titulo": "Nico Robin — fanático furor por el personaje de One Piece",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"markey": {
-"id": "markey",
-"titulo": "Markey — discusión política en torno al senador estadounidense",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"brewersvsraysgame4": {
-"id": "brewersvsraysgame4",
-"titulo": "World Series — agónico empate en el cuarto juego de béisbol",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"ebolaoutbreak": {
-"id": "ebolaoutbreak",
-"titulo": "Alerta sanitaria — seguimiento a nuevo brote de ébola",
-"tipo": "Noticia",
-"categoria": "Bienestar y Fitness",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"elenadeborbon": {
-"id": "elenadeborbon",
-"titulo": "Elena de Borbón — agenda y apariciones de la realeza española",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"complices": {
-"id": "complices",
-"titulo": "Cómplices — tendencia sobre estreno o contenido de entretenimiento",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"bullyingencatamarcalaalumnadenunciadainterpusounamparoparaevitarsuexpulsion": {
-"id": "bullyingencatamarcalaalumnadenunciadainterpusounamparoparaevitarsuexpulsion",
-"titulo": "Bullying — amparo legal para frenar expulsión escolar en Catamarca",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"rout": {
-"id": "rout",
-"titulo": "Rout — análisis deportivo de una aplastante victoria en la MLB",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"mauritiantidaltrapdoorspider": {
-"id": "mauritiantidaltrapdoorspider",
-"titulo": "Descubrimiento — hallazgo de una extraña araña de tapa trampa",
-"tipo": "Noticia",
-"categoria": "Otros",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"thierryhenryballondorbacklash": {
-"id": "thierryhenryballondorbacklash",
-"titulo": "Polémica — debate en redes por declaraciones sobre el Balón de Oro",
-"tipo": "Humor",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"thechangeling": {
-"id": "thechangeling",
-"titulo": "The Changeling — conversación sobre la serie de misterio y fantasía",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"spaintraincrash": {
-"id": "spaintraincrash",
-"titulo": "Accidente — cobertura internacional del choque de trenes en España",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
 "acuna": {
 "id": "acuna",
 "titulo": "Acuña — noticia política reciente",
@@ -2651,270 +1394,6 @@
 ],
 "ts": 1793221691.5556903,
 "lite": false
-},
-"acidentetremespanha": {
-"id": "acidentetremespanha",
-"titulo": "Tragedia — repercusión en Brasil del accidente ferroviario en España",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"dictadura": {
-"id": "dictadura",
-"titulo": "Dictadura — debate histórico y político en las redes argentinas",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"wewatchbb20forqazi": {
-"id": "wewatchbb20forqazi",
-"titulo": "Big Brother — comunidad de fans movilizada por un participante",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"jameswinchester": {
-"id": "jameswinchester",
-"titulo": "James Winchester — novedades sobre el jugador de la NFL",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"openaireleasesgpt61terra": {
-"id": "openaireleasesgpt61terra",
-"titulo": "OpenAI — lanzamiento del nuevo modelo ultrarrápido GPT-6.1 Terra",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"lesinteresarianagendasyproductosrelacionadoscondisenosoriginales": {
-"id": "lesinteresarianagendasyproductosrelacionadoscondisenosoriginales",
-"titulo": "Emprendimientos — búsqueda de validación para agendas con diseño",
-"tipo": "Estilo de vida",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"aliquotacbs": {
-"id": "aliquotacbs",
-"titulo": "Economía — debate sobre la nueva alícuota del impuesto CBS en Brasil",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"nunewspecialsingle": {
-"id": "nunewspecialsingle",
-"titulo": "NuNew — estreno musical y furor por su nuevo sencillo especial",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"tsunamiwarningjp": {
-"id": "tsunamiwarningjp",
-"titulo": "Alerta — reportes y búsqueda sobre posible riesgo de tsunami",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"goodwednesday": {
-"id": "goodwednesday",
-"titulo": "Good Wednesday — saludos y optimismo para arrancar el día",
-"tipo": "Formato",
-"categoria": "Bienestar y Fitness",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"happyhump": {
-"id": "happyhump",
-"titulo": "Happy Hump Day — celebrando la mitad de la semana laboral",
-"tipo": "Humor",
-"categoria": "Bienestar y Fitness",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"cbsbrasil": {
-"id": "cbsbrasil",
-"titulo": "CBS — discusión sobre reformas tributarias y fiscales en Brasil",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"showrunchecoperez": {
-"id": "showrunchecoperez",
-"titulo": "Fórmula 1 — expectativa por el show run de Checo Pérez",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"elmundo": {
-"id": "elmundo",
-"titulo": "El Mundo — lo más leído del diario español en la web",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"bolhadaiachina": {
-"id": "bolhadaiachina",
-"titulo": "IA — análisis sobre una posible burbuja tecnológica en China",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"marceloebrard": {
-"id": "marceloebrard",
-"titulo": "Marcelo Ebrard — declaraciones y agenda del funcionario mexicano",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"marcosllorente": {
-"id": "marcosllorente",
-"titulo": "Marcos Llorente — tendencia por actualidad deportiva y cruces políticos",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"chibakun": {
-"id": "chibakun",
-"titulo": "Chiba-kun — viral de la clásica mascota de la prefectura japonesa",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"a1m": {
-"id": "a1m",
-"titulo": "Tránsito — demoras y reportes sobre la autovía A1(M) en UK",
-"tipo": "Noticia",
-"categoria": "Otros",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"chibarea": {
-"id": "chibarea",
-"titulo": "Chiba — discusiones locales sobre la región japonesa",
-"tipo": "Noticia",
-"categoria": "Otros",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"tyreekhill": {
-"id": "tyreekhill",
-"titulo": "Tyreek Hill — noticias sobre la estrella de la NFL",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"worldseriesgame5": {
-"id": "worldseriesgame5",
-"titulo": "World Series — máxima expectativa por el quinto juego de béisbol",
-"tipo": "Noticia",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"leysalomechubutregulaelautocultivodecannabismedicinalfortaleceelaccesodelospacie": {
-"id": "leysalomechubutregulaelautocultivodecannabismedicinalfortaleceelaccesodelospacie",
-"titulo": "Ley Salomé — Chubut regula el autocultivo de cannabis medicinal",
-"tipo": "Noticia",
-"categoria": "Bienestar y Fitness",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"warsh": {
-"id": "warsh",
-"titulo": "Warsh — movimientos y nombramientos en el plano financiero",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"quentintarantino": {
-"id": "quentintarantino",
-"titulo": "Quentin Tarantino — novedades sobre proyectos del reconocido director",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"newminimumwage": {
-"id": "newminimumwage",
-"titulo": "Salarios — debate sobre el nuevo piso del salario mínimo en UK",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"aposentadoria": {
-"id": "aposentadoria",
-"titulo": "Aposentadoria — cambios y debates sobre el sistema jubilatorio en Brasil",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"tomhanks": {
-"id": "tomhanks",
-"titulo": "Tom Hanks — menciones y homenajes al icónico actor de Hollywood",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"hometownchallenge": {
-"id": "hometownchallenge",
-"titulo": "#出身地当てます — juego viral en X para adivinar de qué ciudad sos",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"adif": {
-"id": "adif",
-"titulo": "ADIF — infraestructura ferroviaria",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"araiza": {
-"id": "araiza",
-"titulo": "Araiza — figura pública",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"mevis": {
-"id": "mevis",
-"titulo": "Mevis — tendencia viral",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"youguysdidbetterjournalismthanbrazil": {
-"id": "youguysdidbetterjournalismthanbrazil",
-"titulo": "You guys did better journalism — debate sobre medios",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
 },
 "doloreshuerta": {
 "id": "doloreshuerta",
@@ -2941,198 +1420,6 @@
 "ts": 1793599503.1344266,
 "lite": true
 },
-"地震びっくり": {
-"id": "地震びっくり",
-"titulo": "地震びっくり — susto por sismo en Japón",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"indieworld": {
-"id": "indieworld",
-"titulo": "Indie World — novedades de videojuegos",
-"tipo": "Estilo de vida",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"firsttimebuyerisa": {
-"id": "firsttimebuyerisa",
-"titulo": "First time buyer ISA — ahorro para vivienda",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"dutchzookeeper": {
-"id": "dutchzookeeper",
-"titulo": "Dutch zookeeper — rescate de leopardo",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"地震情報": {
-"id": "地震情報",
-"titulo": "地震情報 — reporte oficial de sismos",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"sotr": {
-"id": "sotr",
-"titulo": "SOTR — tendencia en redes",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"joaocarlospaesmendonca": {
-"id": "joaocarlospaesmendonca",
-"titulo": "João Carlos Paes Mendonça — empresario",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"決戦の時": {
-"id": "決戦の時",
-"titulo": "決戦の時 — momento de batalla decisiva",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"kareemhunt": {
-"id": "kareemhunt",
-"titulo": "Kareem Hunt — actualidad en la NFL",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"serbianelection": {
-"id": "serbianelection",
-"titulo": "Serbian election — elecciones en Serbia",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"recortador": {
-"id": "recortador",
-"titulo": "Recortador — tauromaquia y cultura",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"maximumbrixselectedbynana": {
-"id": "maximumbrixselectedbynana",
-"titulo": "Maximum Brix Selected by Nana — fruta selecta",
-"tipo": "Consumo",
-"categoria": "Comida y Bebida",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"usandcubaclashatun": {
-"id": "usandcubaclashatun",
-"titulo": "US and Cuba clash at UN — tensión diplomática",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"digitallandlinepowercutrisk": {
-"id": "digitallandlinepowercutrisk",
-"titulo": "Digital landline power cut risk — alerta de servicios",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"motherlanddevotion": {
-"id": "motherlanddevotion",
-"titulo": "Motherland Devotion — contenido patriótico",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"bankofcanada": {
-"id": "bankofcanada",
-"titulo": "Bank of Canada — decisiones financieras",
-"tipo": "Noticia",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"snowweatherforecast": {
-"id": "snowweatherforecast",
-"titulo": "Snow weather forecast — pronóstico de nieve",
-"tipo": "Estilo de vida",
-"categoria": "Otros",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"lockheedc130hercules": {
-"id": "lockheedc130hercules",
-"titulo": "Lockheed C-130 Hercules — avión militar en Brasil",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"accidentetren": {
-"id": "accidentetren",
-"titulo": "Accidente tren — impacto y cobertura",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"cuantosmuertosvanenelaccidentedetren": {
-"id": "cuantosmuertosvanenelaccidentedetren",
-"titulo": "Cuántos muertos en accidente de tren — búsqueda de info",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"adamuz": {
-"id": "adamuz",
-"titulo": "Adamuz — localidad y actualidad",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"ワンターンキル": {
-"id": "ワンターンキル",
-"titulo": "ワンターンキル — estrategia de un turno en gaming",
-"tipo": "Estilo de vida",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"trailblazersvslakers": {
-"id": "trailblazersvslakers",
-"titulo": "Trail Blazers vs Lakers — partidazo de la NBA",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"fleetwoodvsarsenal": {
-"id": "fleetwoodvsarsenal",
-"titulo": "Fleetwood vs Arsenal — duelo de fútbol inglés",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
 "fatimabanez": {
 "id": "fatimabanez",
 "titulo": "Fátima Báñez — Reaparición pública de la exministra española",
@@ -3150,22 +1437,6 @@
 "ts": 1793257712.018897,
 "lite": false
 },
-"時間の地震": {
-"id": "時間の地震",
-"titulo": "時間の地震 — sismo reportado en tiempo real",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"brazilprobesforeignelectionfinancing": {
-"id": "brazilprobesforeignelectionfinancing",
-"titulo": "Brazil probes foreign election financing — investigación",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
 "estadosunidos": {
 "id": "estadosunidos",
 "titulo": "Estados Unidos — Elecciones intermedias y debate político global",
@@ -3182,14 +1453,6 @@
 "encaja": [],
 "ts": 1793832144.9294071,
 "lite": false
-},
-"sakayapyorsun": {
-"id": "sakayapyorsun",
-"titulo": "Şaka yapıyorsun — expresión de sorpresa en turco",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
 },
 "wanda": {
 "id": "wanda",
@@ -3212,174 +1475,6 @@
 "ts": 1794019869.9524174,
 "lite": false
 },
-"whowontheworldseries2026": {
-"id": "whowontheworldseries2026",
-"titulo": "Who won the World Series 2026 — béisbol",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"fleetwoodxarsenal": {
-"id": "fleetwoodxarsenal",
-"titulo": "Fleetwood x Arsenal — cruce futbolístico",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"lakerstrailblazers": {
-"id": "lakerstrailblazers",
-"titulo": "Lakers vs. Trail Blazers — básquet de la NBA",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"lzb": {
-"id": "lzb",
-"titulo": "LZB — tendencia local en España",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"日本シリーズ": {
-"id": "日本シリーズ",
-"titulo": "日本シリーズ — Serie Mundial de béisbol en Japón",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"reaping": {
-"id": "reaping",
-"titulo": "Reaping — cultura geek y literatura",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"rampage": {
-"id": "rampage",
-"titulo": "Rampage — entretenimiento y acción",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"横芝光町": {
-"id": "横芝光町",
-"titulo": "横芝光町 — actualidad en Yokoshibahikari",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"タイピング": {
-"id": "タイピング",
-"titulo": "タイピング — desafíos de dactilografía",
-"tipo": "Estilo de vida",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"stood": {
-"id": "stood",
-"titulo": "Stood — modismo en redes sociales",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"saojudastadeu": {
-"id": "saojudastadeu",
-"titulo": "São Judas Tadeu — festividad religiosa en Brasil",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"supplementalsecurityincome": {
-"id": "supplementalsecurityincome",
-"titulo": "Supplemental Security Income — ayuda social en EEUU",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"georgerussell": {
-"id": "georgerussell",
-"titulo": "George Russell — actualidad en la Fórmula 1",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"cocacola": {
-"id": "cocacola",
-"titulo": "Coca-Cola — consumo y marketing global",
-"tipo": "Consumo",
-"categoria": "Comida y Bebida",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"リーグ優勝": {
-"id": "リーグ優勝",
-"titulo": "リーグ優勝 — campeonato de liga deportiva",
-"tipo": "Estilo de vida",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"murkowski": {
-"id": "murkowski",
-"titulo": "Murkowski — política de los Estados Unidos",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"samfendertickets": {
-"id": "samfendertickets",
-"titulo": "Sam Fender tickets — preventa de recitales",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"bonocomercioxunta2026": {
-"id": "bonocomercioxunta2026",
-"titulo": "Bono comercio Xunta 2026 — ayudas al consumo local",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"dorapostigo": {
-"id": "dorapostigo",
-"titulo": "Dora Postigo — música y estilo emergente",
-"tipo": "Audio",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"earrings": {
-"id": "earrings",
-"titulo": "Earrings — tendencia en accesorios de moda",
-"tipo": "Estilo de vida",
-"categoria": "Belleza y Moda",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"didnetanyahuwintheelection": {
-"id": "didnetanyahuwintheelection",
-"titulo": "Did Netanyahu win the election — política internacional",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
 "portugal": {
 "id": "portugal",
 "titulo": "Portugal — El país es tendencia tras el retiro de Cristiano Ronaldo",
@@ -3401,238 +1496,6 @@
 ],
 "ts": 1793881386.2423942,
 "lite": false
-},
-"cadenaser": {
-"id": "cadenaser",
-"titulo": "Cadena SER — radio y actualidad en España",
-"tipo": "Audio",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"cuban": {
-"id": "cuban",
-"titulo": "Cuban — cultura y debate geopolítico",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"greatwhiteshark": {
-"id": "greatwhiteshark",
-"titulo": "Tiburón blanco — avistajes y curiosidades marinas",
-"tipo": "Consumo",
-"categoria": "Otros",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"gettoknowwilliamest": {
-"id": "gettoknowwilliamest",
-"titulo": "WilliamEst — tendencia viral en redes",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"fleetwoodtown": {
-"id": "fleetwoodtown",
-"titulo": "Fleetwood Town — partido de fútbol",
-"tipo": "Real time",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"clinica": {
-"id": "clinica",
-"titulo": "Clínica — búsquedas sobre salud",
-"tipo": "Estilo de vida",
-"categoria": "Bienestar y Fitness",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"skhynix": {
-"id": "skhynix",
-"titulo": "SK Hynix — novedades de tecnología y chips",
-"tipo": "Noticia",
-"categoria": "IA y Tech",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"lakersxtrailblazers": {
-"id": "lakersxtrailblazers",
-"titulo": "Lakers x Trail Blazers — partidazo de básquet",
-"tipo": "Real time",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"cuandoeseldiadesanjudastadeo": {
-"id": "cuandoeseldiadesanjudastadeo",
-"titulo": "San Judas Tadeo — fecha de la festividad",
-"tipo": "Cultura pop",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"vrt": {
-"id": "vrt",
-"titulo": "$VRT — criptomoneda y finanzas",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"ツイキャス": {
-"id": "ツイキャス",
-"titulo": "TwitCasting — plataforma de streaming japonesa",
-"tipo": "Estilo de vida",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"chpklcdaroglu": {
-"id": "chpklcdaroglu",
-"titulo": "CHP Kılıçdaroğlu — política internacional",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"provaeneminep": {
-"id": "provaeneminep",
-"titulo": "Prova Enem Inep — exámenes educativos en Brasil",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"nataliarezende": {
-"id": "nataliarezende",
-"titulo": "Natalia Rezende — búsquedas de actualidad",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"thefed": {
-"id": "thefed",
-"titulo": "The Fed — decisiones de la Reserva Federal",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"niveathiamidolwithlingling": {
-"id": "niveathiamidolwithlingling",
-"titulo": "Nivea Thiamidol — campaña con LingLing",
-"tipo": "Estilo de vida",
-"categoria": "Belleza y Moda",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"2teelaundryisdry": {
-"id": "2teelaundryisdry",
-"titulo": "2TEE Laundry is dry — meme o tendencia",
-"tipo": "Humor",
-"categoria": "Cultura y Memes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"狐ト蛙ノ旅": {
-"id": "狐ト蛙ノ旅",
-"titulo": "The Fox and Frog Journey — juego o animación",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"katniss": {
-"id": "katniss",
-"titulo": "Katniss — personaje de Los Juegos del Hambre",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"nfltrades": {
-"id": "nfltrades",
-"titulo": "NFL Trades — traspasos y fichajes en el fútbol americano",
-"tipo": "Real time",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"privateschoollewestonclosesdown": {
-"id": "privateschoollewestonclosesdown",
-"titulo": "Leweston School — cierre de colegio privado",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"simifest2026": {
-"id": "simifest2026",
-"titulo": "Simi Fest 2026 — festival de música",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"thevoiceeliminationepisodekellyclarkson": {
-"id": "thevoiceeliminationepisodekellyclarkson",
-"titulo": "The Voice — episodio de eliminación con Kelly Clarkson",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"santosxpalmeiras": {
-"id": "santosxpalmeiras",
-"titulo": "Santos x Palmeiras — clásico del fútbol brasileño",
-"tipo": "Real time",
-"categoria": "Deportes",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"striker": {
-"id": "striker",
-"titulo": "Striker — estreno o tendencia de entretenimiento",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"bbcnews": {
-"id": "bbcnews",
-"titulo": "BBC News — noticias de actualidad global",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"knpohaev80": {
-"id": "knpohaev80",
-"titulo": "KNP OHAE V80 — código o tendencia viral",
-"tipo": "Consumo",
-"categoria": "Consumo y Productos",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"trumpwarnsoftalaricowin": {
-"id": "trumpwarnsoftalaricowin",
-"titulo": "Trump — advertencia sobre la victoria de Talarico",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
-},
-"adroaldoguerrafilho": {
-"id": "adroaldoguerrafilho",
-"titulo": "Adroaldo Guerra Filho — noticia de periodismo local",
-"tipo": "Noticia",
-"categoria": "Noticias y Política",
-"ts": 1793203530.8377554,
-"lite": true
 },
 "nancygodoy": {
 "id": "nancygodoy",
@@ -26677,11 +24540,20 @@
 },
 "sixtonesann": {
 "id": "sixtonesann",
-"titulo": "#SixTONESANN — Programa de radio del grupo japonés SixTONES",
+"titulo": "SixTONES ANN — El programa de radio semanal de la boyband japonesa",
+"explicacion": "Es la emisión nocturna del ciclo radial de la banda japonesa SixTONES, que moviliza a todo su fandom en redes. Para marcas argentinas no tiene sentido sumarse por estar fuera de su público objetivo.",
 "tipo": "Cultura pop",
 "categoria": "Música y Entretenimiento",
-"ts": 1793468793.2802098,
-"lite": true
+"hashtags": [
+"#SixTONESANN",
+"#Jpop",
+"#SixTONES"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
 },
 "doku": {
 "id": "doku",
@@ -26709,11 +24581,29 @@
 },
 "caturday": {
 "id": "caturday",
-"titulo": "#Caturday — Tradición semanal de fotos de gatos",
-"tipo": "Cultura pop",
+"titulo": "Caturday — Sábado dedicado a compartir fotos y memes de gatos",
+"explicacion": "Es la clásica tradición semanal de redes donde usuarios de todo el mundo comparten fotos divertidas y tiernas de sus felinos. Las marcas pueden sumarse para humanizar el feed mostrando las mascotas del staff o activando a su comunidad.",
+"tipo": "Formato",
 "categoria": "Cultura y Memes",
-"ts": 1793468793.2802098,
-"lite": true
+"hashtags": [
+"#Caturday",
+"#Gatos",
+"#Mascotas"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Permite mostrar a los gatos del equipo de los programas y pedirle fotos graciosas a la audiencia en vivo."
+},
+{
+"cliente": "Pasito",
+"por_que": "Sirve para armar una consigna simpática de fin de semana sobre salir a caminar o jugar con las mascotas para sumar pasos."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
 },
 "michiganvsrutgers": {
 "id": "michiganvsrutgers",
@@ -30800,11 +28690,20 @@
 },
 "lewis": {
 "id": "lewis",
-"titulo": "Lewis — Tendencia global en redes",
-"tipo": "Cultura pop",
-"categoria": "Música y Entretenimiento",
-"ts": 1793495550.4191866,
-"lite": true
+"titulo": "Lewis — Repercusiones vinculadas a noticias con ese apellido",
+"explicacion": "El apellido es tendencia en Argentina, pudiendo aludir al piloto Lewis Hamilton o a controversias vinculadas al magnate Joe Lewis. No conviene para marcas sumarse debido a la ambigüedad y al riesgo de asociarse a polémicas políticas.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Lewis",
+"#Actualidad",
+"#Tendencias"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Ambigüedad con posibles disputas judiciales y políticas vinculadas a Joe Lewis en el país.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
 },
 "drakelindsey": {
 "id": "drakelindsey",
@@ -36690,11 +34589,20 @@
 },
 "tzolis": {
 "id": "tzolis",
-"titulo": "Tzolis — goles y jugadas destacadas del delantero griego",
-"tipo": "Formato",
+"titulo": "Christos Tzolis — Actuación destacada del delantero griego",
+"explicacion": "El futbolista griego Christos Tzolis es tendencia global tras convertir o destacarse en la jornada deportiva. Fuera del análisis táctico o el periodismo deportivo, no presenta un ángulo claro para marcas de consumo.",
+"tipo": "Real time",
 "categoria": "Deportes",
-"ts": 1793562184.6018405,
-"lite": true
+"hashtags": [
+"#Tzolis",
+"#Fútbol",
+"#Goles"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
 },
 "whattimeisit": {
 "id": "whattimeisit",
@@ -76576,6 +74484,1804 @@
 "tipo": "Noticia",
 "categoria": "Noticias y Política",
 "ts": 1794046224.724152,
+"lite": true
+},
+"leedsvsspurs": {
+"id": "leedsvsspurs",
+"titulo": "Leeds vs Spurs — Duelo vibrante en el fútbol inglés",
+"explicacion": "El Leeds United y el Tottenham se enfrentan en una jornada clave que concentra las miradas de los futboleros en redes. Una marca de streaming o entretenimiento puede subirse comentando las jugadas polémicas o armando encuestas en vivo con la comunidad.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Leeds",
+"#Spurs",
+"#PremierLeague"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Permite sumarse a las reacciones y memes del fútbol inglés durante el streaming en vivo."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"mainz05bayern": {
+"id": "mainz05bayern",
+"titulo": "Mainz vs Bayern — Choque de Bundesliga con el gigante bávaro",
+"explicacion": "El Bayern Munich visita al Mainz 05 y las redes siguen de cerca las acciones y goles del puntero alemán. Se puede aprovechar para generar interacción rápida con trivias o pronósticos deportivos durante el partido.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Mainz05",
+"#Bayern",
+"#Bundesliga"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Sirve para alimentar el segmento de debate deportivo y fútbol internacional."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"paysandu": {
+"id": "paysandu",
+"titulo": "Paysandú — Movimiento y conversación en torno a la ciudad litoraleña",
+"explicacion": "La ciudad uruguaya es tendencia en la región del Río de la Plata, posiblemente por cruces fronterizos, eventos culturales o actividad deportiva. Conviene monitorear el motivo exacto antes de colgarse para no quedar descontextualizado.",
+"tipo": "Real time",
+"categoria": "Otros",
+"hashtags": [
+"#Paysandú",
+"#Uruguay",
+"#Litoral"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Falta de contexto específico que podría estar ligado a reclamos locales o contingencias climáticas.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"posicionesdesanlorenzodealmagrocontraplatense": {
+"id": "posicionesdesanlorenzodealmagrocontraplatense",
+"titulo": "San Lorenzo vs Platense — Definición en la tabla de la liga",
+"explicacion": "Hinchas y seguidores del fútbol argentino buscan cómo impacta el resultado de este cruce en la tabla de posiciones. Las marcas pueden sumarse con humor sobre el sufrimiento del hincha o posteando memes del fútbol doméstico.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#SanLorenzo",
+"#Platense",
+"#LigaProfesional"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Ideal para debatir el presente de los clubes locales y generar interacción con la audiencia futbolera."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"krakow": {
+"id": "krakow",
+"titulo": "Krakow — Noticias de un tiroteo en Polonia",
+"explicacion": "La ciudad polaca es tendencia a raíz de un reporte sobre un tiroteo y operativo de seguridad. No conviene para marcas.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Krakow",
+"#BreakingNews"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Hecho de violencia y riesgo de víctimas fatales.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"arsenalhullcity": {
+"id": "arsenalhullcity",
+"titulo": "Arsenal vs Hull City — Los Gunners en acción de copa",
+"explicacion": "El Arsenal se mide ante el Hull City generando un alto volumen de búsquedas y comentarios entre los fanáticos británicos y globales. Es una oportunidad para generar conversación en vivo sobre fútbol internacional con placas de resultados o highlights.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Arsenal",
+"#HullCity",
+"#FACup"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Aplica para coberturas en vivo o menciones futboleras en la mesa del programa."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"pilseriesep9": {
+"id": "pilseriesep9",
+"titulo": "PIL Series EP9 — Estreno y furor por el nuevo capítulo",
+"explicacion": "Los fanáticos de la serie asiática están comentando el episodio 9 y compartiendo clips de las escenas más emotivas. Al ser un fenómeno de nicho fandom, no resulta orgánico para marcas masivas locales salvo que apunten a esa comunidad.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#PILSeries",
+"#PILSeriesEP9"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"mrfanboyep11": {
+"id": "mrfanboyep11",
+"titulo": "Mr Fanboy EP11 — Reacciones al desenlace de la serie",
+"explicacion": "El estreno del capítulo 11 de la serie movilizó a su comunidad con teorías y capturas de pantalla en tiempo real. Al ser una conversación hiperespecífica del fandom, no se recomienda meterse a menos que haya un guiño muy genuino.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#MrFanboyEP11",
+"#MrFanboy"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"dortmundsvelversberg": {
+"id": "dortmundsvelversberg",
+"titulo": "Dortmund vs Elversberg — Partido del Borussia por copa",
+"explicacion": "El Borussia Dortmund juega su partido frente a un rival menor y los hinchas siguen de cerca si habrá batacazo o goleada. Sirve para traccionar interacción deportiva con clips de goles o encuestas de último minuto.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#BVB",
+"#Dortmund",
+"#DFBPokal"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Permite generar contenido rápido sobre batacazos o momentos curiosos de copas europeas."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"gustavolazzariesnecesariopararunpaisporlavisitadelpapa": {
+"id": "gustavolazzariesnecesariopararunpaisporlavisitadelpapa",
+"titulo": "Gustavo Lazzari — Polémica por el impacto de la visita del Papa",
+"explicacion": "El economista y empresario cuestionó el freno a la actividad económica ante una hipotética llegada papal, abriendo un debate ardiente en redes. No conviene para marcas.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Lazzari",
+"#Economia",
+"#PapaFrancisco"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Debate político, económico y religioso que genera polarización extrema.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"fulhamnewcastle": {
+"id": "fulhamnewcastle",
+"titulo": "Fulham vs Newcastle — Partido caliente de la Premier League",
+"explicacion": "Ambos equipos ingleses se cruzan en un partido muy disputado que atrae a los fanáticos de las ligas europeas. Se puede utilizar para charlar de fútbol en vivo o armar contenidos de previa de fin de semana.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Fulham",
+"#Newcastle",
+"#PremierLeague"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Sirve para comentar los partidos de la Premier League en la mesa de streaming."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"donjulio": {
+"id": "donjulio",
+"titulo": "Don Julio — Conversación sobre la icónica parrilla porteña",
+"explicacion": "La parrilla Don Julio vuelve a estar en boca de todos por precios, distinciones gastronómicas o visitas de famosos internacionales. Las marcas del rubro lifestyle pueden sumarse hablando del ritual del asado porteño o debatiendo dónde se come la mejor carne de la ciudad.",
+"tipo": "Consumo",
+"categoria": "Comida y Bebida",
+"hashtags": [
+"#DonJulio",
+"#Parrilla",
+"#Palermo"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Se alinea con su pilar gastronómico de alta gama y cultura foodie porteña."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"dondesepuedeconseguirunrepuestoparaestetipodelapiceras": {
+"id": "dondesepuedeconseguirunrepuestoparaestetipodelapiceras",
+"titulo": "Repuestos de lapiceras — Búsqueda comunitaria en foros",
+"explicacion": "Un usuario abrió un hilo en Reddit buscando insumos difíciles para una lapicera y la comunidad empezó a recomendar librerías clásicas. Es una consulta utilitaria de nicho que no ofrece una palanca clara de contenido de marca.",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"hashtags": [
+"#Libreria",
+"#RedditArg"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"mrfanboychapter11": {
+"id": "mrfanboychapter11",
+"titulo": "Mr Fanboy Chapter 11 — Fandom debatiendo el nuevo episodio",
+"explicacion": "Seguidores de la serie comentan masivamente el desarrollo del capítulo 11 en redes con spoilers y teorías. Al tratarse de un consumo de nicho muy segmentado, no se recomienda intervención marcaria general.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#MrFanboy",
+"#Capitulo11"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"gameday": {
+"id": "gameday",
+"titulo": "Game Day — El ritual del día de partido en redes",
+"explicacion": "La frase celebra la llegada del día de juego y se llena de rituales, cábalas y previas de los hinchas. Una marca puede capitalizarlo invitando a la gente a moverse, juntarse con amigos o prepararse para disfrutar del espectáculo.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#GameDay",
+"#DiaDePartido",
+"#ModoMatch"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Encaja perfecto para abrir transmisiones especiales de previas deportivas."
+},
+{
+"cliente": "Pasito",
+"por_que": "Permite incentivar a los hinchas a sumar pasos yendo a la cancha o juntándose a ver el partido."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"rbleipzigaugsburgo": {
+"id": "rbleipzigaugsburgo",
+"titulo": "RB Leipzig vs. Augsburgo — Cruce de la Bundesliga alemana",
+"explicacion": "El RB Leipzig se enfrenta al Augsburgo en una nueva jornada del fútbol alemán, generando búsquedas en vivo de resultados. Una marca deportiva o de streaming puede aprovecharlo para interactuar con fanáticos del fútbol europeo.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Bundesliga",
+"#RBLeipzig",
+"#Fútbol"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"chadtough": {
+"id": "chadtough",
+"titulo": "ChadTough — Campaña de concientización sobre cáncer infantil",
+"explicacion": "La organización ChadTough reúne a miles de usuarios para visibilizar y recaudar fondos para la lucha contra el DIPG, un tumor cerebral infantil. No conviene para marcas abordarlo con fines comerciales por la alta sensibilidad del tema.",
+"tipo": "Noticia",
+"categoria": "Bienestar y Fitness",
+"hashtags": [
+"#ChadTough",
+"#DIPG",
+"#DefeatDIPG"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Causa benéfica ligada a cáncer infantil terminal y duelo de familias.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"galatasarayamedsk": {
+"id": "galatasarayamedsk",
+"titulo": "Galatasaray vs. Amed SK — Choque en el fútbol turco",
+"explicacion": "Galatasaray se mide ante el Amed SK en un cruce que despierta fuerte interés deportivo en Turquía. No conviene para marcas debido a la sensibilidad y las tensiones políticas y étnicas que suelen rodear al club visitante.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Galatasaray",
+"#AmedSK",
+"#Fútbol"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Carga de tensión sociopolítica y disputas identitarias en Turquía vinculadas a Amed SK.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"venue101": {
+"id": "venue101",
+"titulo": "Venue 101 — Emisión del show musical en vivo de la NHK",
+"explicacion": "Se emite un nuevo episodio del programa musical japonés Venue 101 con presentaciones exclusivas de artistas asiáticos. No ofrece una oportunidad directa para marcas locales argentinas.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#Venue101",
+"#NHK",
+"#Música"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"hull": {
+"id": "hull",
+"titulo": "Hull City — El club inglés es tendencia en el Championship",
+"explicacion": "Hull City genera debate en redes durante su compromiso del fin de semana en el ascenso del fútbol inglés. Salvo para plataformas de información deportiva especializada, no aporta valor comunicacional para marcas.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#HullCity",
+"#Championship",
+"#EFL"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"diadelperiodistadeportivo": {
+"id": "diadelperiodistadeportivo",
+"titulo": "Día del Periodista Deportivo — Saludos y homenajes a la profesión",
+"explicacion": "Se celebra esta efeméride en Argentina y las redes se llenan de saludos y reconocimientos para los profesionales del área deportiva. Una marca de medios o entretenimiento puede felicitar a sus cronistas y generar debate sobre los mejores momentos del deporte.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#PeriodismoDeportivo",
+"#Deportes",
+"#Argentina"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Es ideal para homenajear a los periodistas deportivos del canal en vivo y abrir el juego con anécdotas de transmisiones."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"solanke": {
+"id": "solanke",
+"titulo": "Dominic Solanke — El delantero del Tottenham da que hablar",
+"explicacion": "El atacante de los Spurs se vuelve tendencia por sus goles y rendimiento en la Premier League. Es una conversación exclusivamente futbolera que no resulta relevante para marcas locales de consumo general.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Solanke",
+"#Tottenham",
+"#PremierLeague"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"bentancur": {
+"id": "bentancur",
+"titulo": "Rodrigo Bentancur — Protagonismo del volante uruguayo",
+"explicacion": "El mediocampista uruguayo del Tottenham Hotspur concentra comentarios en redes por su desempeño en el fútbol inglés. No brinda un ángulo estratégico aprovechable para marcas fuera del nicho periodístico deportivo.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Bentancur",
+"#Spurs",
+"#Fútbol"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"volkswagengolfgti": {
+"id": "volkswagengolfgti",
+"titulo": "Volkswagen Golf GTI — Interés por el icónico hatchback deportivo",
+"explicacion": "Crecen las búsquedas en Argentina vinculadas a novedades, lanzamientos o precios de mercado del clásico modelo de Volkswagen. Una marca puede capitalizarlo como disparador para hablar de decisiones financieras o el deseo por productos de diseño aspiracional.",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"hashtags": [
+"#GolfGTI",
+"#Volkswagen",
+"#Autos"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Juntala Podcast",
+"por_que": "Permite analizar desde las finanzas personales si conviene comprar o mantener un auto importado de alta gama en Argentina."
+},
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Encaja con el perfil aspiracional y de alta gama de sus clientes para contenidos sobre diseño y lifestyle automotor."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"quiendiceversioncumbia": {
+"id": "quiendiceversioncumbia",
+"titulo": "Quien Dice (Versión Cumbia) — Remix viral en YouTube Argentina",
+"explicacion": "El remix en clave cumbiera de Tomy DJ y Nico Manriquez no para de sumar reproducciones en las listas de música local. Las marcas pueden emplearlo para musicalizar reels, historias de fin de semana o contenido festivo.",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#QuienDice",
+"#Cumbia",
+"#Remix"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Es ideal para musicalizar las previas de fin de semana en el estudio y conectar con la música que escucha la audiencia."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"ep2": {
+"id": "ep2",
+"titulo": "Khemjira The Series EP 2 — Fanatismo por el nuevo episodio",
+"explicacion": "Los fanáticos celebran en X el lanzamiento del segundo capítulo de la serie tailandesa de drama y romance. No presenta utilidad práctica para marcas de consumo masivo fuera de la comunidad de series asiáticas.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#เขมจิราตลอดกาลEP2",
+"#KhemjiraTheSeries",
+"#Series"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"estxvanillinfw26show": {
+"id": "estxvanillinfw26show",
+"titulo": "EST x Vanillin FW26 — Desfile y presentación de la nueva colección de moda",
+"explicacion": "Es la presentación de la nueva colección de moda FW26 que generó conversación global por sus diseños y estética. Una marca de moda o lifestyle puede reaccionar a los looks de la pasarela o usarlos como inspiración.",
+"tipo": "Cultura pop",
+"categoria": "Belleza y Moda",
+"hashtags": [
+"#FW26",
+"#FashionWeek",
+"#Vanillin"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Alcorta Shopping",
+"por_que": "Ideal para curar los mejores looks de la pasarela y vincularlos con las marcas presentes en el shopping."
+},
+{
+"cliente": "Kérastase",
+"por_que": "Permite analizar y comentar los peinados y estilos vistos durante el desfile."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"caspiansea": {
+"id": "caspiansea",
+"titulo": "Caspian Sea — Tendencia sobre actualidad geopolítica en el Mar Caspio",
+"explicacion": "Asumimos por las fuentes que está en tendencia debido a debates geopolíticos y ambientales en la región del Mar Caspio. No conviene para marcas al tratarse de un tema noticioso internacional sensible.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#CaspianSea",
+"#Noticias"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Tema de geopolítica internacional y actualidad noticiosa",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"ジェシー": {
+"id": "ジェシー",
+"titulo": "Jesse (SixTONES) — Tendencia por el popular artista e idol japonés",
+"explicacion": "El cantante y actor japonés Jesse es tendencia global por sus recientes novedades en el entretenimiento y el pop asiático. Las marcas del mundo del streaming o entretenimiento pueden sumarse comentando la conversación del fandom.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#Jesse",
+"#SixTONES"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Sirve para hacer menciones o clips humorísticos sobre la cultura pop y los fenómenos del K-pop y J-pop."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"worstgraduatesfromeachschool": {
+"id": "worstgraduatesfromeachschool",
+"titulo": "Worst graduates — Tendencia para nombrar al peor egresado de cada colegio",
+"explicacion": "Es un formato viral de Bluesky impulsado por la polémica de Stephen Miller donde la gente menciona a los egresados más infames de sus instituciones. No conviene para marcas por rozar la política y el escrache público.",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#WorstGraduates",
+"#Memes"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Involucra discusiones políticas, escraches y menciones a figuras controvertidas",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"khemjiraforeverep2": {
+"id": "khemjiraforeverep2",
+"titulo": "Khemjira Forever EP2 — Estreno del nuevo capítulo del drama tailandés",
+"explicacion": "Es la conversación viral generada por el lanzamiento del segundo episodio de la popular serie tailandesa Khemjira. Un medio de entretenimiento o canal de streaming puede sumarse comentando la reacción de los fans ante el episodio.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#KhemjiraForever",
+"#KhemjiraEP2"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Perfecto para reaccionar o debatir el furor por las series asiáticas en la mesa del programa."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"whatsthedealwithkinyohqontiktok": {
+"id": "whatsthedealwithkinyohqontiktok",
+"titulo": "@kinyohq en TikTok — Debate en redes sobre esta cuenta y herramienta viral",
+"explicacion": "Es una consulta viral en Reddit y TikTok preguntando sobre la repentina popularidad y funcionamiento de la cuenta KinYo. Una marca de finanzas o tecnología puede usarlo para explicar modelos de negocio y crecimiento viral en redes.",
+"tipo": "Real time",
+"categoria": "IA y Tech",
+"hashtags": [
+"#KinYo",
+"#TikTokTrends",
+"#Tech"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Juntala Podcast",
+"por_que": "Ideal para analizar en un episodio cómo las herramientas digitales y apps se monetizan y viralizan."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"arsenalvshull": {
+"id": "arsenalvshull",
+"titulo": "Arsenal vs Hull — Expectativa por el partido del fútbol inglés",
+"explicacion": "Se trata del pico de búsquedas previas al cruce futbolístico entre el Arsenal y el Hull City. Una marca puede sumarse interactuando con la audiencia futbolera antes o durante el partido.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Arsenal",
+"#HullCity",
+"#FACup"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Permite hacer debates deportivos o reacciones en vivo durante el streaming diario."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"rcdespanyoldeportivo": {
+"id": "rcdespanyoldeportivo",
+"titulo": "RCD Espanyol vs Deportivo — Partido del fútbol español en tendencia",
+"explicacion": "Es la tendencia de búsqueda en torno al partido entre el Espanyol y el Deportivo de La Coruña. Las marcas pueden interactuar mediante trivias de pronósticos o comentarios en tiempo real.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#RCDEspanyol",
+"#Deportivo",
+"#LaLiga"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Útil para integrar a las bancadas de debate deportivo relajado en el canal."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"taskforceirongate": {
+"id": "taskforceirongate",
+"titulo": "Task Force Iron Gate — Novedades de la fuerza de tarea militar de EE. UU.",
+"explicacion": "Es una tendencia noticiosa vinculada a operaciones o maniobras militares de las fuerzas armadas estadounidenses. No conviene para marcas por ser un asunto bélico y político.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#TaskForceIronGate",
+"#Military"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Tema militar y de política internacional sensible",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"thegoombafallacy": {
+"id": "thegoombafallacy",
+"titulo": "The Goomba Fallacy — Meme sobre un concepto razonado absurdo con Goombas",
+"explicacion": "Es un formato humorístico viral que parodia falacias lógicas usando la figura de Goomba del juego Mario Bros. Una marca puede adaptar la plantilla para reírse de contradicciones simpáticas de la vida diaria de sus clientes.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#TheGoombaFallacy",
+"#SuperMario",
+"#Memes"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Entrenuts",
+"por_que": "Sirve para crear un meme gracioso sobre las excusas ilógicas al intentar comer sano."
+},
+{
+"cliente": "Pasito",
+"por_que": "Ideal para hacer un meme humorístico sobre la lógica absurda de no querer caminar distancias cortas."
+},
+{
+"cliente": "Luzu TV",
+"por_que": "Permite crear placas o videos adaptando la falacia a anécdotas de los conductores del programa."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"malagaracingdesantander": {
+"id": "malagaracingdesantander",
+"titulo": "Málaga vs Racing de Santander — Cruzamiento clave de la Segunda de España",
+"explicacion": "Es el volumen de búsquedas por el encuentro de fútbol entre Málaga CF y Racing de Santander. Se puede aprovechar para lanzar encuestas de resultados en redes sociales.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#MalagaRacing",
+"#LaLigaHypermotion"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Apto para sumar al resumen deportivo o menciones al pasar durante la transmisión."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"russellbrandverdict": {
+"id": "russellbrandverdict",
+"titulo": "Veredicto de Russell Brand — Cierre del juicio por delitos sexuales",
+"explicacion": "Un jurado en Londres emitió su veredicto en el juicio criminal por agresiones sexuales contra Russell Brand. No conviene para marcas por ser un asunto penal y delito grave de índole sexual.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#RussellBrand",
+"#Juicio"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Caso penal por delitos de índole sexual y abusos",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"frenoalingresodeequiposdetelefoniacelulardechinaargentinaadhirioaunestandardeseg": {
+"id": "frenoalingresodeequiposdetelefoniacelulardechinaargentinaadhirioaunestandardeseg",
+"titulo": "Regulación a celulares chinos — Argentina adhiere a estándares de EE. UU.",
+"explicacion": "Argentina adoptó normativas de seguridad impulsadas por EE. UU. que podrían impactar en la importación de celulares chinos. Al involucrar decisiones gubernamentales y comercio internacional, debe abordarse con prudencia o foco en divulgación económica.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Tecnologia",
+"#Argentina",
+"#Celulares"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Debate de política económica local y decisiones gubernamentales",
+"encaja": [
+{
+"cliente": "Juntala Podcast",
+"por_que": "Ideal para hacer un episodio explicando el impacto de esta medida en el bolsillo y la tecnología local."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"aquehorajuegabocahoy": {
+"id": "aquehorajuegabocahoy",
+"titulo": "A qué hora juega Boca hoy — Búsqueda en vivo por el horario del partido",
+"explicacion": "Los fanáticos buscan de forma masiva la hora y canal de la presentación de Boca Juniors del día. Es una excelente oportunidad para generar engagement inmediato publicando la previa o recordatorios.",
+"tipo": "Real time",
+"categoria": "Deportes",
+"hashtags": [
+"#Boca",
+"#BocaJuniors",
+"#HoyJuegaBoca"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Permite enganchar a la audiencia futbolera activando la previa en los streams del día."
+},
+{
+"cliente": "Pasito",
+"por_que": "Útil para proponer salir a sumar pasos caminando hacia la cancha o juntada de hinchas."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"krakowie": {
+"id": "krakowie",
+"titulo": "Krakowie — Tendencia geográfica sobre novedades en Cracovia, Polonia",
+"explicacion": "Deducimos que es tendencia por eventos o temas locales vinculados a la ciudad de Cracovia. No presenta una oportunidad clara para marcas locales en Argentina por carecer de relevancia de audiencia.",
+"tipo": "Noticia",
+"categoria": "Otros",
+"hashtags": [
+"#Krakow",
+"#Polonia"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"hormigasyflorecitaspatagonicas": {
+"id": "hormigasyflorecitaspatagonicas",
+"titulo": "Hormigas y florecitas patagónicas — postales de naturaleza sureña",
+"explicacion": "Es una publicación viral de Reddit donde los usuarios comparten fotos macro de la flora y fauna diminuta observada durante caminatas en la Patagonia. Una marca vinculada al aire libre o hábitos saludables puede sumarse invitando a apreciar los pequeños detalles del camino.",
+"tipo": "Estilo de vida",
+"categoria": "Otros",
+"hashtags": [
+"#Patagonia",
+"#Naturaleza",
+"#Trekking"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Pasito",
+"por_que": "Puede proponer una consigna para que los usuarios sumen pasos mientras descubren y fotografían detalles naturales en sus paseos diarios."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"n7day": {
+"id": "n7day",
+"titulo": "N7 Day — homenaje anual al universo Mass Effect",
+"explicacion": "Es la celebración global que la comunidad gamer y BioWare realizan cada 7 de noviembre para homenajear la saga de ciencia ficción Mass Effect. Los canales de entretenimiento pueden usarlo como disparador para charlar sobre videojuegos favoritos y cultura geek.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"hashtags": [
+"#N7Day",
+"#MassEffect",
+"#Gaming"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Da pie para abrir un bloque descontracturado de debate sobre videojuegos que marcaron generaciones en los programas de la tarde."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"vehicleswomenactuallylikememe": {
+"id": "vehicleswomenactuallylikememe",
+"titulo": "Vehicles women actually like — parodia a los autos masculinizados",
+"explicacion": "Es un formato humorístico que ironiza sobre la estética agresiva tipo Cybertruck mostrando vehículos absurdos de películas o dibujos que supuestamente prefieren las mujeres. Una marca puede sumarse adaptando el chiste con sus propios productos o vehículos emblemáticos de la cultura pop.",
+"tipo": "Formato",
+"categoria": "Cultura y Memes",
+"hashtags": [
+"#VehiclesWomenLike",
+"#Meme",
+"#Cybertruck"
+],
+"riesgo": "bajo",
+"riesgo_motivo": "",
+"encaja": [
+{
+"cliente": "Luzu TV",
+"por_que": "Permite generar un segmento de humor en vivo con las conductoras mostrando opciones disparatadas de vehículos."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"cuneoopinasobrelanegativademaximokirchnerapresentarseadeclararenlacausahotesurlo": {
+"id": "cuneoopinasobrelanegativademaximokirchnerapresentarseadeclararenlacausahotesurlo",
+"titulo": "Cúneo contra Máximo Kirchner — cruce judicial y político",
+"explicacion": "El periodista Santiago Cúneo lanzó duras críticas tras la negativa del diputado Máximo Kirchner a presentarse a declarar en la causa Hotesur-Los Sauces. No conviene para marcas.",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"hashtags": [
+"#Cuneo",
+"#MaximoKirchner",
+"#PoliticaArgentina"
+],
+"riesgo": "alto",
+"riesgo_motivo": "Contenido de confrontación política partidaria y causas judiciales activas.",
+"encaja": [],
+"ts": 1794068976.698456,
+"lite": false
+},
+"viralioslivelistenwarning": {
+"id": "viralioslivelistenwarning",
+"titulo": "Alerta viral por Live Listen — rumor sobre privacidad en iOS",
+"explicacion": "Circula un post viral alarmista que advierte erróneamente que una actualización de Apple activaría la escucha ambiental sin permiso. Una marca de divulgación puede aprovecharlo para desmentir el mito y educar a los usuarios sobre seguridad digital real.",
+"tipo": "Real time",
+"categoria": "IA y Tech",
+"hashtags": [
+"#LiveListen",
+"#Apple",
+"#Ciberseguridad"
+],
+"riesgo": "medio",
+"riesgo_motivo": "Circulación de desinformación técnica que puede provocar confusión en la audiencia.",
+"encaja": [
+{
+"cliente": "Juntala Podcast",
+"por_que": "Sirve como disparador educativo para explicar qué alertas de privacidad en celulares son reales y cómo proteger los datos financieros personales."
+}
+],
+"ts": 1794068976.698456,
+"lite": false
+},
+"franjamorada": {
+"id": "franjamorada",
+"titulo": "Franja Morada — militancia universitaria argentina",
+"tipo": "Cultura pop",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"大感謝祭": {
+"id": "大感謝祭",
+"titulo": "大感謝祭 — festival de grandes agradecimientos en Japón",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"seniorday": {
+"id": "seniorday",
+"titulo": "Senior Day — celebración de estudiantes del último año",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"インセプ": {
+"id": "インセプ",
+"titulo": "インセプ — término de tendencia en Japón",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"chadcarr": {
+"id": "chadcarr",
+"titulo": "Chad Carr — homenaje y memoria en EE. UU.",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"migueles": {
+"id": "migueles",
+"titulo": "Migueles — apellido o figura en tendencia local",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"ゆごじゅり": {
+"id": "ゆごじゅり",
+"titulo": "ゆごじゅり — duo de idols japoneses en tendencia",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"marmoush": {
+"id": "marmoush",
+"titulo": "Marmoush — desempeño destacado del futbolista",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"4pa4": {
+"id": "4pa4",
+"titulo": "4 PA 4 — colaboración urbana de El Alfa y El Bogueto",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"titan": {
+"id": "titan",
+"titulo": "Titán — mención destacada en redes sociales",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"posicionesdebanfieldcontraatleticotucuman": {
+"id": "posicionesdebanfieldcontraatleticotucuman",
+"titulo": "Posiciones Banfield vs Atlético Tucumán — tabla de la liga",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"gallagher": {
+"id": "gallagher",
+"titulo": "Gallagher — actualidad de la figura pública",
+"tipo": "Noticia",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"saturdayvibes": {
+"id": "saturdayvibes",
+"titulo": "#SaturdayVibes — celebrando la energía del fin de semana",
+"tipo": "Estilo de vida",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"elvirtus2026": {
+"id": "elvirtus2026",
+"titulo": "El Virtus 2026 — evento tecnológico y de innovación",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"posicionesdemalagacfcontraracingdesantander": {
+"id": "posicionesdemalagacfcontraracingdesantander",
+"titulo": "Posiciones Málaga vs Racing — tabla de posiciones",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"alloutforhearts2hearts": {
+"id": "alloutforhearts2hearts",
+"titulo": "ALL OUT FOR HEARTS2HEARTS — fandom musical activo",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"cadizrealoviedo": {
+"id": "cadizrealoviedo",
+"titulo": "Cádiz - Real Oviedo — partido clave de fútbol",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"martinpalermo": {
+"id": "martinpalermo",
+"titulo": "Martín Palermo — novedades del histórico goleador",
+"tipo": "Cultura pop",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"ariamusicawardsde2026": {
+"id": "ariamusicawardsde2026",
+"titulo": "ARIA Music Awards 2026 — premiación de la música australiana",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"arsenalxhullcity": {
+"id": "arsenalxhullcity",
+"titulo": "Arsenal x Hull City — encuentro futbolístico destacado",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"borussiaxelversberg": {
+"id": "borussiaxelversberg",
+"titulo": "Borussia x Elversberg — partido del fútbol alemán",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"blackburnroversvswestham": {
+"id": "blackburnroversvswestham",
+"titulo": "Blackburn Rovers vs West Ham — cruce copero en Inglaterra",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"defesacivilkitemergencia": {
+"id": "defesacivilkitemergencia",
+"titulo": "Defesa civil kit emergência — guía de preparación en Brasil",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"athleticclubrealmadrid": {
+"id": "athleticclubrealmadrid",
+"titulo": "Athletic Club - Real Madrid — partidazo en La Liga",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"aguinaldojubilados": {
+"id": "aguinaldojubilados",
+"titulo": "Aguinaldo jubilados — pagos y novedades en Argentina",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"ドクターペッパー": {
+"id": "ドクターペッパー",
+"titulo": "ドクターペッパー — fanatismo por Dr Pepper en Japón",
+"tipo": "Consumo",
+"categoria": "Comida y Bebida",
+"ts": 1794068976.698456,
+"lite": true
+},
+"lagranjavip": {
+"id": "lagranjavip",
+"titulo": "La Granja VIP — reality show en tendencia",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"charlesporteractor": {
+"id": "charlesporteractor",
+"titulo": "Charles Porter actor — búsqueda sobre el intérprete",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"leedsunitedfcvstottenhamstandings": {
+"id": "leedsunitedfcvstottenhamstandings",
+"titulo": "Leeds United vs Tottenham — posiciones en la Premier",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"birminghamvsswansea": {
+"id": "birminghamvsswansea",
+"titulo": "Birmingham vs Swansea — partido del ascenso inglés",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"burgosceltab": {
+"id": "burgosceltab",
+"titulo": "Burgos - Celta B — duelo del fútbol español",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"unapibaempujoaunadocentedeuncolegiodesanfernando": {
+"id": "unapibaempujoaunadocentedeuncolegiodesanfernando",
+"titulo": "Una piba empujó a una docente — debate viral en San Fernando",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"prestonvssouthampton": {
+"id": "prestonvssouthampton",
+"titulo": "Preston vs Southampton — fútbol inglés en juego",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"慟哭のコンチェルト": {
+"id": "慟哭のコンチェルト",
+"titulo": "慟哭のコンチェルト — tendencia musical en Japón",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"wrexhamvswolves": {
+"id": "wrexhamvswolves",
+"titulo": "Wrexham vs Wolves — cruce atractivo en Inglaterra",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"dezerbi": {
+"id": "dezerbi",
+"titulo": "De Zerbi — actualidad del DT italiano",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"goodsaturday": {
+"id": "goodsaturday",
+"titulo": "Good Saturday — disfrutando el fin de semana",
+"tipo": "Estilo de vida",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"cardiffcityvsburnley": {
+"id": "cardiffcityvsburnley",
+"titulo": "Cardiff City vs Burnley — Championship inglesa",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"チル村さん": {
+"id": "チル村さん",
+"titulo": "チル村さん — personaje o meme viral en Japón",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"wordle1967x": {
+"id": "wordle1967x",
+"titulo": "Wordle 1.967 X — resultado del reto diario de palabras",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"juicioalatorettounapsiquiatradeclaroquealajovenleangustiabasuimagenysecruzoconla": {
+"id": "juicioalatorettounapsiquiatradeclaroquealajovenleangustiabasuimagenysecruzoconla",
+"titulo": "Juicio a La Toretto — pericias psiquiátricas y cruces",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"watfordvsmiddlesbrough": {
+"id": "watfordvsmiddlesbrough",
+"titulo": "Watford vs Middlesbrough — partido de la EFL Championship",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"fulhamxnewcastle": {
+"id": "fulhamxnewcastle",
+"titulo": "Fulham x Newcastle — partidazo en la Premier League",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"westbromvsmillwall": {
+"id": "westbromvsmillwall",
+"titulo": "West Brom vs Millwall — clásico duelo inglés",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"bogle": {
+"id": "bogle",
+"titulo": "Bogle — mención viral de la figura financiera",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"ts": 1794068976.698456,
+"lite": true
+},
+"happydiwali": {
+"id": "happydiwali",
+"titulo": "Happy Diwali — celebración del festival de las luces",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"charltonvssheffieldunited": {
+"id": "charltonvssheffieldunited",
+"titulo": "Charlton vs Sheffield United — fútbol inglés",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"demolicao": {
+"id": "demolicao",
+"titulo": "Demolição — proyectos y obras en Brasil",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"posicionesdeatlantefccontrasantoslaguna": {
+"id": "posicionesdeatlantefccontrasantoslaguna",
+"titulo": "Posiciones Atlante vs Santos Laguna — tabla mexicana",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"normaduval": {
+"id": "normaduval",
+"titulo": "Norma Duval — actualidad de la mítica vedette",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"noahokafor": {
+"id": "noahokafor",
+"titulo": "Noah Okafor — rendimiento del delantero en Europa",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"rbleipzigxaugsburg": {
+"id": "rbleipzigxaugsburg",
+"titulo": "RB Leipzig x Augsburg — acción en la Bundesliga",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"northkoreau17xbrasilsub17": {
+"id": "northkoreau17xbrasilsub17",
+"titulo": "Corea del Norte Sub-17 vs Brasil Sub-17 — mundial juvenil",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"posicionesdeleedsunitedcontratottenham": {
+"id": "posicionesdeleedsunitedcontratottenham",
+"titulo": "Posiciones Leeds vs Tottenham — la tabla al rojo vivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"日村さん": {
+"id": "日村さん",
+"titulo": "日村さん — comediante japonés en tendencia",
+"tipo": "Humor",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"maddison": {
+"id": "maddison",
+"titulo": "Maddison — jugadas y actualidad del volante inglés",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"bloodtransfusionjehovahwitness": {
+"id": "bloodtransfusionjehovahwitness",
+"titulo": "Blood transfusion Jehovah's Witness — debate ético y médico",
+"tipo": "Noticia",
+"categoria": "Bienestar y Fitness",
+"ts": 1794068976.698456,
+"lite": true
+},
+"herencia": {
+"id": "herencia",
+"titulo": "Herencia — trámites, leyes y dudas legales",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"berkshire": {
+"id": "berkshire",
+"titulo": "Berkshire — novedades de la firma de Warren Buffett",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"ts": 1794068976.698456,
+"lite": true
+},
+"jensen": {
+"id": "jensen",
+"titulo": "Jensen — novedades sobre Jensen Huang y NVIDIA",
+"tipo": "Consumo",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"ヴォルタ": {
+"id": "ヴォルタ",
+"titulo": "ヴォルタ — Tendencia en X sobre el término en japonés",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"joemontana": {
+"id": "joemontana",
+"titulo": "Joe Montana — Leyenda del fútbol americano en búsquedas",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"patosdeminas": {
+"id": "patosdeminas",
+"titulo": "Patos de Minas — Búsqueda inmobiliaria en Brasil",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"ts": 1794068976.698456,
+"lite": true
+},
+"kimmich": {
+"id": "kimmich",
+"titulo": "Kimmich — Futbolista alemán tendencia en X",
+"tipo": "Cultura pop",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"texasvsmissouri": {
+"id": "texasvsmissouri",
+"titulo": "Texas vs Missouri — Predicciones de partido universitario",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"armylockinforbts": {
+"id": "armylockinforbts",
+"titulo": "ARMY Lock In For BTS — Movilización global de fans en X",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"美青ちゃん": {
+"id": "美青ちゃん",
+"titulo": "美青ちゃん — Tendencia en X sobre celebridad japonesa",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"maisvoce": {
+"id": "maisvoce",
+"titulo": "Mais Você — Popular programa matutino brasileño",
+"tipo": "Noticia",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"cracovia": {
+"id": "cracovia",
+"titulo": "Cracovia — Ciudad europea en búsquedas de España",
+"tipo": "Consumo",
+"categoria": "Otros",
+"ts": 1794068976.698456,
+"lite": true
+},
+"veteransdayobservances": {
+"id": "veteransdayobservances",
+"titulo": "Veterans Day — Conmemoraciones y homenajes a veteranos",
+"tipo": "Cultura pop",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"floridastatevsbostoncollege": {
+"id": "floridastatevsbostoncollege",
+"titulo": "Florida State vs Boston College — Partido de fútbol americano",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"breakingkindsongsdailymusicprompts": {
+"id": "breakingkindsongsdailymusicprompts",
+"titulo": "BreakingKindSongs — Consignas musicales diarias",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"happyn7": {
+"id": "happyn7",
+"titulo": "Happy N7 — Celebración de la franquicia Mass Effect",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"cbslastinelectionnightratings": {
+"id": "cbslastinelectionnightratings",
+"titulo": "CBS Ratings — Audiencia baja en noche electoral",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"yuruyusebibergazlmudahale": {
+"id": "yuruyusebibergazlmudahale",
+"titulo": "Protestas — Intervención con gas pimienta en marcha",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"porro": {
+"id": "porro",
+"titulo": "Porro — Término popular en conversación de X",
+"tipo": "Humor",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"treinof1": {
+"id": "treinof1",
+"titulo": "Treino F1 — Prácticas de Fórmula 1 en tendencia",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"マーリン": {
+"id": "マーリン",
+"titulo": "マーリン — Personaje o término en X Japón",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"akpdonemizulumdonemi": {
+"id": "akpdonemizulumdonemi",
+"titulo": "Política Turquía — Debate sobre período político en X",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"mariecurie": {
+"id": "mariecurie",
+"titulo": "Marie Curie — Científica histórica tendencia en X",
+"tipo": "Cultura pop",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"erikakirkpromoteskirkhotsauce": {
+"id": "erikakirkpromoteskirkhotsauce",
+"titulo": "Kirk Hot Sauce — Promoción de salsa picante en TV",
+"tipo": "Consumo",
+"categoria": "Comida y Bebida",
+"ts": 1794068976.698456,
+"lite": true
+},
+"28subatdevamediyor": {
+"id": "28subatdevamediyor",
+"titulo": "28 Şubat — Conmemoración histórica en Turquía",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"championshipsaturday": {
+"id": "championshipsaturday",
+"titulo": "Championship Saturday — Sábado de finales deportivas",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"おはぎの宴": {
+"id": "おはぎの宴",
+"titulo": "おはぎの宴 — Evento o banquete de Ohagi en Japón",
+"tipo": "Cultura pop",
+"categoria": "Comida y Bebida",
+"ts": 1794068976.698456,
+"lite": true
+},
+"末満さん": {
+"id": "末満さん",
+"titulo": "末満さん — Dramaturgo Kenichi Suemitsu en tendencia",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"meetday": {
+"id": "meetday",
+"titulo": "Meet Day — Día de competición deportiva en X",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"マリーオルタ": {
+"id": "マリーオルタ",
+"titulo": "マリーオルタ — Personaje de videojuego en X",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"usbc": {
+"id": "usbc",
+"titulo": "USB-C — Estándar de carga universal en tecnología",
+"tipo": "Real time",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"pattinsonscreentestsforbond": {
+"id": "pattinsonscreentestsforbond",
+"titulo": "Pattinson como Bond — Pruebas de casting para 007",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"elinnordegren": {
+"id": "elinnordegren",
+"titulo": "Elin Nordegren — Exmodelo vinculada a fichaje deportivo",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"cane": {
+"id": "cane",
+"titulo": "Cane — Búsqueda en tendencia sobre productos o términos",
+"tipo": "Consumo",
+"categoria": "Consumo y Productos",
+"ts": 1794068976.698456,
+"lite": true
+},
+"walesvsjapan": {
+"id": "walesvsjapan",
+"titulo": "Wales vs Japan — Encuentro deportivo internacional",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"energiarenovable": {
+"id": "energiarenovable",
+"titulo": "Energía Renovable — Búsqueda sobre sostenibilidad",
+"tipo": "Real time",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"demissao": {
+"id": "demissao",
+"titulo": "Demissão — Búsqueda sobre despidos laborales en Brasil",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"byuvsutah": {
+"id": "byuvsutah",
+"titulo": "BYU vs Utah — Partido y pronósticos de fútbol americano",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"marriedatfirstsight": {
+"id": "marriedatfirstsight",
+"titulo": "Married at First Sight — Reality show en tendencia",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"skarletemelo": {
+"id": "skarletemelo",
+"titulo": "Skarlete Melo — Influencer brasileña en búsquedas",
+"tipo": "Cultura pop",
+"categoria": "Cultura y Memes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"clubamericafemenil": {
+"id": "clubamericafemenil",
+"titulo": "Club América Femenil — Fútbol femenil en México",
+"tipo": "Noticia",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"rescisao": {
+"id": "rescisao",
+"titulo": "Rescisão — Búsqueda sobre rescisión de contratos en Brasil",
+"tipo": "Noticia",
+"categoria": "Consumo y Productos",
+"ts": 1794068976.698456,
+"lite": true
+},
+"blackskyprojectuktelecomresilience": {
+"id": "blackskyprojectuktelecomresilience",
+"titulo": "BlackSky Telecom — Proyecto de resiliencia en UK",
+"tipo": "Real time",
+"categoria": "IA y Tech",
+"ts": 1794068976.698456,
+"lite": true
+},
+"refresco": {
+"id": "refresco",
+"titulo": "Refresco — Búsqueda de bebidas en México",
+"tipo": "Consumo",
+"categoria": "Comida y Bebida",
+"ts": 1794068976.698456,
+"lite": true
+},
+"forwithgod": {
+"id": "forwithgod",
+"titulo": "For with God — Expresión de fe en tendencia en X",
+"tipo": "Cultura pop",
+"categoria": "Otros",
+"ts": 1794068976.698456,
+"lite": true
+},
+"wwecrownjewel2026": {
+"id": "wwecrownjewel2026",
+"titulo": "WWE Crown Jewel 2026 — Horarios del evento de lucha libre",
+"tipo": "Cultura pop",
+"categoria": "Deportes",
+"ts": 1794068976.698456,
+"lite": true
+},
+"borrascabruna": {
+"id": "borrascabruna",
+"titulo": "Borrasca Bruna — Fenómeno meteorológico en España",
+"tipo": "Real time",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"icedetainswisconsinstatetrooper": {
+"id": "icedetainswisconsinstatetrooper",
+"titulo": "ICE detiene a policía — Noticia en Wisconsin",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"tumfonlarahementamanapara": {
+"id": "tumfonlarahementamanapara",
+"titulo": "Fondos de inversión — Reclamos financieros en X",
+"tipo": "Noticia",
+"categoria": "Consumo y Productos",
+"ts": 1794068976.698456,
+"lite": true
+},
+"ハイスタ": {
+"id": "ハイスタ",
+"titulo": "Hi-STANDARD — Banda punk japonesa en X",
+"tipo": "Audio",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"magicaldaywithtlefirstone": {
+"id": "magicaldaywithtlefirstone",
+"titulo": "Magical Day — Evento de fandom asiático en X",
+"tipo": "Cultura pop",
+"categoria": "Música y Entretenimiento",
+"ts": 1794068976.698456,
+"lite": true
+},
+"grassrootsresistancetotrump": {
+"id": "grassrootsresistancetotrump",
+"titulo": "Resistencia a Trump — Movimientos sociales post-elecciones",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
+"lite": true
+},
+"trumpsiranisraelclaim": {
+"id": "trumpsiranisraelclaim",
+"titulo": "Declaraciones de Trump — Postura sobre Irán e Israel",
+"tipo": "Noticia",
+"categoria": "Noticias y Política",
+"ts": 1794068976.698456,
 "lite": true
 }
 }
